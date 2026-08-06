@@ -1,0 +1,5 @@
+anthropic>=0.40
+pdfplumber>=0.11
+pytest>=8.0
+# OCR — системные пакеты, не pip: poppler-utils (pdftoppm), tesseract-ocr,
+# tesseract-ocr-rus, tesseract-ocr-kaz
