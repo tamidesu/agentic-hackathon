@@ -15,6 +15,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from pipeline import artifacts as A  # noqa: E402
 from pipeline.compute import Row  # noqa: E402
 from pipeline.config import RunPaths  # noqa: E402
 from pipeline.covenant_types import CovenantTest  # noqa: E402
@@ -219,7 +220,7 @@ def test_no_candidates_means_no_evidence():
 @pytest.fixture
 def prepared(tmp_path):
     paths = RunPaths.create(tmp_path / "run")
-    (paths.artifacts / "06_ledger_clean.csv").write_text(
+    (paths.artifacts / A.LEDGER_CLEAN).write_text(
         "txn_id,scenario_id,date,counterparty,description,amount,currency,amount_usd,"
         "category,party,scope,excluded\n"
         "TXN-P1-0001,P1,2025-02-01,Alpha,x,-300000,USD,-300000,capex,,borrower,0\n"
@@ -227,7 +228,7 @@ def prepared(tmp_path):
         "TXN-P1-0003,P1,2025-04-01,Holding,x,-500000,USD,-500000,opex,related,borrower,0\n",
         encoding="utf-8",
     )
-    (paths.artifacts / "03_covenants.json").write_text(json.dumps({
+    (paths.artifacts / A.COVENANTS).write_text(json.dumps({
         "scenarios": {"P1": {
             "6.2": {"direction": "max", "threshold": 400000.0, "unit": "amount",
                     "metric": {"op": "AGG", "category": "capex"}},
@@ -235,7 +236,7 @@ def prepared(tmp_path):
                     "metric": {"op": "AGG", "category": "any", "party": "related"}},
         }}
     }), encoding="utf-8")
-    (paths.artifacts / "04_adjustments.json").write_text(json.dumps({
+    (paths.artifacts / A.AUDIT_ADJUSTMENTS).write_text(json.dumps({
         "P1": {"notes": [{"note_id": "7.1", "kind": "reclassification",
                           "target_txn_id": "TXN-P1-0002", "from_category": "opex",
                           "to_category": "capex", "description": "перенесено аудитором"}]}
@@ -258,7 +259,7 @@ def test_end_to_end_fills_evidence_field(prepared):
     assert cell63["status"] == "BREACH"
     assert cell63["evidence_txn_id"] == "TXN-P1-0003"
 
-    on_disk = json.loads((prepared.artifacts / "09_results.json").read_text(encoding="utf-8"))
+    on_disk = json.loads((prepared.artifacts / A.RESULTS).read_text(encoding="utf-8"))
     assert on_disk["P1"]["6.2"]["evidence_txn_id"] == "TXN-P1-0002"
 
 

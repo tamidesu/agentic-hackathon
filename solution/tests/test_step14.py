@@ -16,6 +16,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from pipeline import artifacts as A  # noqa: E402
 from pipeline.assemble import build  # noqa: E402
 from pipeline.assemble import run as assemble_run  # noqa: E402
 from pipeline.config import RunPaths, discover_dataset  # noqa: E402
@@ -171,7 +172,7 @@ def test_end_to_end_output_passes_the_validator(tmp_path):
             for p in cells}
         for s, cells in template["answers"].items()
     }
-    (paths.artifacts / "09_results.json").write_text(
+    (paths.artifacts / A.RESULTS).write_text(
         json.dumps(fake_results), encoding="utf-8")
 
     sub, rep = assemble_run(ds, paths, team="tbd", contact_email="me@example.com",
@@ -210,7 +211,7 @@ def test_full_chain_from_ledger_to_score(tmp_path):
     from pipeline.evidence import run as evidence_run
 
     paths = RunPaths.create(tmp_path / "run")
-    (paths.artifacts / "06_ledger_clean.csv").write_text(
+    (paths.artifacts / A.LEDGER_CLEAN).write_text(
         "txn_id,scenario_id,date,counterparty,description,amount,currency,amount_usd,"
         "category,party,scope,excluded\n"
         "TXN-P1-0001,P1,2025-02-01,Alpha,x,-300000,USD,-300000,capex,,borrower,0\n"
@@ -219,7 +220,7 @@ def test_full_chain_from_ledger_to_score(tmp_path):
         "TXN-P1-0004,P1,2025-05-01,Client,x,900000,USD,900000,revenue,,borrower,0\n",
         encoding="utf-8",
     )
-    (paths.artifacts / "03_covenants.json").write_text(json.dumps({
+    (paths.artifacts / A.COVENANTS).write_text(json.dumps({
         "scenarios": {"P1": {
             "6.1": {"direction": "min", "threshold": 1000000.0, "unit": "amount",
                     "metric": {"op": "AGG", "category": "revenue"}},
@@ -229,7 +230,7 @@ def test_full_chain_from_ledger_to_score(tmp_path):
                     "metric": {"op": "AGG", "category": "any", "party": "related"}},
         }}
     }), encoding="utf-8")
-    (paths.artifacts / "04_adjustments.json").write_text(json.dumps({
+    (paths.artifacts / A.AUDIT_ADJUSTMENTS).write_text(json.dumps({
         "P1": {"notes": [{"note_id": "7.1", "kind": "reclassification",
                           "target_txn_id": "TXN-P1-0002", "from_category": "opex",
                           "to_category": "capex", "description": "перенесено аудитором"}]}
@@ -243,7 +244,7 @@ def test_full_chain_from_ledger_to_score(tmp_path):
                for p in ("6.1", "6.2", "6.3")}}}
     (paths.root / "tpl.json").write_text(json.dumps(template), encoding="utf-8")
 
-    results = json.loads((paths.artifacts / "09_results.json").read_text(encoding="utf-8"))
+    results = json.loads((paths.artifacts / A.RESULTS).read_text(encoding="utf-8"))
     sub, rep = build(template, results, "t", "a@b.c", "claude-opus-5")
 
     assert rep.cells_fallback == []

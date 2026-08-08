@@ -43,6 +43,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 from .compute import LedgerAggregateSource, Row
+from . import artifacts as A
 from .config import RunPaths
 from .covenant_types import CovenantTest, run_test
 
@@ -192,23 +193,23 @@ def find_evidence(
 def run(paths: RunPaths) -> dict:
     from .compute import load_rows, load_tests
 
-    results_path = paths.artifacts / "09_results.json"
+    results_path = paths.artifacts / A.RESULTS
     results = json.loads(results_path.read_text(encoding="utf-8"))
 
-    ledger_path = paths.artifacts / "08_ledger_final.csv"
+    ledger_path = paths.artifacts / A.LEDGER_FINAL
     if not ledger_path.exists():
-        ledger_path = paths.artifacts / "06_ledger_clean.csv"
+        ledger_path = paths.artifacts / A.LEDGER_CLEAN
     rows = load_rows(ledger_path)
-    tests = load_tests(paths.artifacts / "03_covenants.json")
+    tests = load_tests(paths.artifacts / A.COVENANTS)
 
-    adj_path = paths.artifacts / "04_adjustments.json"
+    adj_path = paths.artifacts / A.AUDIT_ADJUSTMENTS
     adjustments: list[dict] = []
     if adj_path.exists():
         data = json.loads(adj_path.read_text(encoding="utf-8"))
         for scenario_notes in data.values() if isinstance(data, dict) else []:
             adjustments.extend(scenario_notes.get("notes", []))
 
-    disclosed_path = paths.artifacts / "04_disclosed.json"
+    disclosed_path = paths.artifacts / A.DISCLOSED
     disclosed_all = (
         json.loads(disclosed_path.read_text(encoding="utf-8"))
         if disclosed_path.exists() else {}

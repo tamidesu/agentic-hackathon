@@ -33,6 +33,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 from .classify import AUTHORITATIVE, DocClass
+from . import artifacts as A
 from .config import DatasetPaths, RunPaths
 
 log = logging.getLogger(__name__)
@@ -139,6 +140,26 @@ def find_disclosed_amount(
 # --------------------------------------------------------------------------- #
 
 
+#: Валюты, которые вообще могут встретиться в этом наборе.
+#:
+#: ЗАЧЕМ СПИСОК, А НЕ «ЛЮБЫЕ ТРИ ЗАГЛАВНЫЕ БУКВЫ». Регулярное выражение
+#: принимало за код валюты любое трёхбуквенное сочетание. Пока тексты
+#: приходили из текстового слоя PDF, это было безобидно. Как только
+#: нарисованные страницы пошли на распознавание, из плохого OCR
+#: посыпались «курсы» вымышленных валют YPE и CMJ — и встали в один ряд
+#: с настоящим EUR.
+#:
+#: Курс — это множитель для сумм. Выдуманный курс не падает: он молча
+#: пересчитывает деньги. Поэтому валюта обязана быть настоящей, а список
+#: держится широким (все, что могут появиться в регионе и в отчётности),
+#: но конечным.
+KNOWN_CURRENCIES = frozenset({
+    "USD", "EUR", "KZT", "RUB", "GBP", "CHF", "CNY", "JPY", "TRY",
+    "AED", "KGS", "UZS", "AZN", "GEL", "BYN", "PLN", "SEK", "NOK",
+    "DKK", "CAD", "AUD", "SGD", "HKD", "INR", "KRW",
+})
+
+
 def find_fx_rates(text: str) -> dict[str, tuple[float, str]]:
     """Выводит курсы из раскрытых пар «сумма в валюте → платёж в долларах».
 
@@ -151,6 +172,13 @@ def find_fx_rates(text: str) -> dict[str, tuple[float, str]]:
     for m in FX_PAIR_RE.finditer(flat):
         foreign, currency, usd = m.group(1), m.group(2).upper(), m.group(3)
         if currency == BASE_CURRENCY:
+            continue
+        if currency not in KNOWN_CURRENCIES:
+            # Не настоящая валюта — почти наверняка мусор распознавания.
+            log.warning(
+                "Курс для неизвестной валюты %r пропущен: %s",
+                currency, flat[max(0, m.start() - 60):m.end() + 20].strip()[:160],
+            )
             continue
         f, u = _to_float(foreign), _to_float(usd)
         if f <= 0 or u <= 0:
@@ -171,7 +199,7 @@ def run(dataset: DatasetPaths, paths: RunPaths) -> tuple[list[Txn], LedgerReport
     from . import classify
 
     docs: dict[str, DocClass] = classify.load(paths)
-    texts_dir = paths.artifacts / "01_texts"
+    texts_dir = paths.artifacts / A.TEXTS_DIR
     template = json.loads(dataset.template_json.read_text(encoding="utf-8"))
     scenarios = set(template.get("answers", {}))
 
@@ -295,7 +323,7 @@ def run(dataset: DatasetPaths, paths: RunPaths) -> tuple[list[Txn], LedgerReport
     report.per_scenario = dict(Counter(t.scenario_id for t in txns))
 
     # --- вывод ---
-    out_csv = paths.artifacts / "06_ledger_clean.csv"
+    out_csv = paths.artifacts / A.LEDGER_CLEAN
     with out_csv.open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow([
@@ -309,7 +337,7 @@ def run(dataset: DatasetPaths, paths: RunPaths) -> tuple[list[Txn], LedgerReport
                 t.description, t.amount, t.currency, t.amount_usd,
                 int(t.recovered), t.fx_rate, t.evidence or "", "; ".join(t.problems),
             ])
-    (paths.artifacts / "06_ledger_report.json").write_text(
+    (paths.artifacts / A.LEDGER_REPORT).write_text(
         json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8"
     )
 

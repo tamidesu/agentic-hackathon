@@ -25,6 +25,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Iterable
 
+from . import artifacts as A
 from .config import RunPaths
 from .covenant_types import CovenantTest, TestResult, run_test
 
@@ -263,11 +264,11 @@ def load_tests(path: Path) -> dict[str, list[CovenantTest]]:
 
 
 def run(paths: RunPaths) -> dict[str, list[CellResult]]:
-    covenants_path = paths.artifacts / "03_covenants.json"
-    ledger_path = paths.artifacts / "08_ledger_final.csv"
+    covenants_path = paths.artifacts / A.COVENANTS
+    ledger_path = paths.artifacts / A.LEDGER_FINAL
     if not ledger_path.exists():
-        ledger_path = paths.artifacts / "06_ledger_clean.csv"
-    disclosed_path = paths.artifacts / "04_disclosed.json"
+        ledger_path = paths.artifacts / A.LEDGER_CLEAN
+    disclosed_path = paths.artifacts / A.DISCLOSED
 
     tests = load_tests(covenants_path)
     rows = load_rows(ledger_path)
@@ -293,7 +294,7 @@ def run(paths: RunPaths) -> dict[str, list[CellResult]]:
     out = {
         s: {c.point: c.to_dict() for c in cells} for s, cells in results.items()
     }
-    (paths.artifacts / "09_results.json").write_text(
+    (paths.artifacts / A.RESULTS).write_text(
         json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 

@@ -22,6 +22,7 @@ import math
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from . import artifacts as A
 from .config import DatasetPaths, RunPaths
 
 log = logging.getLogger(__name__)
@@ -140,7 +141,7 @@ def run(
     out_path: Path | None = None,
 ) -> tuple[dict, AssemblyReport]:
     template = json.loads(dataset.template_json.read_text(encoding="utf-8"))
-    results_path = paths.artifacts / "09_results.json"
+    results_path = paths.artifacts / A.RESULTS
     results = (
         json.loads(results_path.read_text(encoding="utf-8"))
         if results_path.exists() else {}
@@ -150,11 +151,11 @@ def run(
 
     submission, report = build(template, results, team, contact_email, model)
 
-    out_path = out_path or (paths.root / "submission.json")
+    out_path = out_path or (paths.root / A.SUBMISSION)
     out_path.write_text(
         json.dumps(submission, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    (paths.artifacts / "10_assembly_report.json").write_text(
+    (paths.artifacts / A.ASSEMBLY_REPORT).write_text(
         json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8"
     )
 

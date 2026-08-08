@@ -16,6 +16,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from pipeline import artifacts as A  # noqa: E402
 from pipeline.compute import (  # noqa: E402
     LedgerAggregateSource,
     Row,
@@ -214,7 +215,7 @@ def test_nan_actual_serialises_as_null_not_nan():
 @pytest.fixture
 def prepared(tmp_path):
     paths = RunPaths.create(tmp_path / "run")
-    (paths.artifacts / "06_ledger_clean.csv").write_text(
+    (paths.artifacts / A.LEDGER_CLEAN).write_text(
         "txn_id,scenario_id,date,counterparty,description,amount,currency,amount_usd,"
         "category,party,scope,excluded\n"
         "TXN-P1-0001,P1,2025-02-01,Alpha,rev,8000000,USD,8000000,revenue,,borrower,0\n"
@@ -223,7 +224,7 @@ def prepared(tmp_path):
         "TXN-P2-0001,P2,2025-05-01,Delta,cap,-3500000,USD,-3500000,capex,,borrower,0\n",
         encoding="utf-8",
     )
-    (paths.artifacts / "03_covenants.json").write_text(json.dumps({
+    (paths.artifacts / A.COVENANTS).write_text(json.dumps({
         "scenarios": {
             "P1": {
                 "6.1": {"direction": "min", "threshold": 2.0, "unit": "ratio",
@@ -261,7 +262,7 @@ def test_end_to_end_produces_results_artifact(prepared):
     assert p2["6.2"].actual == pytest.approx(3_500_000.0)
     assert p2["6.2"].status == BREACH
 
-    out = json.loads((prepared.artifacts / "09_results.json").read_text(encoding="utf-8"))
+    out = json.loads((prepared.artifacts / A.RESULTS).read_text(encoding="utf-8"))
     assert set(out) == {"P1", "P2"}
     assert out["P1"]["6.1"]["actual"] == 1.45
     assert out["P1"]["6.1"]["trace"], "трассировка обязана попасть в артефакт"
@@ -275,22 +276,22 @@ def test_scenarios_are_isolated_from_each_other(prepared):
 
 
 def test_loaders_read_what_the_previous_steps_write(prepared):
-    rows_ = load_rows(prepared.artifacts / "06_ledger_clean.csv")
+    rows_ = load_rows(prepared.artifacts / A.LEDGER_CLEAN)
     assert len(rows_) == 4
     assert rows_[2].party == "related"
 
-    tests = load_tests(prepared.artifacts / "03_covenants.json")
+    tests = load_tests(prepared.artifacts / A.COVENANTS)
     assert sorted(tests) == ["P1", "P2"]
     assert [t.point for t in tests["P1"]] == ["6.1", "6.3"]
     assert tests["P1"][0].unit == "ratio" and tests["P1"][0].quote
 
 
 def test_scenario_without_transactions_is_reported(prepared, caplog):
-    data = json.loads((prepared.artifacts / "03_covenants.json").read_text(encoding="utf-8"))
+    data = json.loads((prepared.artifacts / A.COVENANTS).read_text(encoding="utf-8"))
     data["scenarios"]["P9"] = {
         "6.1": {"direction": "max", "threshold": 1.0, "metric": {"op": "AGG", "category": "capex"}}
     }
-    (prepared.artifacts / "03_covenants.json").write_text(json.dumps(data), encoding="utf-8")
+    (prepared.artifacts / A.COVENANTS).write_text(json.dumps(data), encoding="utf-8")
 
     import logging
 

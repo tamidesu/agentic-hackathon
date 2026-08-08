@@ -9,6 +9,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from pipeline import artifacts as A  # noqa: E402
 from pipeline import ledger  # noqa: E402
 from pipeline.ledger import find_disclosed_amount, find_fx_rates  # noqa: E402
 
@@ -189,7 +190,7 @@ def test_no_duplicate_transaction_ids(prepared_ledger):
 @pytest.mark.slow
 def test_artifact_is_written_for_next_step(prepared_ledger, corpus_report):
     _, rp = corpus_report
-    out = rp.artifacts / "06_ledger_clean.csv"
+    out = rp.artifacts / A.LEDGER_CLEAN
     assert out.exists()
     import csv
 
@@ -205,3 +206,52 @@ def test_unknown_direction_is_reported_not_assumed():
     value, _, direction_known = find_disclosed_amount("TXN-X-1", text)
     assert value == pytest.approx(500.00)
     assert direction_known is False
+
+
+# --------------------------------------------------------------------------- #
+# Курс валюты — это множитель для сумм
+#
+# РЕАЛЬНЫЙ СЛУЧАЙ. Регулярное выражение принимало за код валюты любое
+# трёхбуквенное сочетание. Пока тексты приходили из текстового слоя PDF,
+# это было безобидно. Как только нарисованные страницы пошли на
+# распознавание, из плохого OCR посыпались «курсы» вымышленных валют
+# YPE и CMJ — и встали в один ряд с настоящим EUR.
+#
+# Выдуманный курс не падает. Он молча пересчитывает деньги.
+# --------------------------------------------------------------------------- #
+
+
+def test_a_made_up_currency_code_is_ignored():
+    from pipeline.ledger import find_fx_rates
+
+    text = ("Расчёт произведён на сумму 1,000.00 YPE, что соответствует "
+            "платежу в размере $1,364.31.")
+    assert find_fx_rates(text) == {}
+
+
+def test_a_real_currency_is_still_read():
+    from pipeline.ledger import find_fx_rates
+
+    text = ("Расчёт произведён на сумму 1,000.00 EUR, что соответствует "
+            "платежу в размере $1,160.00.")
+    rates = find_fx_rates(text)
+    assert set(rates) == {"EUR"}
+    assert rates["EUR"][0] == pytest.approx(1.16)
+
+
+def test_garbage_does_not_crowd_out_a_real_rate():
+    """Смесь настоящего курса и мусора распознавания на одной странице."""
+    from pipeline.ledger import find_fx_rates
+
+    text = ("сумма 1,000.00 CMJ соответствует платежу $623.38. "
+            "Расчёт на сумму 2,000.00 EUR соответствует платежу $2,320.00.")
+    assert set(find_fx_rates(text)) == {"EUR"}
+
+
+def test_the_currency_list_covers_the_region():
+    """Список держится широким, но конечным: узкий отбросил бы настоящую
+    валюту, а это потеря данных, а не защита от них."""
+    from pipeline.ledger import KNOWN_CURRENCIES
+
+    for code in ("USD", "EUR", "KZT", "RUB", "CNY", "TRY", "AED", "KGS"):
+        assert code in KNOWN_CURRENCIES
