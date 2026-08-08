@@ -279,3 +279,126 @@ def test_no_alarm_on_a_healthy_distribution():
         items[f"t{i}"] = TxnCategory(f"t{i}", category)
     report = categorize.CategoryReport(items=items)
     assert report.alarms(expected=10) == []
+
+
+# --------------------------------------------------------------------------- #
+# Группировка по смыслу
+#
+# На публичном наборе 673 строки дают лишь 244 различных смысловых
+# описания: «Management advisory retainer» встречается одиннадцать раз.
+# Спрашивать модель об одном и том же одиннадцать раз значит платить
+# одиннадцать раз за один ответ — и именно на этом шаге кончилась
+# суточная квота, оставив 323 строки из 673 неразмеченными.
+# --------------------------------------------------------------------------- #
+
+from pipeline.categorize import build_groups, group_key  # noqa: E402
+
+
+def test_location_and_period_do_not_split_a_group():
+    """«Corporate income tax instalment — Kostanay centre, H1 2025»
+    и «… — Almaty office» это одна статья расхода."""
+    a = _row("T1", "Corporate income tax instalment — Kostanay centre, H1 2025")
+    b = _row("T2", "Corporate income tax instalment — Almaty office")
+    assert group_key(a) == group_key(b)
+
+
+def test_different_meanings_stay_apart():
+    assert group_key(_row("T1", "Revolver interest — November")) != \
+           group_key(_row("T2", "Land tax instalment — November"))
+
+
+def test_case_and_spacing_do_not_split_a_group():
+    assert group_key(_row("T1", "Revolver  Interest")) == \
+           group_key(_row("T2", "revolver interest"))
+
+
+def test_every_row_belongs_to_exactly_one_group():
+    """Строка, не попавшая ни в одну группу, исчезнет из агрегата."""
+    rows = [_row(f"T{i}", d) for i, d in enumerate(
+        ["Payroll — March", "Payroll — April", "Rent — Q1", "Tax filing"])]
+    representatives, members = build_groups(rows)
+    covered = [t for group in members.values() for t in group]
+    assert sorted(covered) == sorted(r["txn_id"] for r in rows)
+    assert len(covered) == len(set(covered)), "строка попала в две группы"
+    assert len(representatives) == 3
+
+
+def test_the_representative_is_the_first_row_of_its_group():
+    rows = [_row("T1", "Payroll — March"), _row("T2", "Payroll — April")]
+    representatives, members = build_groups(rows)
+    assert [r["txn_id"] for r in representatives] == ["T1"]
+    assert members["T1"] == ["T1", "T2"]
+
+
+def test_the_group_answer_spreads_to_every_member(tmp_path):
+    """Ради этого группировка и делается: один вызов — вся группа."""
+    paths = RunPaths.create(tmp_path / "run")
+    rows = [_row("T1", "Revolver interest — November"),
+            _row("T2", "Revolver interest — December"),
+            _row("T3", "Land tax instalment — H1")]
+    client, mock = _client([_answer(("T1", "interest"), ("T3", "taxes"))], tmp_path)
+
+    report = categorize.run(rows, paths, client, batch_size=60)
+
+    assert report.groups == 2, "две группы вместо трёх строк"
+    assert len(mock.calls) == 1
+    assert report.items["T2"].category == "interest"
+    assert "то же описание" in report.items["T2"].reason
+    assert set(report.items) == {"T1", "T2", "T3"}
+
+
+def test_grouping_does_not_hide_a_missing_row(tmp_path):
+    """Отчёт считает СТРОКИ, а не группы: из строк складываются агрегаты."""
+    paths = RunPaths.create(tmp_path / "run")
+    rows = [_row("T1", "Payroll — March"), _row("T2", "Payroll — April"),
+            _row("T3", "Rent — Q1")]
+    client, _ = _client([_answer(("T1", "payroll"))], tmp_path)
+
+    report = categorize.run(rows, paths, client, batch_size=60)
+
+    assert set(report.items) == {"T1", "T2", "T3"}
+    assert report.items["T3"].fallback, "непришедшая группа обязана быть заметна"
+    assert report.items["T2"].category == "payroll"
+
+
+def test_a_fallback_group_marks_all_its_rows_as_fallback(tmp_path):
+    paths = RunPaths.create(tmp_path / "run")
+    rows = [_row("T1", "Payroll — March"), _row("T2", "Payroll — April")]
+
+    class Boom(MockProvider):
+        def call(self, req, extra=()):
+            raise RuntimeError("нет сети")
+
+    client = LLMClient(cache_dir=tmp_path / "c", provider=Boom())
+    report = categorize.run(rows, paths, client, batch_size=60)
+    assert sorted(report.fallbacks()) == ["T1", "T2"]
+
+
+def test_marketing_is_its_own_category():
+    """Выяснено измерением, а не рассуждением. Без отдельной статьи
+    129 строк из 157 в `opex` оказывались маркетинговыми — 291 млн
+    из 339 — и операционные расходы раздувались в разы.
+
+    У P1 `opex` выходил 19.27 млн вместо 4.00 млн, ковенант
+    «капиталоёмкость» показывал 0.09 при настоящих 0.46, и вердикт
+    переворачивался. Выделение статьи подняло долю верных вердиктов
+    с 25 до 29 из 36."""
+    assert "marketing" in CATEGORIES
+
+    prompt = categorize.build_prompt([])
+    assert "marketing" in prompt
+    assert "НЕ смешивай с opex" in prompt, (
+        "модель обязана знать, что это отдельная статья, а не разновидность opex"
+    )
+
+
+def test_the_vocabulary_is_shared_by_every_step_that_uses_it():
+    """Статья, известная одному шагу и неизвестная другому, даёт ПУСТОЙ
+    агрегат: шаг 5 попросит AGG(marketing), а шаг 10 такую не назначит."""
+    from pipeline import adjustments, covenants
+
+    for build in (categorize.build_prompt, covenants.build_prompt,
+                  adjustments.build_prompt):
+        prompt = build([] if build is categorize.build_prompt else "x")
+        for category in CATEGORIES:
+            assert category in prompt, f"{build.__module__}: нет статьи {category}"

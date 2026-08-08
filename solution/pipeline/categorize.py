@@ -44,6 +44,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from dataclasses import asdict, dataclass, field
 from typing import Any, Iterable, Sequence
 
@@ -55,11 +56,16 @@ from .schemas import TXN_CATEGORY_SCHEMA, make_txn_category_validator
 
 log = logging.getLogger(__name__)
 
-PROMPT_VERSION = "categorize-v1"
+PROMPT_VERSION = "categorize-v2-marketing"
 
-#: Строк в одном запросе. Меньше — больше вызовов, больше — дороже повтор
-#: при сбое и выше риск, что модель потеряет строку в середине списка.
-BATCH_SIZE = 40
+#: Записей в одном запросе. Меньше — больше вызовов, больше — дороже повтор
+#: при сбое и выше риск, что модель потеряет запись в середине списка.
+#:
+#: Значение поднято с 40 до 60 после того, как суточная квота кончилась
+#: на середине шага: сорока строк на вызов хватало по качеству, но не
+#: по бюджету. Потеря записи внутри пакета остаётся наблюдаемой —
+#: состав ответа сверяется с составом запроса поимённо.
+BATCH_SIZE = 60
 
 #: Категория, в которую попадает всё, что не удалось разложить. Ноль
 #: агрегата по ней безопаснее, чем случайная статья: `other` не входит
@@ -91,6 +97,9 @@ _PROMPT = """Разложи банковские операции по стат�
   interest          проценты по займам и по остаткам на счетах
   lease             аренда и лизинговые платежи
   insurance         страховые премии и связанные с ними расчёты
+  marketing         реклама и продвижение: медиазакупки, кампании, спонсорство,
+                    выставочные стенды, рассылки, брендинг, полиграфия для точек
+                    продаж. НЕ смешивай с opex: это отдельная статья
   financing_inflow  поступления по финансированию: займы, взносы в капитал
   other             ничего из перечисленного
 
@@ -147,6 +156,8 @@ class CategoryReport:
     problems: list[str] = field(default_factory=list)
     batches: int = 0
     retried: int = 0
+    #: Смысловых групп — по ним и шли запросы.
+    groups: int = 0
 
     def low_confidence(self, threshold: float = 0.5) -> list[str]:
         return sorted(
@@ -191,6 +202,7 @@ class CategoryReport:
             "problems": self.problems,
             "counts": self.counts(),
             "batches": self.batches,
+            "groups": self.groups,
             "retried": self.retried,
             "low_confidence": self.low_confidence(),
             "fallbacks": self.fallbacks(),
@@ -201,6 +213,59 @@ class CategoryReport:
 # --------------------------------------------------------------------------- #
 # Пакетная разметка
 # --------------------------------------------------------------------------- #
+
+
+#: Хвост описания: место и период. «Corporate income tax instalment —
+#: Kostanay centre, H1 2025» и «… — Almaty office» это одна и та же статья
+#: расхода, отличаются они только тем, где и когда.
+_DESCRIPTION_TAIL = re.compile(r"\s+[—–-]\s+.*$")
+
+
+def group_key(row: dict) -> str:
+    """Смысловая часть описания — то, что определяет статью.
+
+    ЗАЧЕМ ГРУППИРОВАТЬ. В публичном наборе 673 строки, но лишь 244
+    различных смысловых описания: «Management advisory retainer»
+    встречается одиннадцать раз, «Corporate income tax instalment» —
+    восемь. Спрашивать модель об одном и том же одиннадцать раз значит
+    платить одиннадцать раз за один ответ.
+
+    Экономия здесь не косметическая: на бесплатном тарифе суточная квота
+    кончилась ровно посреди этого шага, и 323 строки из 673 остались
+    неразмеченными — почти половина агрегатов не досчиталась.
+
+    ПОЧЕМУ ЭТО НЕ УХУДШАЕТ ОТВЕТ. Статья определяется тем, ЗА ЧТО
+    заплачено, а не где и когда. Хвост после тире несёт площадку и период;
+    ни то ни другое статью не меняет. Категория, назначенная смыслу,
+    применяется ко всем строкам с этим смыслом — и это скорее строже,
+    чем построчная разметка: одинаковые описания гарантированно получают
+    одинаковую статью, а не расходятся по прихоти пакета.
+    """
+    core = _DESCRIPTION_TAIL.sub("", str(row.get("description", "")).strip())
+    return re.sub(r"\s+", " ", core).lower()
+
+
+def build_groups(rows: Sequence[dict]) -> tuple[list[dict], dict[str, list[str]]]:
+    """Разбивает строки на смысловые группы.
+
+    Возвращает (представители, id представителя → id всех строк группы).
+    Представителем берётся ПЕРВАЯ строка группы: её описание уходит
+    в промпт целиком, вместе с хвостом, — модели полезен контекст,
+    даже если на решение он не влияет.
+    """
+    order: list[str] = []
+    members: dict[str, list[str]] = {}
+    representatives: dict[str, dict] = {}
+
+    for row in rows:
+        key = group_key(row)
+        if key not in representatives:
+            representatives[key] = row
+            members[row["txn_id"]] = []
+            order.append(key)
+        members[representatives[key]["txn_id"]].append(row["txn_id"])
+
+    return [representatives[k] for k in order], members
 
 
 def chunk(rows: Sequence[dict], size: int = BATCH_SIZE) -> list[list[dict]]:
@@ -272,7 +337,12 @@ def run(
     ни на одном пути.
     """
     report = CategoryReport()
-    batches = chunk(rows, batch_size)
+
+    # Размечаются СМЫСЛЫ, а не строки: одинаковые описания получают один
+    # ответ на всех. На публичном наборе это 244 запроса вместо 673.
+    representatives, members = build_groups(rows)
+    report.groups = len(representatives)
+    batches = chunk(representatives, batch_size)
     report.batches = len(batches)
 
     def work(batch: list[dict]):
@@ -289,7 +359,7 @@ def run(
         report.items.update(marked)
         report.problems.extend(notes)
 
-    missing = [r for r in rows if r["txn_id"] not in report.items]
+    missing = [r for r in representatives if r["txn_id"] not in report.items]
     if missing:
         report.retried = len(missing)
         log.warning("КАТЕГОРИИ: не размечено %d операций, дозапрашиваю", len(missing))
@@ -303,6 +373,23 @@ def run(
             marked, notes = result
             report.items.update(marked)
             report.problems.extend(notes)
+
+    # Ответ по представителю распространяется на всю его группу. Делается
+    # это ДО учёта недостающих, чтобы «не размечено» считалось по строкам,
+    # а не по группам: в отчёте важны строки, из них складываются агрегаты.
+    for rep_id, group in members.items():
+        marked = report.items.get(rep_id)
+        if marked is None:
+            continue
+        for txn_id in group:
+            if txn_id == rep_id:
+                continue
+            report.items[txn_id] = TxnCategory(
+                txn_id=txn_id, category=marked.category, flow=marked.flow,
+                confidence=marked.confidence,
+                reason=f"как {rep_id} (то же описание)",
+                fallback=marked.fallback,
+            )
 
     still_missing = [r["txn_id"] for r in rows if r["txn_id"] not in report.items]
     for txn_id in still_missing:
@@ -324,8 +411,8 @@ def run(
     for alarm in report.alarms(expected=len(rows)):
         log.warning("КАТЕГОРИИ: %s", alarm)
     log.info(
-        "Размечено %d операций за %d пакетов; распределение: %s",
-        len(report.items), report.batches, report.counts(),
+        "Размечено %d операций (%d смысловых групп) за %d пакетов; распределение: %s",
+        len(report.items), report.groups, report.batches, report.counts(),
     )
     return report
 
