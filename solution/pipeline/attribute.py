@@ -37,6 +37,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 from .classify import AUTHORITATIVE, DocClass, DocType
+from . import artifacts as A
 from .config import DatasetPaths, RunPaths
 
 log = logging.getLogger(__name__)
@@ -217,7 +218,28 @@ MONTHS_RU = {
     "января": 1, "февраля": 2, "марта": 3, "апреля": 4, "мая": 5, "июня": 6,
     "июля": 7, "августа": 8, "сентября": 9, "октября": 10, "ноября": 11, "декабря": 12,
 }
+#: Организаторы предупредили: документы приватного набора «могут быть на
+#: английском, но в основном на русском». Дата — не оформление, а вход
+#: расчёта: по ней выбирается ДЕЙСТВУЮЩИЙ договор. Не распознанная дата
+#: означает не «чуть хуже», а выбор не той редакции договора и обнуление
+#: всех трёх ковенантов заёмщика, поэтому английские формы разбираются
+#: наравне с русскими, а не «по возможности».
+MONTHS_EN = {
+    "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
+    "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12,
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "jun": 6, "jul": 7,
+    "aug": 8, "sep": 9, "sept": 9, "oct": 10, "nov": 11, "dec": 12,
+}
+_MONTHS_ANY = {**MONTHS_RU, **MONTHS_EN}
+#: Длинные формы раньше коротких, иначе «Jan» съест начало «January».
+_MONTH_ALT = "|".join(sorted(_MONTHS_ANY, key=len, reverse=True))
 _RU_DATE_RE = re.compile(r"(\d{1,2})\s+(" + "|".join(MONTHS_RU) + r")\s+(20\d\d)")
+#: «31 December 2025» и «December 31, 2025» — обе формы встречаются.
+_EN_DATE_RE = re.compile(
+    r"(\d{1,2})\s+(" + "|".join(sorted(MONTHS_EN, key=len, reverse=True)) + r")\.?,?\s+(20\d\d)"
+    r"|(" + "|".join(sorted(MONTHS_EN, key=len, reverse=True)) + r")\.?\s+(\d{1,2}),?\s+(20\d\d)",
+    re.IGNORECASE,
+)
 _ISO_DATE_RE = re.compile(r"\b(20\d\d)-(\d{2})-(\d{2})\b")
 
 
@@ -228,6 +250,12 @@ def all_dates(text: str) -> list[str]:
     for m in _RU_DATE_RE.finditer(flat):
         d, mo, y = m.groups()
         found.append((m.start(), f"{y}-{MONTHS_RU[mo]:02d}-{int(d):02d}"))
+    for m in _EN_DATE_RE.finditer(flat):
+        if m.group(1):
+            d, mo, y = m.group(1), m.group(2), m.group(3)
+        else:
+            mo, d, y = m.group(4), m.group(5), m.group(6)
+        found.append((m.start(), f"{y}-{MONTHS_EN[mo.lower()]:02d}-{int(d):02d}"))
     for m in _ISO_DATE_RE.finditer(flat):
         y, mo, d = m.groups()
         found.append((m.start(), f"{y}-{mo}-{d}"))
@@ -321,7 +349,13 @@ def padded_period(period: tuple[str, str] | None, days: int = PERIOD_MARGIN_DAYS
             (d(period[1]) + timedelta(days=days)).isoformat())
 
 
-_PERIOD_ISO_RE = re.compile(r"с\s*(20\d\d-\d\d-\d\d)\s*по\s*(20\d\d-\d\d-\d\d)")
+#: «с 2025-01-01 по 2025-12-31» и английские эквиваленты. Предлог обязателен:
+#: без него две подряд идущие даты в шапке документа выдали бы себя за период.
+_PERIOD_ISO_RE = re.compile(
+    r"(?:с|from|between)\s*(20\d\d-\d\d-\d\d)\s*"
+    r"(?:по|to|through|until|and|[—\-–])\s*(20\d\d-\d\d-\d\d)",
+    re.IGNORECASE,
+)
 
 
 def covenant_period(text: str) -> tuple[str, str] | None:
@@ -335,27 +369,32 @@ def covenant_period(text: str) -> tuple[str, str] | None:
     период ковенанта и есть период, за который проверяется соблюдение.
     """
     flat = re.sub(r"\s+", " ", text)
-    months = "|".join(MONTHS_RU)
 
     def scan(fragment: str) -> tuple[str, str] | None:
         m = _PERIOD_ISO_RE.search(fragment)
         if m:
             return m.group(1), m.group(2)
-        ru = re.search(
-            rf"с\s*(\d{{1,2}})\s*({months})\s*(20\d\d)[^.]{{0,20}}?по\s*(\d{{1,2}})\s*({months})\s*(20\d\d)",
-            fragment,
+        worded = re.search(
+            rf"(?:с|from|between)\s*(\d{{1,2}})\s*({_MONTH_ALT})\.?,?\s*(20\d\d)"
+            rf"[^.]{{0,25}}?(?:по|to|through|until|and)\s*(\d{{1,2}})\s*({_MONTH_ALT})\.?,?\s*(20\d\d)",
+            fragment, re.IGNORECASE,
         )
-        if ru:
-            d1, m1, y1, d2, m2, y2 = ru.groups()
-            return (f"{y1}-{MONTHS_RU[m1]:02d}-{int(d1):02d}",
-                    f"{y2}-{MONTHS_RU[m2]:02d}-{int(d2):02d}")
+        if worded:
+            d1, m1, y1, d2, m2, y2 = worded.groups()
+            return (f"{y1}-{_MONTHS_ANY[m1.lower()]:02d}-{int(d1):02d}",
+                    f"{y2}-{_MONTHS_ANY[m2.lower()]:02d}-{int(d2):02d}")
         return None
 
-    i = flat.find("Финансовые ковенанты")
-    if i >= 0:
-        found = scan(flat[i : i + 6000])
-        if found:
-            return found
+    # Сначала — раздел о ковенантах: период ковенанта и есть искомый.
+    # Заголовок ищется на обоих языках, иначе на английском договоре
+    # поиск молча деградирует до «первый период во всём тексте», а первым
+    # там стоит период выборки кредита, а не период ковенанта.
+    for anchor in ("Финансовые ковенанты", "FINANCIAL COVENANTS", "Financial Covenants"):
+        i = flat.find(anchor)
+        if i >= 0:
+            found = scan(flat[i : i + 6000])
+            if found:
+                return found
     return scan(flat)
 
 
@@ -555,7 +594,7 @@ def run(dataset: DatasetPaths, paths: RunPaths) -> tuple[dict[str, DocClass], At
     from . import classify
 
     docs = classify.load(paths)
-    texts_dir = paths.artifacts / "01_texts"
+    texts_dir = paths.artifacts / A.TEXTS_DIR
     texts = {
         p.stem: p.read_text(encoding="utf-8") for p in texts_dir.glob("*.txt")
     }
@@ -621,11 +660,11 @@ def run(dataset: DatasetPaths, paths: RunPaths) -> tuple[dict[str, DocClass], At
                 f"документ выпадет из расчёта, разберите вручную"
             )
 
-    index_path = paths.artifacts / "02_doc_index.json"
+    index_path = paths.artifacts / A.DOC_INDEX
     data = json.loads(index_path.read_text(encoding="utf-8"))
     data["documents"] = {k: asdict(v) for k, v in sorted(docs.items())}
     index_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    (paths.artifacts / "03_attribution_report.json").write_text(
+    (paths.artifacts / A.ATTRIBUTION_REPORT).write_text(
         json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
