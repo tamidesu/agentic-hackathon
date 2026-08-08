@@ -238,6 +238,7 @@ def test_covenant_validator_catches_bad_period_and_threshold():
 def test_related_parties_validator_catches_threshold_inconsistency():
     """Прямая защита от ошибки, которая переворачивает вердикт по 6.3."""
     payload = {
+        "has_ownership_section": True,
         "threshold_pct": 40.0,
         "parties": [
             {"name": "Taraz Holding Group LLP", "ownership_pct": 46.8, "is_related": True},
@@ -264,7 +265,10 @@ def test_txn_category_validator_catches_missing_and_invented():
 
 def test_audit_adjustment_validator_requires_amount_for_missing_amount():
     problems = schemas.validate_audit_adjustments(
-        {"notes": [{"note_id": "8.1", "kind": "missing_amount", "value_usd": None}]}
+        # status обязателен: без него валидатор не знает, применяется ли
+        # примечание, и требовать от него полноты полей нельзя.
+        {"notes": [{"note_id": "8.1", "kind": "missing_amount",
+                    "status": "applied", "value_usd": None}]}
     )
     joined = " | ".join(problems)
     assert "требует value_usd" in joined and "требует target_txn_id" in joined
