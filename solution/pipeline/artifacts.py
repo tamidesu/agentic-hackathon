@@ -54,6 +54,7 @@ TXN_CATEGORIES = "07_categories.json"
 # --------------------------------------------------------------------------- #
 
 LEDGER_FINAL = "08_ledger_final.csv"
+APPLY_REPORT = "08_apply_report.json"
 RESULTS = "09_results.json"
 ASSEMBLY_REPORT = "10_assembly_report.json"
 SUBMISSION = "submission.json"
