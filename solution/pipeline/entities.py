@@ -55,6 +55,23 @@ _QUOTES = frozenset(
 #: «Foxridge Telecom LP Holding (Ekibastuz block B)».
 _PARENTHETICAL_RE = re.compile(r"\s*\([^)]*\)\s*")
 
+#: Аббревиатура, записанная через точки: «L.L.P.», «L.L.C.», «А.О.».
+#:
+#: РЕАЛЬНАЯ ПОТЕРЯ ДАННЫХ. Набор пишет организационно-правовую форму
+#: по-разному в досье и в реестре, причём в обе стороны:
+#:
+#:     P1  досье «Aktau Holdings LLP»        реестр «Aktau Holdings L.L.P.»
+#:     P7  досье «Atyrau Holding Group L.L.P.» реестр «Atyrau Holding Group LLP»
+#:
+#: Точки гасились наравне с прочей пунктуацией, и «L.L.P.» распадалось
+#: на три отдельных слова «l l p». Отбрасывание формы их не узнавало,
+#: сравнение не срабатывало, и ВЕСЬ агрегат по связанным сторонам этих
+#: заёмщиков выходил нулевым. Ковенант «платежи связанным сторонам»
+#: показывал COMPLIANT со значением 0 при настоящих 283 664.18.
+#:
+#: Поэтому точечные аббревиатуры схлопываются ДО общей чистки пунктуации.
+_DOTTED_ACRONYM_RE = re.compile(r"\b(?:[^\W\d_]\.){2,}")
+
 
 def normalize_entity_name(name: str) -> str:
     """Приводит название к сопоставимому виду.
@@ -66,6 +83,8 @@ def normalize_entity_name(name: str) -> str:
     """
     s = _PARENTHETICAL_RE.sub(" ", name)
     s = "".join(" " if ch in _QUOTES else ch for ch in s)
+    # Сначала склеиваем «L.L.P.» в «LLP», иначе точки распадутся на слова.
+    s = _DOTTED_ACRONYM_RE.sub(lambda m: m.group(0).replace(".", ""), s)
     s = re.sub(r"[.,;:]+", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s.casefold()
