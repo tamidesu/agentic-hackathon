@@ -230,10 +230,15 @@ def test_full_chain_from_ledger_to_score(tmp_path):
                     "metric": {"op": "AGG", "category": "any", "party": "related"}},
         }}
     }), encoding="utf-8")
+    # Форма — та же, что пишет шаг 7: сверху alarms/problems/scenarios.
+    # Подделывать здесь «удобную» структуру значит проверять несуществующий
+    # контракт: ровно так расхождение формы и доехало до расчёта.
     (paths.artifacts / A.AUDIT_ADJUSTMENTS).write_text(json.dumps({
-        "P1": {"notes": [{"note_id": "7.1", "kind": "reclassification",
-                          "target_txn_id": "TXN-P1-0002", "from_category": "opex",
-                          "to_category": "capex", "description": "перенесено аудитором"}]}
+        "alarms": [], "problems": [],
+        "scenarios": {"P1": {"scenario_id": "P1", "notes": [
+            {"note_id": "7.1", "kind": "reclassification", "status": "applied",
+             "target_txn_id": "TXN-P1-0002", "from_category": "opex",
+             "to_category": "capex", "description": "перенесено аудитором"}]}}
     }), encoding="utf-8")
 
     compute_run(paths)

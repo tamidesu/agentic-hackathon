@@ -40,15 +40,31 @@ def test_no_module_builds_an_artifact_path_from_a_literal():
     assert offenders == [], f"имена артефактов заданы литералами: {offenders}"
 
 
+#: Признаки ЗАПИСИ. Чтение и запись отличаются режимом открытия, и не
+#: различать их — значит получать ложные тревоги: apply.py читает
+#: LEDGER_CLEAN и был обвинён в том, что пишет его наравне с ledger.py.
+#: Тест, который кричит на исправный код, перестают читать.
+_WRITE_MARKERS = ('.write_text(', '.open("w"', ".open('w'", "to_csv(")
+
+
 def _written_by(source: str) -> set[str]:
     """Константы артефактов, в которые модуль ПИШЕТ."""
     written = set()
     for match in re.finditer(r"artifacts / A\.([A-Z_]+)", source):
         name = match.group(1)
         window = source[match.end(): match.end() + 200]
-        if ".write_text(" in window or ".open(" in window or "to_csv" in window:
+        if any(marker in window for marker in _WRITE_MARKERS):
             written.add(name)
     return written
+
+
+def test_the_write_detector_tells_reading_from_writing():
+    """Проверка самой проверки: без этого различия тест обвинял
+    читающий модуль в записи."""
+    reading = 'path = paths.artifacts / A.LEDGER_CLEAN\n    with path.open(newline="") as fh:'
+    writing = 'out = paths.artifacts / A.LEDGER_FINAL\n    with out.open("w", newline="") as fh:'
+    assert _written_by(reading) == set()
+    assert _written_by(writing) == {"LEDGER_FINAL"}
 
 
 def test_no_two_modules_write_the_same_artifact():
@@ -118,3 +134,89 @@ def test_a_step_reads_back_what_it_writes(module, constant, tmp_path):
     assert f"A.{constant}" in source, (
         f"{module} не использует A.{constant} — имя артефакта разъехалось"
     )
+
+
+# --------------------------------------------------------------------------- #
+# Форма артефакта — тоже контракт
+#
+# Реестр имён свёл шаги к одному файлу, но ФОРМА расходилась: шаг 5 пишет
+# scenarios[X] = {covenants: [...]}, а шаг 12 ожидал словарь «пункт →
+# спецификация». Расчёт падал с «'str' object has no attribute 'get'»,
+# потому что перебор шёл по служебным полям, а не по ковенантам.
+#
+# Общее имя необходимо, но недостаточно.
+# --------------------------------------------------------------------------- #
+
+
+def test_step12_reads_what_step5_writes(tmp_path):
+    """Круговая проверка: артефакт шага 5 обязан читаться шагом 12."""
+    import json as _json
+
+    from pipeline.compute import load_tests
+    from pipeline.config import RunPaths
+    from pipeline.covenants import CovenantReport, ScenarioCovenants
+
+    paths = RunPaths.create(tmp_path / "run")
+    report = CovenantReport(scenarios=[ScenarioCovenants(
+        scenario_id="P1", doc_id="d1", section_anchor="Финансовые ковенанты",
+        covenants=[{
+            "point": "6.1", "title": "t", "direction": "max", "threshold": 0.42,
+            "unit": "ratio", "period_start": "2025-01-01", "period_end": "2025-12-31",
+            "metric_definition": "d", "quote": "q",
+            "metric": {"op": "DIV", "args": [{"op": "AGG", "category": "capex"},
+                                             {"op": "AGG", "category": "opex"}]},
+        }],
+    )])
+    (paths.artifacts / A.COVENANTS).write_text(
+        _json.dumps(report.to_dict(), ensure_ascii=False), encoding="utf-8")
+
+    tests = load_tests(paths.artifacts / A.COVENANTS)
+    assert list(tests) == ["P1"]
+    assert tests["P1"][0].point == "6.1"
+    assert tests["P1"][0].threshold == 0.42
+    assert tests["P1"][0].period == ("2025-01-01", "2025-12-31")
+    assert tests["P1"][0].metric["op"] == "DIV"
+
+
+def test_step12_carries_over_a_springing_condition(tmp_path):
+    """Условие springing-теста хранится отдельными полями и обязано
+    собраться обратно — иначе ковенант проверится всегда, а не при условии."""
+    import json as _json
+
+    from pipeline.compute import load_tests
+    from pipeline.config import RunPaths
+
+    paths = RunPaths.create(tmp_path / "run")
+    (paths.artifacts / A.COVENANTS).write_text(_json.dumps({"scenarios": {"P3": {
+        "covenants": [{
+            "point": "6.1", "direction": "max", "threshold": 1.7, "unit": "ratio",
+            "period_start": "2025-01-01", "period_end": "2025-12-31",
+            "metric": {"op": "AGG", "category": "financing_inflow"},
+            "is_conditional": True,
+            "condition_metric": {"op": "AGG", "category": "financing_inflow"},
+            "condition_direction": "max", "condition_threshold": 4000000.0,
+        }]}}}, ensure_ascii=False), encoding="utf-8")
+
+    test = load_tests(paths.artifacts / A.COVENANTS)["P3"][0]
+    assert test.condition is not None
+    assert test.condition["threshold"] == 4000000.0
+
+
+def test_a_broken_covenant_does_not_kill_the_rest(tmp_path):
+    """Один неполный ковенант не должен обнулять остальных заёмщиков."""
+    import json as _json
+
+    from pipeline.compute import load_tests
+    from pipeline.config import RunPaths
+
+    paths = RunPaths.create(tmp_path / "run")
+    (paths.artifacts / A.COVENANTS).write_text(_json.dumps({"scenarios": {
+        "P1": {"covenants": [{"point": "6.1"}]},
+        "P2": {"covenants": [{
+            "point": "6.1", "direction": "max", "threshold": 1.0,
+            "metric": {"op": "AGG", "category": "opex"}}]},
+    }}, ensure_ascii=False), encoding="utf-8")
+
+    tests = load_tests(paths.artifacts / A.COVENANTS)
+    assert tests["P1"] == []
+    assert len(tests["P2"]) == 1

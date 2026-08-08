@@ -110,7 +110,18 @@ class LedgerAggregateSource:
                 continue
             matched.append(r)
 
-        value = sum(abs(r.amount_usd) for r in matched)
+        # ВОЗВРАТ УМЕНЬШАЕТ СТАТЬЮ, А НЕ УВЕЛИЧИВАЕТ ЕЁ.
+        #
+        # Прежде складывались модули: sum(abs(...)). Тогда строка
+        # «Unused ad campaign budget returned +832,732.80» прибавлялась
+        # к расходам наравне с самими расходами. У B1 операционные расходы
+        # вышли 36.4 млн вместо 16.6 — вдвое с лишним, и коэффициент
+        # покрытия процентов перевернулся вместе с вердиктом.
+        #
+        # Правильная величина статьи — модуль АЛГЕБРАИЧЕСКОЙ суммы: расходы
+        # отрицательны, возвраты положительны, и они гасят друг друга сами,
+        # без разбора направления по полю flow.
+        value = abs(sum(r.amount_usd for r in matched))
         if not matched:
             if party is not None:
                 # Ни одна операция не помечена нужным типом контрагента.
@@ -242,23 +253,72 @@ def load_rows(csv_path: Path) -> list[Row]:
 
 
 def load_tests(path: Path) -> dict[str, list[CovenantTest]]:
+    """Читает артефакт шага 5 и переводит в вычислимую форму.
+
+    ФОРМА АРТЕФАКТА — ЭТО КОНТРАКТ, И ОН ВАЖНЕЕ ИМЕНИ ФАЙЛА. Реестр имён
+    (artifacts.py) свёл шаги к одному файлу, но форма расходилась: шаг 5
+    пишет `scenarios[X] = {covenants: [...], ...}`, а здесь ожидался
+    словарь «пункт → спецификация». Расчёт падал с `'str' object has no
+    attribute 'get'` — потому что перебор шёл по служебным полям
+    (`scenario_id`, `doc_id`), а не по ковенантам.
+
+    Поддерживаются обе формы: старая нужна тестам шагов 12–14, которые
+    готовят входные данные вручную и не обязаны знать про шаг 5.
+    """
     data = json.loads(path.read_text(encoding="utf-8"))
     out: dict[str, list[CovenantTest]] = {}
-    for scenario, cells in data.get("scenarios", {}).items():
+
+    for scenario, payload in data.get("scenarios", {}).items():
+        specs: list[tuple[str, dict]] = []
+        if isinstance(payload, dict) and isinstance(payload.get("covenants"), list):
+            # Форма шага 5: список ковенантов с полем point внутри.
+            specs = [
+                (str(c.get("point", "?")), c)
+                for c in payload["covenants"]
+                if isinstance(c, dict)
+            ]
+        elif isinstance(payload, dict):
+            # Плоская форма «пункт → спецификация».
+            specs = [(k, v) for k, v in payload.items() if isinstance(v, dict)]
+
         tests = []
-        for point, spec in cells.items():
+        for point, spec in specs:
             period = spec.get("period")
-            tests.append(CovenantTest(
-                point=point,
-                direction=spec["direction"],
-                threshold=float(spec["threshold"]),
-                metric=spec["metric"],
-                unit=spec.get("unit", "amount"),
-                period=tuple(period) if period else None,
-                condition=spec.get("condition"),
-                quote=spec.get("quote", ""),
-                notes=spec.get("notes", []),
-            ))
+            if not period and spec.get("period_start") and spec.get("period_end"):
+                # Шаг 5 хранит границы отдельными полями: они ближе к тексту
+                # договора, где период тоже назван двумя датами.
+                period = [spec["period_start"], spec["period_end"]]
+
+            condition = spec.get("condition")
+            if condition is None and spec.get("is_conditional"):
+                metric = spec.get("condition_metric")
+                if metric:
+                    condition = {
+                        "metric": metric,
+                        "direction": spec.get("condition_direction", "max"),
+                        "threshold": spec.get("condition_threshold"),
+                    }
+
+            try:
+                tests.append(CovenantTest(
+                    point=point,
+                    direction=spec["direction"],
+                    threshold=float(spec["threshold"]),
+                    metric=spec["metric"],
+                    unit=spec.get("unit", "amount"),
+                    period=tuple(period) if period else None,
+                    condition=condition,
+                    quote=spec.get("quote", ""),
+                    notes=spec.get("notes", []),
+                ))
+            except (KeyError, TypeError, ValueError) as exc:
+                # Неполный ковенант не должен ронять расчёт по остальным:
+                # ячейка получит запасное значение, но одиннадцать других
+                # заёмщиков будут посчитаны.
+                log.warning(
+                    "РАСЧЁТ: %s пункт %s пропущен — %s: %s",
+                    scenario, point, type(exc).__name__, exc,
+                )
         out[scenario] = sorted(tests, key=lambda t: t.point)
     return out
 

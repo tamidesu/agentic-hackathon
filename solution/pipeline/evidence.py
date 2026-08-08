@@ -190,6 +190,41 @@ def find_evidence(
     )
 
 
+def load_adjustment_notes(path: Path) -> list[dict]:
+    """Собирает примечания аудитора из артефакта шага 7.
+
+    ФОРМА АРТЕФАКТА — КОНТРАКТ, И ИМЕНИ ФАЙЛА МАЛО. Прежняя версия
+    перебирала `data.values()` в надежде, что это словарь «заёмщик →
+    примечания». Шаг 7 пишет иначе: сверху лежат `alarms`, `problems`
+    и `scenarios`, поэтому перебор натыкался на список тревог и падал
+    с `'list' object has no attribute 'get'`.
+
+    Разбор ведётся от известной структуры, а не от догадки о ней.
+    """
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        log.warning("ДОКАЗАТЕЛЬСТВА: артефакт корректировок не читается: %s", exc)
+        return []
+
+    scenarios = data.get("scenarios") if isinstance(data, dict) else None
+    if not isinstance(scenarios, dict):
+        return []
+
+    notes: list[dict] = []
+    for scenario, payload in scenarios.items():
+        if not isinstance(payload, dict):
+            continue
+        for note in payload.get("notes", []):
+            if isinstance(note, dict):
+                # Заёмщик нужен дальше: доказательство ищется среди строк
+                # ЕГО реестра, а примечания разных заёмщиков смешивать нельзя.
+                notes.append({**note, "scenario_id": scenario})
+    return notes
+
+
 def run(paths: RunPaths) -> dict:
     from .compute import load_rows, load_tests
 
@@ -202,12 +237,7 @@ def run(paths: RunPaths) -> dict:
     rows = load_rows(ledger_path)
     tests = load_tests(paths.artifacts / A.COVENANTS)
 
-    adj_path = paths.artifacts / A.AUDIT_ADJUSTMENTS
-    adjustments: list[dict] = []
-    if adj_path.exists():
-        data = json.loads(adj_path.read_text(encoding="utf-8"))
-        for scenario_notes in data.values() if isinstance(data, dict) else []:
-            adjustments.extend(scenario_notes.get("notes", []))
+    adjustments = load_adjustment_notes(paths.artifacts / A.AUDIT_ADJUSTMENTS)
 
     disclosed_path = paths.artifacts / A.DISCLOSED
     disclosed_all = (
