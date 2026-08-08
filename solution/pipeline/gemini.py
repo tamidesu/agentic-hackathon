@@ -273,6 +273,15 @@ class GeminiProvider(Provider):
         self._cycle = itertools.cycle(range(self.n_keys))
         self._lock = threading.Lock()
 
+        #: Ключи, чей ПРОЕКТ исчерпал суточную квоту. Выбывают из круга
+        #: до конца прогона: квота не рассосётся, а каждый следующий
+        #: запрос к такому ключу — это гарантированный отказ, потраченное
+        #: время и ещё одна ветка, упавшая на ровном месте.
+        #:
+        #: Раньше ключи перебирались вслепую, и один исчерпанный проект
+        #: отравлял треть всех вызовов.
+        self._retired: set[int] = set()
+
         env_interval = os.environ.get("GEMINI_MIN_INTERVAL_S")
         self.min_interval_s = (
             float(env_interval) if env_interval is not None else FREE_TIER_MIN_INTERVAL_S
@@ -305,8 +314,27 @@ class GeminiProvider(Provider):
                 out.append(name)
         return sorted(out)
 
-    def _next_client(self):
-        """Следующий ключ по кругу, с выдержкой паузы под лимит частоты.
+    def retire_key(self, index: int, reason: str) -> bool:
+        """Выводит ключ из круга. Возвращает True, если остались живые.
+
+        Последний ключ НЕ выводится: тогда работать станет нечем, а
+        осмысленное сообщение об исчерпании квоты полезнее, чем ошибка
+        «нет доступных ключей».
+        """
+        with self._lock:
+            if len(self._retired) >= self.n_keys - 1:
+                return False
+            self._retired.add(index)
+            alive = self.n_keys - len(self._retired)
+        log.warning("Ключ %d выведен из круга (%s); осталось %d", index, reason, alive)
+        return True
+
+    @property
+    def live_keys(self) -> int:
+        return self.n_keys - len(self._retired)
+
+    def _pick_key(self) -> int:
+        """Номер следующего живого ключа, с выдержкой паузы под лимит частоты.
 
         Пауза выдерживается ВНЕ блокировки: держать её во время сна значило
         бы выстроить все ветки в одну очередь и свести параллелизм к нулю.
@@ -316,7 +344,15 @@ class GeminiProvider(Provider):
         import time
 
         with self._lock:  # itertools.cycle не потокобезопасен
-            idx = next(self._cycle) if self.n_keys > 1 else 0
+            idx = 0
+            if self.n_keys > 1:
+                # Пропускаем выбывшие. Круг конечен, поэтому обход
+                # ограничен числом ключей: бесконечного цикла не выйдет
+                # даже если выбыли все.
+                for _ in range(self.n_keys):
+                    idx = next(self._cycle)
+                    if idx not in self._retired:
+                        break
             if self.min_interval_s > 0:
                 earliest = self._last_call[idx] + self.min_interval_s
                 wait = max(0.0, earliest - time.monotonic())
@@ -329,7 +365,22 @@ class GeminiProvider(Provider):
         if wait > 0:
             log.debug("Ключ %d: жду %.1fс до следующего запроса", idx, wait)
             time.sleep(wait)
-        return self._clients[idx]
+        return idx
+
+    def _next_client_with_index(self):
+        """Клиент и НОМЕР его ключа.
+
+        Номер берётся из самого перебора, а не поиском по списку: искать
+        клиент в списке значит выводить из круга «похожий» ключ вместо
+        того, который упёрся в квоту. Заодно это делало подмену клиента
+        в тестах невозможной.
+        """
+        idx = self._pick_key()
+        return self._clients[idx], idx
+
+    def _next_client(self):
+        """Только клиент — для мест, где номер ключа не нужен."""
+        return self._clients[self._pick_key()]
 
     def call(self, req: LLMRequest, extra_user_turns: Sequence[dict] = ()) -> tuple[dict, int, int]:
         types = self._types
@@ -360,8 +411,9 @@ class GeminiProvider(Provider):
                 system_instruction=req.system or None,
                 thinking_config=self._thinking_config(req.model),
             )
+            client, key_index = self._next_client_with_index()
             try:
-                response = self._next_client().models.generate_content(
+                response = client.models.generate_content(
                     model=req.model, contents=contents, config=config
                 )
             except Exception as exc:  # noqa: BLE001
@@ -371,6 +423,11 @@ class GeminiProvider(Provider):
                         f"Список доступных: scripts/list_models.py"
                     ) from exc
                 if self._is_daily_quota(exc):
+                    # Квота считается на ПРОЕКТ. Если ключей несколько и
+                    # они из разных проектов, соседний может быть свеж —
+                    # выводим исчерпанный и пробуем дальше.
+                    if self.retire_key(key_index, f"суточная квота {req.model}"):
+                        continue
                     raise DailyQuotaExhausted(
                         f"исчерпана СУТОЧНАЯ квота бесплатного тарифа для модели "
                         f"{req.model}. Ждать до полуночи по тихоокеанскому времени "

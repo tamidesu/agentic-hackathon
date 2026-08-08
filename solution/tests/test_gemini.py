@@ -318,7 +318,7 @@ def test_budget_escalates_after_truncation(provider, monkeypatch):
     # genai.Client.models — свойство только для чтения, поэтому
     # подменяется выбор клиента, а не его содержимое.
     fake = type("Client", (), {"models": FakeModels()})()
-    monkeypatch.setattr(provider, "_next_client", lambda: fake)
+    monkeypatch.setattr(provider, "_next_client_with_index", lambda: (fake, 0))
 
     payload, _, _ = provider.call(LLMRequest(prompt="p", schema={"type": "object"},
                                              max_tokens=4000))
@@ -339,7 +339,7 @@ def test_escalation_gives_up_at_the_ceiling(provider, monkeypatch):
             return _FakeResponse('{"a"', finish="MAX_TOKENS", thoughts=1)
 
     fake = type("Client", (), {"models": AlwaysTruncated()})()
-    monkeypatch.setattr(provider, "_next_client", lambda: fake)
+    monkeypatch.setattr(provider, "_next_client_with_index", lambda: (fake, 0))
 
     with pytest.raises(TruncatedResponse):
         provider.call(LLMRequest(prompt="p", schema={"type": "object"}, max_tokens=8000))
@@ -482,16 +482,23 @@ def test_daily_quota_is_not_retried(provider, monkeypatch):
     assert not provider.retryable(exc)
 
 
-def test_daily_quota_message_says_what_to_do(provider, monkeypatch):
-    from pipeline.gemini import DailyQuotaExhausted
+def test_daily_quota_message_says_what_to_do(monkeypatch):
+    """С ОДНИМ ключом переходить некуда, и тогда сообщение — единственное,
+    что остаётся пользователю. С несколькими ключами провайдер сначала
+    перебирает их, и это проверяется отдельным тестом."""
+    from pipeline.gemini import DailyQuotaExhausted, GeminiProvider
     from pipeline.llm import LLMRequest
+
+    monkeypatch.setenv("GEMINI_API_KEY", "solo")
+    monkeypatch.setenv("GEMINI_MIN_INTERVAL_S", "0")
+    provider = GeminiProvider()
 
     class Exhausted:
         def generate_content(self, model, contents, config):
             raise _Err(DAILY_429)
 
     fake = type("Client", (), {"models": Exhausted()})()
-    monkeypatch.setattr(provider, "_next_client", lambda: fake)
+    monkeypatch.setattr(provider, "_next_client_with_index", lambda: (fake, 0))
 
     with pytest.raises(DailyQuotaExhausted) as exc:
         provider.call(LLMRequest(prompt="p", schema={"type": "object"}))
@@ -727,3 +734,62 @@ def test_catalogue_failure_does_not_stop_the_run(provider, monkeypatch):
     chosen, notes = verify_model(provider, "gemini-3.6-flash")
     assert chosen == "gemini-3.6-flash"
     assert any("каталог недоступен" in n for n in notes)
+
+
+# --------------------------------------------------------------------------- #
+# Вывод исчерпанного ключа из круга
+#
+# Квота считается на ПРОЕКТ. Ключи перебирались вслепую, и один
+# исчерпанный проект отравлял треть всех вызовов: каждый третий запрос
+# был гарантированным отказом.
+# --------------------------------------------------------------------------- #
+
+
+def test_a_retired_key_leaves_the_rotation(provider):
+    assert provider.live_keys == 3
+    assert provider.retire_key(1, "квота")
+    assert provider.live_keys == 2
+
+    used = {provider._clients.index(provider._next_client()) for _ in range(12)}
+    assert used == {0, 2}, "выбывший ключ продолжает участвовать"
+
+
+def test_the_last_key_is_never_retired(provider):
+    """Иначе работать станет нечем, а осмысленное сообщение об исчерпании
+    квоты полезнее ошибки «нет доступных ключей»."""
+    assert provider.retire_key(0, "квота")
+    assert provider.retire_key(1, "квота")
+    assert not provider.retire_key(2, "квота")
+    assert provider.live_keys == 1
+
+
+def test_rotation_does_not_hang_when_everything_is_retired(provider):
+    """Обход ограничен числом ключей: бесконечного цикла не выйдет."""
+    provider._retired = {0, 1, 2}
+    assert provider._next_client() is not None
+
+
+def test_daily_quota_moves_to_the_next_key(provider, monkeypatch):
+    """Соседний ключ может быть из другого проекта и потому свежим."""
+    from pipeline.llm import LLMRequest
+
+    seen: list[int] = []
+
+    class PerKey:
+        def __init__(self, index):
+            self.index = index
+
+        def generate_content(self, model, contents, config):
+            seen.append(self.index)
+            if self.index == 0:
+                raise _Err(DAILY_429)
+            return _FakeResponse('{"ok": true}')
+
+    fakes = [type("C", (), {"models": PerKey(i)})() for i in range(3)]
+    order = iter([(fakes[0], 0), (fakes[1], 1)])
+    monkeypatch.setattr(provider, "_next_client_with_index", lambda: next(order))
+
+    payload, _, _ = provider.call(LLMRequest(prompt="p", schema={"type": "object"}))
+    assert payload == {"ok": True}
+    assert seen == [0, 1], "запрос обязан был уйти на следующий ключ"
+    assert 0 in provider._retired
