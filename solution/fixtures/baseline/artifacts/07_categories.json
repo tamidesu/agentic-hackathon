@@ -1,0 +1,5408 @@
+{
+  "alarms": [],
+  "problems": [],
+  "counts": {
+    "marketing": 134,
+    "lease": 95,
+    "interest": 93,
+    "taxes": 90,
+    "insurance": 87,
+    "utilities": 63,
+    "payroll": 51,
+    "opex": 29,
+    "revenue": 19,
+    "capex": 10,
+    "financing_inflow": 2
+  },
+  "batches": 5,
+  "groups": 244,
+  "retried": 0,
+  "low_confidence": [],
+  "fallbacks": [],
+  "items": {
+    "TXN-B1-0001": {
+      "txn_id": "TXN-B1-0001",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Sublet rent received",
+      "fallback": false
+    },
+    "TXN-B1-0002": {
+      "txn_id": "TXN-B1-0002",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Rent deposit returned",
+      "fallback": false
+    },
+    "TXN-B1-0003": {
+      "txn_id": "TXN-B1-0003",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0015 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0004": {
+      "txn_id": "TXN-B1-0004",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "Payroll settlement for operational staff",
+      "fallback": false
+    },
+    "TXN-B1-0005": {
+      "txn_id": "TXN-B1-0005",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0005 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0006": {
+      "txn_id": "TXN-B1-0006",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Point-of-sale marketing materials",
+      "fallback": false
+    },
+    "TXN-B1-0007": {
+      "txn_id": "TXN-B1-0007",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0008": {
+      "txn_id": "TXN-B1-0008",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0009": {
+      "txn_id": "TXN-B1-0009",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0010": {
+      "txn_id": "TXN-B1-0010",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0011": {
+      "txn_id": "TXN-B1-0011",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Rent overpayment refunded",
+      "fallback": false
+    },
+    "TXN-B1-0012": {
+      "txn_id": "TXN-B1-0012",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0013": {
+      "txn_id": "TXN-B1-0013",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0006 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0014": {
+      "txn_id": "TXN-B1-0014",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0015": {
+      "txn_id": "TXN-B1-0015",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Motor third-party insurance",
+      "fallback": false
+    },
+    "TXN-B1-0016": {
+      "txn_id": "TXN-B1-0016",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0017": {
+      "txn_id": "TXN-B1-0017",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0033 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0018": {
+      "txn_id": "TXN-B1-0018",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0019": {
+      "txn_id": "TXN-B1-0019",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Sponsorship marketing",
+      "fallback": false
+    },
+    "TXN-B1-0020": {
+      "txn_id": "TXN-B1-0020",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0021": {
+      "txn_id": "TXN-B1-0021",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Digital media buy",
+      "fallback": false
+    },
+    "TXN-B1-0022": {
+      "txn_id": "TXN-B1-0022",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0024 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0023": {
+      "txn_id": "TXN-B1-0023",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0024": {
+      "txn_id": "TXN-B1-0024",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0004 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0025": {
+      "txn_id": "TXN-B1-0025",
+      "category": "marketing",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0026": {
+      "txn_id": "TXN-B1-0026",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0027": {
+      "txn_id": "TXN-B1-0027",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Excise tax credit received",
+      "fallback": false
+    },
+    "TXN-B1-0028": {
+      "txn_id": "TXN-B1-0028",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0036 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0029": {
+      "txn_id": "TXN-B1-0029",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0006 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0030": {
+      "txn_id": "TXN-B1-0030",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0031": {
+      "txn_id": "TXN-B1-0031",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Social tax remittance",
+      "fallback": false
+    },
+    "TXN-B1-0032": {
+      "txn_id": "TXN-B1-0032",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0033": {
+      "txn_id": "TXN-B1-0033",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0034": {
+      "txn_id": "TXN-B1-0034",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0035": {
+      "txn_id": "TXN-B1-0035",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0036": {
+      "txn_id": "TXN-B1-0036",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0027 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0037": {
+      "txn_id": "TXN-B1-0037",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0038": {
+      "txn_id": "TXN-B1-0038",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B1-0039": {
+      "txn_id": "TXN-B1-0039",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0040": {
+      "txn_id": "TXN-B1-0040",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Rent for regional office",
+      "fallback": false
+    },
+    "TXN-B1-0041": {
+      "txn_id": "TXN-B1-0041",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Workers comp insurance",
+      "fallback": false
+    },
+    "TXN-B1-0042": {
+      "txn_id": "TXN-B1-0042",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Industry exhibition stand marketing",
+      "fallback": false
+    },
+    "TXN-B1-0043": {
+      "txn_id": "TXN-B1-0043",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0044": {
+      "txn_id": "TXN-B1-0044",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0045": {
+      "txn_id": "TXN-B1-0045",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0046": {
+      "txn_id": "TXN-B1-0046",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0026 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0047": {
+      "txn_id": "TXN-B1-0047",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0048": {
+      "txn_id": "TXN-B1-0048",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Equipment yard lease",
+      "fallback": false
+    },
+    "TXN-B1-0049": {
+      "txn_id": "TXN-B1-0049",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Marine cargo insurance premium",
+      "fallback": false
+    },
+    "TXN-B1-0050": {
+      "txn_id": "TXN-B1-0050",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0051": {
+      "txn_id": "TXN-B1-0051",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0003 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0052": {
+      "txn_id": "TXN-B1-0052",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0053": {
+      "txn_id": "TXN-B1-0053",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0054": {
+      "txn_id": "TXN-B1-0054",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Environmental liability insurance",
+      "fallback": false
+    },
+    "TXN-B1-0055": {
+      "txn_id": "TXN-B1-0055",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0053 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B1-0056": {
+      "txn_id": "TXN-B1-0056",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Rent for training centre",
+      "fallback": false
+    },
+    "TXN-B1-0057": {
+      "txn_id": "TXN-B1-0057",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0018 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0001": {
+      "txn_id": "TXN-B4-0001",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0002": {
+      "txn_id": "TXN-B4-0002",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0003": {
+      "txn_id": "TXN-B4-0003",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0004": {
+      "txn_id": "TXN-B4-0004",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0005": {
+      "txn_id": "TXN-B4-0005",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0009 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0006": {
+      "txn_id": "TXN-B4-0006",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0007": {
+      "txn_id": "TXN-B4-0007",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0027 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0008": {
+      "txn_id": "TXN-B4-0008",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0009": {
+      "txn_id": "TXN-B4-0009",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0010": {
+      "txn_id": "TXN-B4-0010",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0011": {
+      "txn_id": "TXN-B4-0011",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Radio ad campaign schedule",
+      "fallback": false
+    },
+    "TXN-B4-0012": {
+      "txn_id": "TXN-B4-0012",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0040 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0013": {
+      "txn_id": "TXN-B4-0013",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0021 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0014": {
+      "txn_id": "TXN-B4-0014",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0015": {
+      "txn_id": "TXN-B4-0015",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0016": {
+      "txn_id": "TXN-B4-0016",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "District heating utility charge",
+      "fallback": false
+    },
+    "TXN-B4-0017": {
+      "txn_id": "TXN-B4-0017",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0018": {
+      "txn_id": "TXN-B4-0018",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0019": {
+      "txn_id": "TXN-B4-0019",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0020": {
+      "txn_id": "TXN-B4-0020",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0021": {
+      "txn_id": "TXN-B4-0021",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0022": {
+      "txn_id": "TXN-B4-0022",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Electricity for site lighting",
+      "fallback": false
+    },
+    "TXN-B4-0023": {
+      "txn_id": "TXN-B4-0023",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0024": {
+      "txn_id": "TXN-B4-0024",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0003 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0025": {
+      "txn_id": "TXN-B4-0025",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0026": {
+      "txn_id": "TXN-B4-0026",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0027": {
+      "txn_id": "TXN-B4-0027",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0036 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0028": {
+      "txn_id": "TXN-B4-0028",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0029": {
+      "txn_id": "TXN-B4-0029",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Rent deposit returned",
+      "fallback": false
+    },
+    "TXN-B4-0030": {
+      "txn_id": "TXN-B4-0030",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Refinery product sales settlement",
+      "fallback": false
+    },
+    "TXN-B4-0031": {
+      "txn_id": "TXN-B4-0031",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0038 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0032": {
+      "txn_id": "TXN-B4-0032",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P4-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0033": {
+      "txn_id": "TXN-B4-0033",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0034": {
+      "txn_id": "TXN-B4-0034",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0035": {
+      "txn_id": "TXN-B4-0035",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0034 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0036": {
+      "txn_id": "TXN-B4-0036",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0037": {
+      "txn_id": "TXN-B4-0037",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0038": {
+      "txn_id": "TXN-B4-0038",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0039": {
+      "txn_id": "TXN-B4-0039",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Interest credited on current account",
+      "fallback": false
+    },
+    "TXN-B4-0040": {
+      "txn_id": "TXN-B4-0040",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0041": {
+      "txn_id": "TXN-B4-0041",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0042": {
+      "txn_id": "TXN-B4-0042",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0027 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0043": {
+      "txn_id": "TXN-B4-0043",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0004 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0044": {
+      "txn_id": "TXN-B4-0044",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0045": {
+      "txn_id": "TXN-B4-0045",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0003 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0046": {
+      "txn_id": "TXN-B4-0046",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0005 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0047": {
+      "txn_id": "TXN-B4-0047",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0048": {
+      "txn_id": "TXN-B4-0048",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0009 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0049": {
+      "txn_id": "TXN-B4-0049",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0050": {
+      "txn_id": "TXN-B4-0050",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0051": {
+      "txn_id": "TXN-B4-0051",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0052": {
+      "txn_id": "TXN-B4-0052",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0053": {
+      "txn_id": "TXN-B4-0053",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0054": {
+      "txn_id": "TXN-B4-0054",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0055": {
+      "txn_id": "TXN-B4-0055",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-B4-0056": {
+      "txn_id": "TXN-B4-0056",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-B4-0057": {
+      "txn_id": "TXN-B4-0057",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0001": {
+      "txn_id": "TXN-P1-0001",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0005 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0002": {
+      "txn_id": "TXN-P1-0002",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Telecom leased line",
+      "fallback": false
+    },
+    "TXN-P1-0003": {
+      "txn_id": "TXN-P1-0003",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0004": {
+      "txn_id": "TXN-P1-0004",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0005": {
+      "txn_id": "TXN-P1-0005",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0017 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0006": {
+      "txn_id": "TXN-P1-0006",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0037 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0007": {
+      "txn_id": "TXN-P1-0007",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Plant and boiler insurance premium",
+      "fallback": false
+    },
+    "TXN-P1-0008": {
+      "txn_id": "TXN-P1-0008",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0009 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0009": {
+      "txn_id": "TXN-P1-0009",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0010": {
+      "txn_id": "TXN-P1-0010",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0011": {
+      "txn_id": "TXN-P1-0011",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0012": {
+      "txn_id": "TXN-P1-0012",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Payroll for laboratory staff",
+      "fallback": false
+    },
+    "TXN-P1-0013": {
+      "txn_id": "TXN-P1-0013",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0014": {
+      "txn_id": "TXN-P1-0014",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Terminal land lease payments",
+      "fallback": false
+    },
+    "TXN-P1-0015": {
+      "txn_id": "TXN-P1-0015",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0016": {
+      "txn_id": "TXN-P1-0016",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P7-0053 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0017": {
+      "txn_id": "TXN-P1-0017",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0018": {
+      "txn_id": "TXN-P1-0018",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0019": {
+      "txn_id": "TXN-P1-0019",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0020": {
+      "txn_id": "TXN-P1-0020",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Payroll advance recovered from staff",
+      "fallback": false
+    },
+    "TXN-P1-0021": {
+      "txn_id": "TXN-P1-0021",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0050 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0022": {
+      "txn_id": "TXN-P1-0022",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Municipal tax levy",
+      "fallback": false
+    },
+    "TXN-P1-0023": {
+      "txn_id": "TXN-P1-0023",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0024": {
+      "txn_id": "TXN-P1-0024",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0025": {
+      "txn_id": "TXN-P1-0025",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Sponsorship marketing",
+      "fallback": false
+    },
+    "TXN-P1-0026": {
+      "txn_id": "TXN-P1-0026",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Standby generator electricity",
+      "fallback": false
+    },
+    "TXN-P1-0027": {
+      "txn_id": "TXN-P1-0027",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P3-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0028": {
+      "txn_id": "TXN-P1-0028",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Utility deposit returned",
+      "fallback": false
+    },
+    "TXN-P1-0029": {
+      "txn_id": "TXN-P1-0029",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P5-0001 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0030": {
+      "txn_id": "TXN-P1-0030",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0031": {
+      "txn_id": "TXN-P1-0031",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0032": {
+      "txn_id": "TXN-P1-0032",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Default interest charge",
+      "fallback": false
+    },
+    "TXN-P1-0033": {
+      "txn_id": "TXN-P1-0033",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0034": {
+      "txn_id": "TXN-P1-0034",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0035": {
+      "txn_id": "TXN-P1-0035",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0038 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0036": {
+      "txn_id": "TXN-P1-0036",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0037": {
+      "txn_id": "TXN-P1-0037",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Interest on trade facility",
+      "fallback": false
+    },
+    "TXN-P1-0038": {
+      "txn_id": "TXN-P1-0038",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Water charge adjustment credit",
+      "fallback": false
+    },
+    "TXN-P1-0039": {
+      "txn_id": "TXN-P1-0039",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P2-0018 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0040": {
+      "txn_id": "TXN-P1-0040",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0041": {
+      "txn_id": "TXN-P1-0041",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Electricity network capacity charge",
+      "fallback": false
+    },
+    "TXN-P1-0042": {
+      "txn_id": "TXN-P1-0042",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0043": {
+      "txn_id": "TXN-P1-0043",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0044": {
+      "txn_id": "TXN-P1-0044",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0045": {
+      "txn_id": "TXN-P1-0045",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0046": {
+      "txn_id": "TXN-P1-0046",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0047": {
+      "txn_id": "TXN-P1-0047",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0048": {
+      "txn_id": "TXN-P1-0048",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0049": {
+      "txn_id": "TXN-P1-0049",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Utility rebate received",
+      "fallback": false
+    },
+    "TXN-P1-0050": {
+      "txn_id": "TXN-P1-0050",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Payroll for night shift",
+      "fallback": false
+    },
+    "TXN-P1-0051": {
+      "txn_id": "TXN-P1-0051",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-B4-0050 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0052": {
+      "txn_id": "TXN-P1-0052",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0021 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0053": {
+      "txn_id": "TXN-P1-0053",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P1-0054": {
+      "txn_id": "TXN-P1-0054",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0036 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0055": {
+      "txn_id": "TXN-P1-0055",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P1-0056": {
+      "txn_id": "TXN-P1-0056",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0001": {
+      "txn_id": "TXN-P10-0001",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0060 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0002": {
+      "txn_id": "TXN-P10-0002",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0003": {
+      "txn_id": "TXN-P10-0003",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0004": {
+      "txn_id": "TXN-P10-0004",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Product launch ad campaign",
+      "fallback": false
+    },
+    "TXN-P10-0005": {
+      "txn_id": "TXN-P10-0005",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0006": {
+      "txn_id": "TXN-P10-0006",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0007": {
+      "txn_id": "TXN-P10-0007",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0008": {
+      "txn_id": "TXN-P10-0008",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Marketing photography and artwork",
+      "fallback": false
+    },
+    "TXN-P10-0009": {
+      "txn_id": "TXN-P10-0009",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P6-0051 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0011": {
+      "txn_id": "TXN-P10-0011",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Property insurance premium",
+      "fallback": false
+    },
+    "TXN-P10-0012": {
+      "txn_id": "TXN-P10-0012",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0013": {
+      "txn_id": "TXN-P10-0013",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Corporate brand marketing programme",
+      "fallback": false
+    },
+    "TXN-P10-0015": {
+      "txn_id": "TXN-P10-0015",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0021 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0016": {
+      "txn_id": "TXN-P10-0016",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0017": {
+      "txn_id": "TXN-P10-0017",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0018": {
+      "txn_id": "TXN-P10-0018",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0019": {
+      "txn_id": "TXN-P10-0019",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0020": {
+      "txn_id": "TXN-P10-0020",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0021": {
+      "txn_id": "TXN-P10-0021",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Warehouse land lease payments",
+      "fallback": false
+    },
+    "TXN-P10-0023": {
+      "txn_id": "TXN-P10-0023",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Marketing translation and localisation",
+      "fallback": false
+    },
+    "TXN-P10-0024": {
+      "txn_id": "TXN-P10-0024",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0037 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0025": {
+      "txn_id": "TXN-P10-0025",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0036 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0027": {
+      "txn_id": "TXN-P10-0027",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0029": {
+      "txn_id": "TXN-P10-0029",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0030": {
+      "txn_id": "TXN-P10-0030",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0031": {
+      "txn_id": "TXN-P10-0031",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0032": {
+      "txn_id": "TXN-P10-0032",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0033": {
+      "txn_id": "TXN-P10-0033",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0004 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0034": {
+      "txn_id": "TXN-P10-0034",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0035": {
+      "txn_id": "TXN-P10-0035",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0036": {
+      "txn_id": "TXN-P10-0036",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0037": {
+      "txn_id": "TXN-P10-0037",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0038": {
+      "txn_id": "TXN-P10-0038",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Interest on bridge facility",
+      "fallback": false
+    },
+    "TXN-P10-0039": {
+      "txn_id": "TXN-P10-0039",
+      "category": "marketing",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0040": {
+      "txn_id": "TXN-P10-0040",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0041": {
+      "txn_id": "TXN-P10-0041",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0042": {
+      "txn_id": "TXN-P10-0042",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0043": {
+      "txn_id": "TXN-P10-0043",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0044": {
+      "txn_id": "TXN-P10-0044",
+      "category": "marketing",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0045": {
+      "txn_id": "TXN-P10-0045",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0046": {
+      "txn_id": "TXN-P10-0046",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0021 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0047": {
+      "txn_id": "TXN-P10-0047",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0048": {
+      "txn_id": "TXN-P10-0048",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0060 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0049": {
+      "txn_id": "TXN-P10-0049",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0050": {
+      "txn_id": "TXN-P10-0050",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0051": {
+      "txn_id": "TXN-P10-0051",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0052": {
+      "txn_id": "TXN-P10-0052",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0053": {
+      "txn_id": "TXN-P10-0053",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0054": {
+      "txn_id": "TXN-P10-0054",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0036 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0055": {
+      "txn_id": "TXN-P10-0055",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P10-0056": {
+      "txn_id": "TXN-P10-0056",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0051 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0057": {
+      "txn_id": "TXN-P10-0057",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0058": {
+      "txn_id": "TXN-P10-0058",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0059": {
+      "txn_id": "TXN-P10-0059",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0060": {
+      "txn_id": "TXN-P10-0060",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Interest income on treasury bills",
+      "fallback": false
+    },
+    "TXN-P10-0061": {
+      "txn_id": "TXN-P10-0061",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P6-0051 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0062": {
+      "txn_id": "TXN-P10-0062",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Interest recovery on overpayment",
+      "fallback": false
+    },
+    "TXN-P10-0063": {
+      "txn_id": "TXN-P10-0063",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0010 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P10-0064": {
+      "txn_id": "TXN-P10-0064",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0001": {
+      "txn_id": "TXN-P2-0001",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P4-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0002": {
+      "txn_id": "TXN-P2-0002",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0003": {
+      "txn_id": "TXN-P2-0003",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0004": {
+      "txn_id": "TXN-P2-0004",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0005": {
+      "txn_id": "TXN-P2-0005",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0062 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0006": {
+      "txn_id": "TXN-P2-0006",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Property tax payment",
+      "fallback": false
+    },
+    "TXN-P2-0007": {
+      "txn_id": "TXN-P2-0007",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0062 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0008": {
+      "txn_id": "TXN-P2-0008",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Customer newsletter marketing production",
+      "fallback": false
+    },
+    "TXN-P2-0009": {
+      "txn_id": "TXN-P2-0009",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0010": {
+      "txn_id": "TXN-P2-0010",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0011": {
+      "txn_id": "TXN-P2-0011",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0012": {
+      "txn_id": "TXN-P2-0012",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0013": {
+      "txn_id": "TXN-P2-0013",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0014": {
+      "txn_id": "TXN-P2-0014",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0015": {
+      "txn_id": "TXN-P2-0015",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0016": {
+      "txn_id": "TXN-P2-0016",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0017": {
+      "txn_id": "TXN-P2-0017",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0018": {
+      "txn_id": "TXN-P2-0018",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0019": {
+      "txn_id": "TXN-P2-0019",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Overdraft interest",
+      "fallback": false
+    },
+    "TXN-P2-0020": {
+      "txn_id": "TXN-P2-0020",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0021 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0021": {
+      "txn_id": "TXN-P2-0021",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0022": {
+      "txn_id": "TXN-P2-0022",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0023": {
+      "txn_id": "TXN-P2-0023",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0024": {
+      "txn_id": "TXN-P2-0024",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0004 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0025": {
+      "txn_id": "TXN-P2-0025",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0026": {
+      "txn_id": "TXN-P2-0026",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0027": {
+      "txn_id": "TXN-P2-0027",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0033 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0028": {
+      "txn_id": "TXN-P2-0028",
+      "category": "financing_inflow",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Term loan facility drawdown",
+      "fallback": false
+    },
+    "TXN-P2-0029": {
+      "txn_id": "TXN-P2-0029",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0030": {
+      "txn_id": "TXN-P2-0030",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0031": {
+      "txn_id": "TXN-P2-0031",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0032": {
+      "txn_id": "TXN-P2-0032",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0033": {
+      "txn_id": "TXN-P2-0033",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0034": {
+      "txn_id": "TXN-P2-0034",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0035": {
+      "txn_id": "TXN-P2-0035",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0036": {
+      "txn_id": "TXN-P2-0036",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0037": {
+      "txn_id": "TXN-P2-0037",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "VAT refund received",
+      "fallback": false
+    },
+    "TXN-P2-0038": {
+      "txn_id": "TXN-P2-0038",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0039": {
+      "txn_id": "TXN-P2-0039",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0040": {
+      "txn_id": "TXN-P2-0040",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0041": {
+      "txn_id": "TXN-P2-0041",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0005 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0042": {
+      "txn_id": "TXN-P2-0042",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0043": {
+      "txn_id": "TXN-P2-0043",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0044": {
+      "txn_id": "TXN-P2-0044",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0045": {
+      "txn_id": "TXN-P2-0045",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0046": {
+      "txn_id": "TXN-P2-0046",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0047": {
+      "txn_id": "TXN-P2-0047",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0048": {
+      "txn_id": "TXN-P2-0048",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "Tax penalty settlement charge",
+      "fallback": false
+    },
+    "TXN-P2-0049": {
+      "txn_id": "TXN-P2-0049",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0021 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0050": {
+      "txn_id": "TXN-P2-0050",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P9-0034 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0051": {
+      "txn_id": "TXN-P2-0051",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0052": {
+      "txn_id": "TXN-P2-0052",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0053": {
+      "txn_id": "TXN-P2-0053",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0054": {
+      "txn_id": "TXN-P2-0054",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P2-0055": {
+      "txn_id": "TXN-P2-0055",
+      "category": "marketing",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P2-0056": {
+      "txn_id": "TXN-P2-0056",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Media buy rate adjustment credit",
+      "fallback": false
+    },
+    "TXN-P3-0001": {
+      "txn_id": "TXN-P3-0001",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0002": {
+      "txn_id": "TXN-P3-0002",
+      "category": "financing_inflow",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Term loan facility drawdown",
+      "fallback": false
+    },
+    "TXN-P3-0003": {
+      "txn_id": "TXN-P3-0003",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0050 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0004": {
+      "txn_id": "TXN-P3-0004",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0005": {
+      "txn_id": "TXN-P3-0005",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0006": {
+      "txn_id": "TXN-P3-0006",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0027 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0007": {
+      "txn_id": "TXN-P3-0007",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Warehouse contents insurance",
+      "fallback": false
+    },
+    "TXN-P3-0008": {
+      "txn_id": "TXN-P3-0008",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0012 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0009": {
+      "txn_id": "TXN-P3-0009",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P5-0001 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0010": {
+      "txn_id": "TXN-P3-0010",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0011": {
+      "txn_id": "TXN-P3-0011",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0012": {
+      "txn_id": "TXN-P3-0012",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0013": {
+      "txn_id": "TXN-P3-0013",
+      "category": "marketing",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0014": {
+      "txn_id": "TXN-P3-0014",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0015": {
+      "txn_id": "TXN-P3-0015",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0016": {
+      "txn_id": "TXN-P3-0016",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0047 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0017": {
+      "txn_id": "TXN-P3-0017",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0018": {
+      "txn_id": "TXN-P3-0018",
+      "category": "interest",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0019": {
+      "txn_id": "TXN-P3-0019",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0055 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0020": {
+      "txn_id": "TXN-P3-0020",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0021": {
+      "txn_id": "TXN-P3-0021",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0022": {
+      "txn_id": "TXN-P3-0022",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0023": {
+      "txn_id": "TXN-P3-0023",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Seasonal payroll run",
+      "fallback": false
+    },
+    "TXN-P3-0024": {
+      "txn_id": "TXN-P3-0024",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0025": {
+      "txn_id": "TXN-P3-0025",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0026": {
+      "txn_id": "TXN-P3-0026",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0027": {
+      "txn_id": "TXN-P3-0027",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0028": {
+      "txn_id": "TXN-P3-0028",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0029": {
+      "txn_id": "TXN-P3-0029",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0021 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0030": {
+      "txn_id": "TXN-P3-0030",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0031": {
+      "txn_id": "TXN-P3-0031",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0006 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0032": {
+      "txn_id": "TXN-P3-0032",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Storage unit rent",
+      "fallback": false
+    },
+    "TXN-P3-0033": {
+      "txn_id": "TXN-P3-0033",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0060 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0034": {
+      "txn_id": "TXN-P3-0034",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P5-0025 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0035": {
+      "txn_id": "TXN-P3-0035",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Environmental emissions tax",
+      "fallback": false
+    },
+    "TXN-P3-0036": {
+      "txn_id": "TXN-P3-0036",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0037": {
+      "txn_id": "TXN-P3-0037",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0038": {
+      "txn_id": "TXN-P3-0038",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0039": {
+      "txn_id": "TXN-P3-0039",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Use tax payment",
+      "fallback": false
+    },
+    "TXN-P3-0040": {
+      "txn_id": "TXN-P3-0040",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Payroll top-up transfer",
+      "fallback": false
+    },
+    "TXN-P3-0041": {
+      "txn_id": "TXN-P3-0041",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Group insurance experience refund",
+      "fallback": false
+    },
+    "TXN-P3-0042": {
+      "txn_id": "TXN-P3-0042",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0052 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0043": {
+      "txn_id": "TXN-P3-0043",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0044": {
+      "txn_id": "TXN-P3-0044",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0045": {
+      "txn_id": "TXN-P3-0045",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Utility metering charge",
+      "fallback": false
+    },
+    "TXN-P3-0046": {
+      "txn_id": "TXN-P3-0046",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0047": {
+      "txn_id": "TXN-P3-0047",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0048": {
+      "txn_id": "TXN-P3-0048",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0049": {
+      "txn_id": "TXN-P3-0049",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P3-0050": {
+      "txn_id": "TXN-P3-0050",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0051": {
+      "txn_id": "TXN-P3-0051",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Bi-weekly payroll run",
+      "fallback": false
+    },
+    "TXN-P3-0052": {
+      "txn_id": "TXN-P3-0052",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0053": {
+      "txn_id": "TXN-P3-0053",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Rent free period credit",
+      "fallback": false
+    },
+    "TXN-P3-0054": {
+      "txn_id": "TXN-P3-0054",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P3-0055": {
+      "txn_id": "TXN-P3-0055",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0015 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0001": {
+      "txn_id": "TXN-P4-0001",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0002": {
+      "txn_id": "TXN-P4-0002",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0003": {
+      "txn_id": "TXN-P4-0003",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0004": {
+      "txn_id": "TXN-P4-0004",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0005": {
+      "txn_id": "TXN-P4-0005",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0006": {
+      "txn_id": "TXN-P4-0006",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0007": {
+      "txn_id": "TXN-P4-0007",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0027 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0008": {
+      "txn_id": "TXN-P4-0008",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0009": {
+      "txn_id": "TXN-P4-0009",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0010": {
+      "txn_id": "TXN-P4-0010",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0040 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0011": {
+      "txn_id": "TXN-P4-0011",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 0.95,
+      "reason": "как TXN-B1-0038 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0012": {
+      "txn_id": "TXN-P4-0012",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0013": {
+      "txn_id": "TXN-P4-0013",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Outdoor marketing site hire",
+      "fallback": false
+    },
+    "TXN-P4-0014": {
+      "txn_id": "TXN-P4-0014",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0015": {
+      "txn_id": "TXN-P4-0015",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0038 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0016": {
+      "txn_id": "TXN-P4-0016",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0017": {
+      "txn_id": "TXN-P4-0017",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0024 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0018": {
+      "txn_id": "TXN-P4-0018",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Warehouse lease",
+      "fallback": false
+    },
+    "TXN-P4-0019": {
+      "txn_id": "TXN-P4-0019",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0020": {
+      "txn_id": "TXN-P4-0020",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0034 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0021": {
+      "txn_id": "TXN-P4-0021",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0004 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0022": {
+      "txn_id": "TXN-P4-0022",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0023": {
+      "txn_id": "TXN-P4-0023",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0024": {
+      "txn_id": "TXN-P4-0024",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0015 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0025": {
+      "txn_id": "TXN-P4-0025",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0026": {
+      "txn_id": "TXN-P4-0026",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0027": {
+      "txn_id": "TXN-P4-0027",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0028": {
+      "txn_id": "TXN-P4-0028",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0036 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0029": {
+      "txn_id": "TXN-P4-0029",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Depot yard rent",
+      "fallback": false
+    },
+    "TXN-P4-0030": {
+      "txn_id": "TXN-P4-0030",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Land tax instalment",
+      "fallback": false
+    },
+    "TXN-P4-0031": {
+      "txn_id": "TXN-P4-0031",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0033 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0032": {
+      "txn_id": "TXN-P4-0032",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0033": {
+      "txn_id": "TXN-P4-0033",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0034": {
+      "txn_id": "TXN-P4-0034",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0035": {
+      "txn_id": "TXN-P4-0035",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0036": {
+      "txn_id": "TXN-P4-0036",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0051 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0037": {
+      "txn_id": "TXN-P4-0037",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0003 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0038": {
+      "txn_id": "TXN-P4-0038",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Telecom service credit received",
+      "fallback": false
+    },
+    "TXN-P4-0039": {
+      "txn_id": "TXN-P4-0039",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Interest on escrow balance",
+      "fallback": false
+    },
+    "TXN-P4-0040": {
+      "txn_id": "TXN-P4-0040",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0041": {
+      "txn_id": "TXN-P4-0041",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0042": {
+      "txn_id": "TXN-P4-0042",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0043": {
+      "txn_id": "TXN-P4-0043",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0044": {
+      "txn_id": "TXN-P4-0044",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0045": {
+      "txn_id": "TXN-P4-0045",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0046": {
+      "txn_id": "TXN-P4-0046",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0052 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0047": {
+      "txn_id": "TXN-P4-0047",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0048": {
+      "txn_id": "TXN-P4-0048",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0049": {
+      "txn_id": "TXN-P4-0049",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0005 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0050": {
+      "txn_id": "TXN-P4-0050",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0051": {
+      "txn_id": "TXN-P4-0051",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0047 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0052": {
+      "txn_id": "TXN-P4-0052",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0053": {
+      "txn_id": "TXN-P4-0053",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Purchase of grain conveyor equipment",
+      "fallback": false
+    },
+    "TXN-P4-0054": {
+      "txn_id": "TXN-P4-0054",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P4-0055": {
+      "txn_id": "TXN-P4-0055",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P4-0056": {
+      "txn_id": "TXN-P4-0056",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Revolver interest payment",
+      "fallback": false
+    },
+    "TXN-P4-0057": {
+      "txn_id": "TXN-P4-0057",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0037 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0001": {
+      "txn_id": "TXN-P5-0001",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P5-0002": {
+      "txn_id": "TXN-P5-0002",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0038 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0003": {
+      "txn_id": "TXN-P5-0003",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0004": {
+      "txn_id": "TXN-P5-0004",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0005": {
+      "txn_id": "TXN-P5-0005",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0006": {
+      "txn_id": "TXN-P5-0006",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0007": {
+      "txn_id": "TXN-P5-0007",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Electricity metering correction credit",
+      "fallback": false
+    },
+    "TXN-P5-0008": {
+      "txn_id": "TXN-P5-0008",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0009": {
+      "txn_id": "TXN-P5-0009",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0010": {
+      "txn_id": "TXN-P5-0010",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0011": {
+      "txn_id": "TXN-P5-0011",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0012": {
+      "txn_id": "TXN-P5-0012",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0013": {
+      "txn_id": "TXN-P5-0013",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P5-0014": {
+      "txn_id": "TXN-P5-0014",
+      "category": "interest",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P5-0015": {
+      "txn_id": "TXN-P5-0015",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0016": {
+      "txn_id": "TXN-P5-0016",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Purchase of switchyard equipment",
+      "fallback": false
+    },
+    "TXN-P5-0017": {
+      "txn_id": "TXN-P5-0017",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0018": {
+      "txn_id": "TXN-P5-0018",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0019": {
+      "txn_id": "TXN-P5-0019",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0040 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0020": {
+      "txn_id": "TXN-P5-0020",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0055 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0021": {
+      "txn_id": "TXN-P5-0021",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0025 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0022": {
+      "txn_id": "TXN-P5-0022",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Lease deposit released",
+      "fallback": false
+    },
+    "TXN-P5-0023": {
+      "txn_id": "TXN-P5-0023",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0024": {
+      "txn_id": "TXN-P5-0024",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0025": {
+      "txn_id": "TXN-P5-0025",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P5-0026": {
+      "txn_id": "TXN-P5-0026",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Water charge adjustment credit",
+      "fallback": false
+    },
+    "TXN-P5-0027": {
+      "txn_id": "TXN-P5-0027",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0026 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0028": {
+      "txn_id": "TXN-P5-0028",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0030 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0029": {
+      "txn_id": "TXN-P5-0029",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0030": {
+      "txn_id": "TXN-P5-0030",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0024 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0031": {
+      "txn_id": "TXN-P5-0031",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P5-0032": {
+      "txn_id": "TXN-P5-0032",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P6-0051 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0033": {
+      "txn_id": "TXN-P5-0033",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Marketing research panel subscription",
+      "fallback": false
+    },
+    "TXN-P5-0034": {
+      "txn_id": "TXN-P5-0034",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0035": {
+      "txn_id": "TXN-P5-0035",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P4-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0036": {
+      "txn_id": "TXN-P5-0036",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0037": {
+      "txn_id": "TXN-P5-0037",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0026 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0038": {
+      "txn_id": "TXN-P5-0038",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0001 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0039": {
+      "txn_id": "TXN-P5-0039",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P5-0001 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0040": {
+      "txn_id": "TXN-P5-0040",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0024 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0041": {
+      "txn_id": "TXN-P5-0041",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P2-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0042": {
+      "txn_id": "TXN-P5-0042",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0033 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0043": {
+      "txn_id": "TXN-P5-0043",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Payroll for drivers",
+      "fallback": false
+    },
+    "TXN-P5-0044": {
+      "txn_id": "TXN-P5-0044",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0045": {
+      "txn_id": "TXN-P5-0045",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0046": {
+      "txn_id": "TXN-P5-0046",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0026 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0047": {
+      "txn_id": "TXN-P5-0047",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0048": {
+      "txn_id": "TXN-P5-0048",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Antenna mast lease",
+      "fallback": false
+    },
+    "TXN-P5-0049": {
+      "txn_id": "TXN-P5-0049",
+      "category": "marketing",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0050": {
+      "txn_id": "TXN-P5-0050",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0051": {
+      "txn_id": "TXN-P5-0051",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Interest on subordinated notes",
+      "fallback": false
+    },
+    "TXN-P5-0052": {
+      "txn_id": "TXN-P5-0052",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0053": {
+      "txn_id": "TXN-P5-0053",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0034 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P5-0054": {
+      "txn_id": "TXN-P5-0054",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Marketing volume rebate",
+      "fallback": false
+    },
+    "TXN-P6-0001": {
+      "txn_id": "TXN-P6-0001",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0002": {
+      "txn_id": "TXN-P6-0002",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0003": {
+      "txn_id": "TXN-P6-0003",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0005 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0004": {
+      "txn_id": "TXN-P6-0004",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Plant crew payroll disbursement",
+      "fallback": false
+    },
+    "TXN-P6-0005": {
+      "txn_id": "TXN-P6-0005",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Franchise tax filing",
+      "fallback": false
+    },
+    "TXN-P6-0006": {
+      "txn_id": "TXN-P6-0006",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0007": {
+      "txn_id": "TXN-P6-0007",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0008": {
+      "txn_id": "TXN-P6-0008",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0009": {
+      "txn_id": "TXN-P6-0009",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Fidelity bond insurance",
+      "fallback": false
+    },
+    "TXN-P6-0010": {
+      "txn_id": "TXN-P6-0010",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0011": {
+      "txn_id": "TXN-P6-0011",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0012": {
+      "txn_id": "TXN-P6-0012",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Directors and officers insurance",
+      "fallback": false
+    },
+    "TXN-P6-0013": {
+      "txn_id": "TXN-P6-0013",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0015 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0014": {
+      "txn_id": "TXN-P6-0014",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0015": {
+      "txn_id": "TXN-P6-0015",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0018 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0016": {
+      "txn_id": "TXN-P6-0016",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Corporate income tax instalment",
+      "fallback": false
+    },
+    "TXN-P6-0017": {
+      "txn_id": "TXN-P6-0017",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0018": {
+      "txn_id": "TXN-P6-0018",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0019": {
+      "txn_id": "TXN-P6-0019",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0020": {
+      "txn_id": "TXN-P6-0020",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Rent for spare parts store",
+      "fallback": false
+    },
+    "TXN-P6-0021": {
+      "txn_id": "TXN-P6-0021",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0018 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0022": {
+      "txn_id": "TXN-P6-0022",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Purchase of clinker grinding equipment",
+      "fallback": false
+    },
+    "TXN-P6-0023": {
+      "txn_id": "TXN-P6-0023",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Customs duty and tax payment",
+      "fallback": false
+    },
+    "TXN-P6-0024": {
+      "txn_id": "TXN-P6-0024",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0025": {
+      "txn_id": "TXN-P6-0025",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0026": {
+      "txn_id": "TXN-P6-0026",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Marketing agency credit note",
+      "fallback": false
+    },
+    "TXN-P6-0027": {
+      "txn_id": "TXN-P6-0027",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0028": {
+      "txn_id": "TXN-P6-0028",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0029": {
+      "txn_id": "TXN-P6-0029",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0012 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0030": {
+      "txn_id": "TXN-P6-0030",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0040 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0031": {
+      "txn_id": "TXN-P6-0031",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0032": {
+      "txn_id": "TXN-P6-0032",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0033": {
+      "txn_id": "TXN-P6-0033",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Insurance premium refund",
+      "fallback": false
+    },
+    "TXN-P6-0034": {
+      "txn_id": "TXN-P6-0034",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0035": {
+      "txn_id": "TXN-P6-0035",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0006 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0036": {
+      "txn_id": "TXN-P6-0036",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Vehicle tax payment",
+      "fallback": false
+    },
+    "TXN-P6-0037": {
+      "txn_id": "TXN-P6-0037",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0038": {
+      "txn_id": "TXN-P6-0038",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0039": {
+      "txn_id": "TXN-P6-0039",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0040": {
+      "txn_id": "TXN-P6-0040",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0041": {
+      "txn_id": "TXN-P6-0041",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0042": {
+      "txn_id": "TXN-P6-0042",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0005 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0043": {
+      "txn_id": "TXN-P6-0043",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0024 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0044": {
+      "txn_id": "TXN-P6-0044",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P7-0047 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0045": {
+      "txn_id": "TXN-P6-0045",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Business interruption insurance",
+      "fallback": false
+    },
+    "TXN-P6-0046": {
+      "txn_id": "TXN-P6-0046",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0060 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0047": {
+      "txn_id": "TXN-P6-0047",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Insurance claim reimbursement",
+      "fallback": false
+    },
+    "TXN-P6-0048": {
+      "txn_id": "TXN-P6-0048",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0016 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0049": {
+      "txn_id": "TXN-P6-0049",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0050": {
+      "txn_id": "TXN-P6-0050",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0051": {
+      "txn_id": "TXN-P6-0051",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0052": {
+      "txn_id": "TXN-P6-0052",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Rent for archive premises",
+      "fallback": false
+    },
+    "TXN-P6-0053": {
+      "txn_id": "TXN-P6-0053",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Retail unit rent",
+      "fallback": false
+    },
+    "TXN-P6-0054": {
+      "txn_id": "TXN-P6-0054",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P6-0055": {
+      "txn_id": "TXN-P6-0055",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P6-0056": {
+      "txn_id": "TXN-P6-0056",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0001": {
+      "txn_id": "TXN-P7-0001",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0060 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0002": {
+      "txn_id": "TXN-P7-0002",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Lease incentive received",
+      "fallback": false
+    },
+    "TXN-P7-0003": {
+      "txn_id": "TXN-P7-0003",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0004": {
+      "txn_id": "TXN-P7-0004",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0005": {
+      "txn_id": "TXN-P7-0005",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0034 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0006": {
+      "txn_id": "TXN-P7-0006",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0007": {
+      "txn_id": "TXN-P7-0007",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0008": {
+      "txn_id": "TXN-P7-0008",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0009": {
+      "txn_id": "TXN-P7-0009",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Interest on escrow balance",
+      "fallback": false
+    },
+    "TXN-P7-0010": {
+      "txn_id": "TXN-P7-0010",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0011": {
+      "txn_id": "TXN-P7-0011",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0050 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0012": {
+      "txn_id": "TXN-P7-0012",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0050 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0013": {
+      "txn_id": "TXN-P7-0013",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0018 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0014": {
+      "txn_id": "TXN-P7-0014",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P1-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0015": {
+      "txn_id": "TXN-P7-0015",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0040 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0016": {
+      "txn_id": "TXN-P7-0016",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0017": {
+      "txn_id": "TXN-P7-0017",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 0.95,
+      "reason": "как TXN-P7-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0018": {
+      "txn_id": "TXN-P7-0018",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0019": {
+      "txn_id": "TXN-P7-0019",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0020": {
+      "txn_id": "TXN-P7-0020",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0046 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0021": {
+      "txn_id": "TXN-P7-0021",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0022": {
+      "txn_id": "TXN-P7-0022",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Insurance broker rebate",
+      "fallback": false
+    },
+    "TXN-P7-0023": {
+      "txn_id": "TXN-P7-0023",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0024": {
+      "txn_id": "TXN-P7-0024",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Unused ad campaign budget returned",
+      "fallback": false
+    },
+    "TXN-P7-0025": {
+      "txn_id": "TXN-P7-0025",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Unclaimed payroll returned",
+      "fallback": false
+    },
+    "TXN-P7-0026": {
+      "txn_id": "TXN-P7-0026",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Vehicle livery marketing application",
+      "fallback": false
+    },
+    "TXN-P7-0027": {
+      "txn_id": "TXN-P7-0027",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0043 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0028": {
+      "txn_id": "TXN-P7-0028",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Credit facility interest",
+      "fallback": false
+    },
+    "TXN-P7-0029": {
+      "txn_id": "TXN-P7-0029",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0030": {
+      "txn_id": "TXN-P7-0030",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 0.95,
+      "reason": "как TXN-P7-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0031": {
+      "txn_id": "TXN-P7-0031",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Pump station servicing and operating costs",
+      "fallback": false
+    },
+    "TXN-P7-0032": {
+      "txn_id": "TXN-P7-0032",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0033": {
+      "txn_id": "TXN-P7-0033",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0034": {
+      "txn_id": "TXN-P7-0034",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Payroll for security detail",
+      "fallback": false
+    },
+    "TXN-P7-0035": {
+      "txn_id": "TXN-P7-0035",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0036": {
+      "txn_id": "TXN-P7-0036",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0037": {
+      "txn_id": "TXN-P7-0037",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0038": {
+      "txn_id": "TXN-P7-0038",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0039": {
+      "txn_id": "TXN-P7-0039",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0040": {
+      "txn_id": "TXN-P7-0040",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0041": {
+      "txn_id": "TXN-P7-0041",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0042": {
+      "txn_id": "TXN-P7-0042",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0043": {
+      "txn_id": "TXN-P7-0043",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0033 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0044": {
+      "txn_id": "TXN-P7-0044",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Printed marketing collateral run",
+      "fallback": false
+    },
+    "TXN-P7-0045": {
+      "txn_id": "TXN-P7-0045",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0046": {
+      "txn_id": "TXN-P7-0046",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0047": {
+      "txn_id": "TXN-P7-0047",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0048": {
+      "txn_id": "TXN-P7-0048",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0049": {
+      "txn_id": "TXN-P7-0049",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0050": {
+      "txn_id": "TXN-P7-0050",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0051": {
+      "txn_id": "TXN-P7-0051",
+      "category": "payroll",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0052": {
+      "txn_id": "TXN-P7-0052",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0053": {
+      "txn_id": "TXN-P7-0053",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P7-0054": {
+      "txn_id": "TXN-P7-0054",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P7-0055": {
+      "txn_id": "TXN-P7-0055",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Political risk insurance",
+      "fallback": false
+    },
+    "TXN-P7-0056": {
+      "txn_id": "TXN-P7-0056",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-P5-0001 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0001": {
+      "txn_id": "TXN-P8-0001",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0002": {
+      "txn_id": "TXN-P8-0002",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Advance profit tax instalment",
+      "fallback": false
+    },
+    "TXN-P8-0003": {
+      "txn_id": "TXN-P8-0003",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0033 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0004": {
+      "txn_id": "TXN-P8-0004",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Telecom services",
+      "fallback": false
+    },
+    "TXN-P8-0005": {
+      "txn_id": "TXN-P8-0005",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Field crew payroll disbursement",
+      "fallback": false
+    },
+    "TXN-P8-0006": {
+      "txn_id": "TXN-P8-0006",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0007": {
+      "txn_id": "TXN-P8-0007",
+      "category": "marketing",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Marketing co-operative funding received",
+      "fallback": false
+    },
+    "TXN-P8-0008": {
+      "txn_id": "TXN-P8-0008",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0009": {
+      "txn_id": "TXN-P8-0009",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0010": {
+      "txn_id": "TXN-P8-0010",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0011": {
+      "txn_id": "TXN-P8-0011",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0012": {
+      "txn_id": "TXN-P8-0012",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0013": {
+      "txn_id": "TXN-P8-0013",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "Marketing overbilling refund",
+      "fallback": false
+    },
+    "TXN-P8-0014": {
+      "txn_id": "TXN-P8-0014",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0015": {
+      "txn_id": "TXN-P8-0015",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0016": {
+      "txn_id": "TXN-P8-0016",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0017": {
+      "txn_id": "TXN-P8-0017",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0018": {
+      "txn_id": "TXN-P8-0018",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0038 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0019": {
+      "txn_id": "TXN-P8-0019",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "Customer newsletter marketing production",
+      "fallback": false
+    },
+    "TXN-P8-0020": {
+      "txn_id": "TXN-P8-0020",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Interest income on term deposit",
+      "fallback": false
+    },
+    "TXN-P8-0021": {
+      "txn_id": "TXN-P8-0021",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0022": {
+      "txn_id": "TXN-P8-0022",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0023": {
+      "txn_id": "TXN-P8-0023",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0037 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0024": {
+      "txn_id": "TXN-P8-0024",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "District heating utility charge",
+      "fallback": false
+    },
+    "TXN-P8-0025": {
+      "txn_id": "TXN-P8-0025",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0026": {
+      "txn_id": "TXN-P8-0026",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0027": {
+      "txn_id": "TXN-P8-0027",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0048 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0028": {
+      "txn_id": "TXN-P8-0028",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0029": {
+      "txn_id": "TXN-P8-0029",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0030": {
+      "txn_id": "TXN-P8-0030",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0031": {
+      "txn_id": "TXN-P8-0031",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0032": {
+      "txn_id": "TXN-P8-0032",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0036 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0033": {
+      "txn_id": "TXN-P8-0033",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0034": {
+      "txn_id": "TXN-P8-0034",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0004 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0035": {
+      "txn_id": "TXN-P8-0035",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0036": {
+      "txn_id": "TXN-P8-0036",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0019 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0037": {
+      "txn_id": "TXN-P8-0037",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0001 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0038": {
+      "txn_id": "TXN-P8-0038",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0039": {
+      "txn_id": "TXN-P8-0039",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0040": {
+      "txn_id": "TXN-P8-0040",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0023 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0041": {
+      "txn_id": "TXN-P8-0041",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0002 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0042": {
+      "txn_id": "TXN-P8-0042",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0043": {
+      "txn_id": "TXN-P8-0043",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0024 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0044": {
+      "txn_id": "TXN-P8-0044",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0045": {
+      "txn_id": "TXN-P8-0045",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0046": {
+      "txn_id": "TXN-P8-0046",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P8-0047": {
+      "txn_id": "TXN-P8-0047",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0026 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0048": {
+      "txn_id": "TXN-P8-0048",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0049": {
+      "txn_id": "TXN-P8-0049",
+      "category": "interest",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0062 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0050": {
+      "txn_id": "TXN-P8-0050",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0032 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0051": {
+      "txn_id": "TXN-P8-0051",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0052": {
+      "txn_id": "TXN-P8-0052",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0053": {
+      "txn_id": "TXN-P8-0053",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0022 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0054": {
+      "txn_id": "TXN-P8-0054",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P8-0055": {
+      "txn_id": "TXN-P8-0055",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0001": {
+      "txn_id": "TXN-P9-0001",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0002": {
+      "txn_id": "TXN-P9-0002",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0003": {
+      "txn_id": "TXN-P9-0003",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0004": {
+      "txn_id": "TXN-P9-0004",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0005": {
+      "txn_id": "TXN-P9-0005",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0042 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0006": {
+      "txn_id": "TXN-P9-0006",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0028 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0007": {
+      "txn_id": "TXN-P9-0007",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P7-0044 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0008": {
+      "txn_id": "TXN-P9-0008",
+      "category": "taxes",
+      "flow": "reversal",
+      "confidence": 0.9,
+      "reason": "Withholding tax reclaim received",
+      "fallback": false
+    },
+    "TXN-P9-0009": {
+      "txn_id": "TXN-P9-0009",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0010": {
+      "txn_id": "TXN-P9-0010",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0011": {
+      "txn_id": "TXN-P9-0011",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Office rent",
+      "fallback": false
+    },
+    "TXN-P9-0012": {
+      "txn_id": "TXN-P9-0012",
+      "category": "revenue",
+      "flow": "inflow",
+      "confidence": 1.0,
+      "reason": "Ore haulage sales settlement",
+      "fallback": false
+    },
+    "TXN-P9-0013": {
+      "txn_id": "TXN-P9-0013",
+      "category": "insurance",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0014": {
+      "txn_id": "TXN-P9-0014",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0015": {
+      "txn_id": "TXN-P9-0015",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "VAT instalment",
+      "fallback": false
+    },
+    "TXN-P9-0016": {
+      "txn_id": "TXN-P9-0016",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Water supply charge",
+      "fallback": false
+    },
+    "TXN-P9-0017": {
+      "txn_id": "TXN-P9-0017",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0018": {
+      "txn_id": "TXN-P9-0018",
+      "category": "lease",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0011 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0019": {
+      "txn_id": "TXN-P9-0019",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0033 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0020": {
+      "txn_id": "TXN-P9-0020",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0021": {
+      "txn_id": "TXN-P9-0021",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0020 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0022": {
+      "txn_id": "TXN-P9-0022",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0045 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0023": {
+      "txn_id": "TXN-P9-0023",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Travel insurance for staff",
+      "fallback": false
+    },
+    "TXN-P9-0024": {
+      "txn_id": "TXN-P9-0024",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0025": {
+      "txn_id": "TXN-P9-0025",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0026": {
+      "txn_id": "TXN-P9-0026",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P10-0013 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0027": {
+      "txn_id": "TXN-P9-0027",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0028": {
+      "txn_id": "TXN-P9-0028",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0029": {
+      "txn_id": "TXN-P9-0029",
+      "category": "interest",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P5-0014 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0030": {
+      "txn_id": "TXN-P9-0030",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": "как TXN-B4-0050 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0031": {
+      "txn_id": "TXN-P9-0031",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0029 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0032": {
+      "txn_id": "TXN-P9-0032",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0033": {
+      "txn_id": "TXN-P9-0033",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0049 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0034": {
+      "txn_id": "TXN-P9-0034",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0035": {
+      "txn_id": "TXN-P9-0035",
+      "category": "capex",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0036": {
+      "txn_id": "TXN-P9-0036",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0037": {
+      "txn_id": "TXN-P9-0037",
+      "category": "taxes",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P3-0035 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0038": {
+      "txn_id": "TXN-P9-0038",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0054 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0039": {
+      "txn_id": "TXN-P9-0039",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Capitalised interest charge",
+      "fallback": false
+    },
+    "TXN-P9-0040": {
+      "txn_id": "TXN-P9-0040",
+      "category": "opex",
+      "flow": "outflow",
+      "confidence": 0.9,
+      "reason": "как TXN-P1-0031 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0041": {
+      "txn_id": "TXN-P9-0041",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 0.95,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0042": {
+      "txn_id": "TXN-P9-0042",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0004 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0043": {
+      "txn_id": "TXN-P9-0043",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0044": {
+      "txn_id": "TXN-P9-0044",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P4-0056 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0045": {
+      "txn_id": "TXN-P9-0045",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0026 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0046": {
+      "txn_id": "TXN-P9-0046",
+      "category": "utilities",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0038 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0047": {
+      "txn_id": "TXN-P9-0047",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0015 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0048": {
+      "txn_id": "TXN-P9-0048",
+      "category": "utilities",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P1-0041 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0049": {
+      "txn_id": "TXN-P9-0049",
+      "category": "lease",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "Parking garage lease",
+      "fallback": false
+    },
+    "TXN-P9-0050": {
+      "txn_id": "TXN-P9-0050",
+      "category": "insurance",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P6-0009 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0051": {
+      "txn_id": "TXN-P9-0051",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-B1-0007 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0052": {
+      "txn_id": "TXN-P9-0052",
+      "category": "interest",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P9-0039 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0053": {
+      "txn_id": "TXN-P9-0053",
+      "category": "marketing",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": "как TXN-P2-0008 (то же описание)",
+      "fallback": false
+    },
+    "TXN-P9-0054": {
+      "txn_id": "TXN-P9-0054",
+      "category": "payroll",
+      "flow": "outflow",
+      "confidence": 1.0,
+      "reason": null,
+      "fallback": false
+    },
+    "TXN-P9-0055": {
+      "txn_id": "TXN-P9-0055",
+      "category": "marketing",
+      "flow": "reversal",
+      "confidence": 1.0,
+      "reason": "как TXN-P8-0013 (то же описание)",
+      "fallback": false
+    }
+  }
+}

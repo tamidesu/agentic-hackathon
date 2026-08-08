@@ -1,0 +1,194 @@
+{
+  "B1": {
+    "scenario_id": "B1",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "B4": {
+    "scenario_id": "B4",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P1": {
+    "scenario_id": "P1",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P10": {
+    "scenario_id": "P10",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P2": {
+    "scenario_id": "P2",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P3": {
+    "scenario_id": "P3",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P4": {
+    "scenario_id": "P4",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P5": {
+    "scenario_id": "P5",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P6": {
+    "scenario_id": "P6",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P7": {
+    "scenario_id": "P7",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P8": {
+    "scenario_id": "P8",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  },
+  "P9": {
+    "scenario_id": "P9",
+    "borrower": "",
+    "threshold_pct": null,
+    "entities": [],
+    "group": {
+      "parent": null,
+      "source_doc": null,
+      "values": {},
+      "derivations": {}
+    },
+    "problems": [
+      "в досье не найдено ни одной сущности — 6.3 неразрешим"
+    ],
+    "related_names": []
+  }
+}

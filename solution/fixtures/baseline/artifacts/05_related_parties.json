@@ -1,0 +1,471 @@
+{
+  "alarms": [],
+  "problems": [],
+  "scenarios": {
+    "B1": {
+      "scenario_id": "B1",
+      "doc_id": "c66b5b638410",
+      "threshold_pct": 20.0,
+      "threshold_quote": "Организации, в которых Группа владеет 20.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Ertis Capital, LLP"
+      ],
+      "parties": [
+        {
+          "name": "Ertis Capital, LLP",
+          "ownership_pct": 31.4,
+          "basis": null,
+          "quote": "Ertis Capital, LLP 31.4%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Irtysh Advisory Bureau",
+          "ownership_pct": 18.6,
+          "basis": null,
+          "quote": "Irtysh Advisory Bureau 18.6%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Pavlodar Plant Services LLP",
+          "ownership_pct": 12.5,
+          "basis": null,
+          "quote": "Pavlodar Plant Services LLP 12.5%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "B4": {
+      "scenario_id": "B4",
+      "doc_id": "a144690a213c",
+      "threshold_pct": 30.0,
+      "threshold_quote": "Организации, в которых Группа владеет 30.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Kazyna Capital LLP.",
+        "Shymkent Fuel Distributors LLP"
+      ],
+      "parties": [
+        {
+          "name": "Atyrau Pipeline Engineering LLP",
+          "ownership_pct": 11.7,
+          "basis": null,
+          "quote": "Atyrau Pipeline Engineering LLP 11.7%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Kazyna Capital LLP.",
+          "ownership_pct": 38.9,
+          "basis": null,
+          "quote": "Kazyna Capital LLP. 38.9%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Shymkent Fuel Distributors LLP",
+          "ownership_pct": 48.0,
+          "basis": null,
+          "quote": "Shymkent Fuel Distributors LLP 48.0%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Turkistan Petroleum Traders LLP",
+          "ownership_pct": 29.4,
+          "basis": null,
+          "quote": "Turkistan Petroleum Traders LLP 29.4%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P1": {
+      "scenario_id": "P1",
+      "doc_id": "2dd8671ac405",
+      "threshold_pct": 20.0,
+      "threshold_quote": "Организации, в которых Группа владеет 20.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Aktau Holdings LLP"
+      ],
+      "parties": [
+        {
+          "name": "Aktau Holdings LLP",
+          "ownership_pct": 34.5,
+          "basis": null,
+          "quote": "Aktau Holdings LLP 34.5%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Kaspi Marine Engineering LLP",
+          "ownership_pct": 18.7,
+          "basis": null,
+          "quote": "Kaspi Marine Engineering LLP 18.7%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Ural Crane Works LLP",
+          "ownership_pct": 6.2,
+          "basis": null,
+          "quote": "Ural Crane Works LLP 6.2%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P10": {
+      "scenario_id": "P10",
+      "doc_id": "07e1a2a0275d",
+      "threshold_pct": 36.0,
+      "threshold_quote": "Организации, в которых Группа владеет 36.0% и более голосующих прав, признаются связанных сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "\"Saryarka Capital Partners\" LLP"
+      ],
+      "parties": [
+        {
+          "name": "\"Saryarka Capital Partners\" LLP",
+          "ownership_pct": 42.3,
+          "basis": null,
+          "quote": "\"Saryarka Capital Partners\" LLP 42.3%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Karaganda Energy Supply JSC",
+          "ownership_pct": 12.1,
+          "basis": null,
+          "quote": "Karaganda Energy Supply JSC 12.1%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Saryarka Terminal Properties LLP",
+          "ownership_pct": 33.5,
+          "basis": null,
+          "quote": "Saryarka Terminal Properties LLP 33.5%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P2": {
+      "scenario_id": "P2",
+      "doc_id": "63e162bd710b",
+      "threshold_pct": 25.0,
+      "threshold_quote": "Организации, в которых Группа владеет 25.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Zhetysu Capital Partners LLP"
+      ],
+      "parties": [
+        {
+          "name": "Almaty Chill Logistics LLP",
+          "ownership_pct": 8.6,
+          "basis": null,
+          "quote": "Almaty Chill Logistics LLP | 8.6%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Tien Shan Advisory Bureau",
+          "ownership_pct": 23.4,
+          "basis": null,
+          "quote": "Tien Shan Advisory Bureau | 23.4%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Zhetysu Capital Partners LLP",
+          "ownership_pct": 31.2,
+          "basis": null,
+          "quote": "Zhetysu Capital Partners LLP | 31.2%",
+          "is_related": true,
+          "model_said": true
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P3": {
+      "scenario_id": "P3",
+      "doc_id": "ee32532e1126",
+      "threshold_pct": 25.0,
+      "threshold_quote": "Организации, в которых Группа владеет 25.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "\"Turan Capital\" LLP"
+      ],
+      "parties": [
+        {
+          "name": "\"Turan Capital\" LLP",
+          "ownership_pct": 28.8,
+          "basis": null,
+          "quote": "\"Turan Capital\" LLP 28.8%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "KazMunayGas Refining JSC",
+          "ownership_pct": 4.1,
+          "basis": null,
+          "quote": "KazMunayGas Refining JSC 4.1%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Shymkent Plant Services LLP",
+          "ownership_pct": 22.9,
+          "basis": null,
+          "quote": "Shymkent Plant Services LLP 22.9%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P4": {
+      "scenario_id": "P4",
+      "doc_id": "9f1a89a5ed42",
+      "threshold_pct": 30.0,
+      "threshold_quote": "Организации, в которых Группа владеет 30.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Aral Capital Partners, LLP"
+      ],
+      "parties": [
+        {
+          "name": "Aktobe Elevator Services LLP",
+          "ownership_pct": 28.6,
+          "basis": null,
+          "quote": "Aktobe Elevator Services LLP 28.6%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Aral Capital Partners, LLP",
+          "ownership_pct": 33.4,
+          "basis": null,
+          "quote": "Aral Capital Partners, LLP 33.4%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Ural Conveyor Works LLP",
+          "ownership_pct": 7.3,
+          "basis": null,
+          "quote": "Ural Conveyor Works LLP 7.3%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P5": {
+      "scenario_id": "P5",
+      "doc_id": "89af6ae7964f",
+      "threshold_pct": 35.0,
+      "threshold_quote": "Организации, в которых Группа владеет 35.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Sarybel Capital LLP."
+      ],
+      "parties": [
+        {
+          "name": "Pavlodar Plant Services LLP",
+          "ownership_pct": 33.8,
+          "basis": null,
+          "quote": "Pavlodar Plant Services LLP 33.8%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Sarybel Capital LLP.",
+          "ownership_pct": 41.2,
+          "basis": null,
+          "quote": "Sarybel Capital LLP. 41.2%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Ural Turbine Works LLP",
+          "ownership_pct": 9.4,
+          "basis": null,
+          "quote": "Ural Turbine Works LLP 9.4%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P6": {
+      "scenario_id": "P6",
+      "doc_id": "f3fa6d20c8a1",
+      "threshold_pct": 40.0,
+      "threshold_quote": "Организации, в которых Группа владеет 40.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "\"Taraz Holding Group\" LLP"
+      ],
+      "parties": [
+        {
+          "name": "\"Taraz Holding Group\" LLP",
+          "ownership_pct": 46.8,
+          "basis": null,
+          "quote": "\"Taraz Holding Group\" LLP | 46.8%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Taraz Kiln Services LLP",
+          "ownership_pct": 38.1,
+          "basis": null,
+          "quote": "Taraz Kiln Services LLP | 38.1%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Ural Grinding Works LLP",
+          "ownership_pct": 11.5,
+          "basis": null,
+          "quote": "Ural Grinding Works LLP | 11.5%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P7": {
+      "scenario_id": "P7",
+      "doc_id": "2bdb134db53c",
+      "threshold_pct": 32.0,
+      "threshold_quote": "Организации, в которых Группа владеет 32.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Atyrau Holding Group L.L.P."
+      ],
+      "parties": [
+        {
+          "name": "Atyrau Energy Supply JSC",
+          "ownership_pct": 8.8,
+          "basis": null,
+          "quote": "Atyrau Energy Supply JSC 8.8%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Atyrau Holding Group L.L.P.",
+          "ownership_pct": 37.9,
+          "basis": null,
+          "quote": "Atyrau Holding Group L.L.P. 37.9%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Atyrau Pump Station Services LLP",
+          "ownership_pct": 29.3,
+          "basis": null,
+          "quote": "Atyrau Pump Station Services LLP 29.3%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P8": {
+      "scenario_id": "P8",
+      "doc_id": "22c1707dad45",
+      "threshold_pct": 38.0,
+      "threshold_quote": "Организации, в которых Группа владеет 38.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Syrdarya Capital Holding, LLP"
+      ],
+      "parties": [
+        {
+          "name": "Kyzylorda Drilling Personnel LLP",
+          "ownership_pct": 36.2,
+          "basis": null,
+          "quote": "Kyzylorda Drilling Personnel LLP 36.2%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Syrdarya Capital Holding, LLP",
+          "ownership_pct": 44.6,
+          "basis": null,
+          "quote": "Syrdarya Capital Holding, LLP 44.6%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Ural Rig Manufacturing LLP",
+          "ownership_pct": 10.7,
+          "basis": null,
+          "quote": "Ural Rig Manufacturing LLP 10.7%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    },
+    "P9": {
+      "scenario_id": "P9",
+      "doc_id": "aaf665cbc612",
+      "threshold_pct": 34.0,
+      "threshold_quote": "Организации, в которых Группа владеет 34.0% и более голосующих прав, признаются связанными сторонами для целей Договора.",
+      "has_ownership_section": true,
+      "related_names": [
+        "Ulytau Capital LLP."
+      ],
+      "parties": [
+        {
+          "name": "Kazakhmys Smelting JSC",
+          "ownership_pct": 6.9,
+          "basis": null,
+          "quote": "Kazakhmys Smelting JSC 6.9%",
+          "is_related": false,
+          "model_said": false
+        },
+        {
+          "name": "Ulytau Capital LLP.",
+          "ownership_pct": 39.7,
+          "basis": null,
+          "quote": "Ulytau Capital LLP. 39.7%",
+          "is_related": true,
+          "model_said": true
+        },
+        {
+          "name": "Ural Haul Systems LLP",
+          "ownership_pct": 31.4,
+          "basis": null,
+          "quote": "Ural Haul Systems LLP 31.4%",
+          "is_related": false,
+          "model_said": false
+        }
+      ],
+      "problems": [],
+      "notes": []
+    }
+  }
+}

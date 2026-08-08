@@ -1,0 +1,674 @@
+txn_id,scenario_id,date,counterparty,amount_usd,category,party,scope,excluded,exclusion_reason,origin,confidence
+TXN-P1-0007,P1,2025-01-02,Hartley Building Services Holdings (Turkistan point),-11065870.19,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0056,P4,2025-01-02,Cedarville Payroll LP,-2019970.78,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0016,P6,2025-01-02,Glenwood Facilities Holdings (Oskemen unit),-440014.44,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0007,P8,2025-01-02,Ashford Water Works Group JSC (Turkistan point),6830284.13,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0012,P1,2025-01-03,Ironwood Power Trust Enterprise (Karaganda yard),-1604249.66,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P6-0005,P6,2025-01-03,Glenwood Property Trust,-4810458.99,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P6-0020,P6,2025-01-03,Foxridge Power LLC Ltd (Kyzylorda station),-8599812.02,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P8-0001,P8,2025-01-03,Eastgate Water Works Ltd Company,-1435608.42,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0019,B1,2025-01-04,Ashford Office Supplies LLC,-212472.44,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0034,B1,2025-01-04,Foxridge Stationery (Almaty office),-7012825.84,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P7-0022,P7,2025-01-06,Ironwood Insurance LLC (Taraz site),1516471.55,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B1-0048,B1,2025-01-07,Bridgeport Leasing LLC (Uralsk annex),-5414655.83,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0044,P7,2025-01-07,Juniper Tax Advisory LLC Trading House,-9477411.59,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0027,B1,2025-01-09,Cedarville Facilities,1751470.75,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B4-0039,B4,2025-01-09,Juniper Printing Inc Trading House (Turkistan point),12367740.28,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0062,P10,2025-01-09,Cedarville Tax Advisory Partners Trading House (Kyzylorda station),220304.84,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P2-0006,P2,2025-01-09,Bridgeport Power Corp (Semey base),-2125991.67,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P2-0017,P2,2025-01-09,Dunmore Realty (Kyzylorda station),-3249662.49,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0053,P3,2025-01-09,Dunmore Facilities Associates Trading House,1209157.56,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0056,B1,2025-01-10,Ironwood Realty Services (Karaganda yard),-417312.75,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0004,P10,2025-01-10,Eastgate Maintenance Solutions,-174400.39,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0033,P5,2025-01-10,Ashford Uniforms Associates (Shymkent depot),-1870958.07,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0011,P9,2025-01-10,Bridgeport Courier Solutions (Ekibastuz block B),-238906.18,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P1-0002,P1,2025-01-11,Foxridge Tax Advisory Corp (Semey base),-1474435.73,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P1-0032,P1,2025-01-12,Eastgate Janitorial Partners (Ekibastuz block B),-654151.88,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0048,P5,2025-01-12,Cedarville Uniforms Solutions Service Centre (Oskemen unit),-634250.84,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P5-0054,P5,2025-01-12,Ashford Maintenance LLC (Zhezkazgan compound),7045005.71,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P10-0008,P10,2025-01-13,Bridgeport Office Supplies (Semey base),-266501.58,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0041,P3,2025-01-13,Dunmore Utility Inc,1064153.42,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0013,P4,2025-01-14,Cedarville Uniforms Solutions,-6073547.09,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0026,P7,2025-01-16,Juniper Landscaping LLC (Aktobe hub),-824986.91,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0023,P3,2025-01-17,Ashford Cleaning Services LLP (Almaty office),-10504386.24,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P8-0012,P8,2025-01-17,Sentinel Insurance Group (Aktobe hub),2667830.89,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B4-0016,B4,2025-01-20,Ironwood Power Trust (Ekibastuz block B),-10042101.92,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P5-0026,P5,2025-01-21,Bridgeport Supply LP,1481878.83,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P4-0018,P4,2025-01-22,Juniper Uniforms Co LLP,-2356896.70,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0038,P4,2025-01-22,Kingsley Water Works Solutions (Taraz site),459637.57,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P5-0007,P5,2025-01-22,Bridgeport Janitorial Solutions (Ekibastuz block B),1571727.86,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P9-0015,P9,2025-01-25,Cedarville Janitorial Holdings Group,-2357671.23,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B1-0046,B1,2025-01-26,Hartley Landscaping Ltd JSC (Pavlodar block),-462598.24,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0029,P4,2025-01-26,Glenwood Uniforms Group (Kostanay centre),-2540625.50,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0049,B1,2025-01-28,Glenwood Telecom Corp (Kyzylorda station),-6840662.36,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0037,P1,2025-01-28,Ashford Property Co (Taraz site),-6453942.70,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0045,P6,2025-01-28,Kingsley Water Works Solutions,-466225.78,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B1-0054,B1,2025-01-29,Hartley Catering LP Supply,-1099515.55,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0026,P1,2025-01-29,Foxridge Stationery (Zhezkazgan compound),-1585834.81,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P10-0038,P10,2025-01-29,Cedarville Printing Services (Ekibastuz block B),-1214344.92,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P2-0019,P2,2025-01-30,Eastgate Office Supplies Solutions,-1143345.59,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0015,B1,2025-01-31,Bridgeport Office Supplies LLP (Semey base),-6029826.75,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P3-0045,P3,2025-01-31,Cedarville Leasing (Karaganda yard),-5075771.04,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P4-0031,P4,2025-02-02,Eastgate Office Supplies Solutions Partners,-716503.49,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0033,P6,2025-02-02,Foxridge Property Associates,6005234.90,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P8-0004,P8,2025-02-02,Trident Power Cooperative (Uralsk annex),-520395.97,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P9-0023,P9,2025-02-02,Ironwood Cleaning LLC Works (Karaganda yard),-7888458.51,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P7-0009,P7,2025-02-03,Juniper Building Services Partners (Kyzylorda station),10314274.31,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0009,P6,2025-02-04,Cascade Water Utility Works (Pavlodar block),-667823.42,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P3-0032,P3,2025-02-05,Eastgate Courier Partners (Atyrau terminal),-2846486.78,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0030,P10,2025-02-06,Hartley Supply Works,-1587631.97,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0060,P10,2025-02-06,Summit Telecom Group (Kostanay centre),625992.10,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P8-0005,P8,2025-02-06,Kyzylorda Drilling Personnel LLP,-2418663.27,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P3-0040,P3,2025-02-07,Eastgate Courier Partners Enterprise,-366905.32,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P10-0023,P10,2025-02-08,Bridgeport Waste Systems Ltd (Oskemen unit),-268827.27,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0030,P4,2025-02-08,Bridgeport Utility Co,-258858.22,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P6-0013,P6,2025-02-08,Glenwood Waste Systems Trust (Kyzylorda station),-373627.82,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P6-0052,P6,2025-02-08,Hartley Maintenance Partners,-6295425.94,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0022,P9,2025-02-09,Bridgeport Realty Inc Group (Karaganda yard),-7594649.55,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P5-0046,P5,2025-02-10,Ashford Tax Advisory Holdings Company,-9119061.31,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0030,P2,2025-02-11,Dunmore Uniforms Holdings,-1054367.22,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0039,P4,2025-02-11,Glenwood Water Works LLC (Atyrau terminal),2013671.07,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0016,P5,2025-02-11,Ural Turbine Works LLP,-1703882.44,capex,,borrower,0,,шаг 10: capex,1.00
+TXN-P6-0023,P6,2025-02-11,Foxridge Insurance Co (Zhezkazgan compound),-4274468.38,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0053,P10,2025-02-12,Juniper Landscaping LLC (Zhezkazgan compound),-2801359.37,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P2-0008,P2,2025-02-12,Bridgeport Tax Advisory Services Supply,-351195.46,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0042,B1,2025-02-13,Kingsley Power Holdings,-221738.10,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0051,P5,2025-02-14,Eastgate Facilities Trust (Taraz site),-1072861.80,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0036,P6,2025-02-14,Hartley Printing Co,-1119866.56,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P9-0021,P9,2025-02-14,Bridgeport Uniforms Trust Works,-673095.49,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0031,B1,2025-02-15,Juniper Payroll Associates (Shymkent depot),-1463827.85,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0024,P8,2025-02-15,Granger Utilities Holding,-5908411.58,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P10-0013,P10,2025-02-16,Ironwood Stationery Solutions JSC (Kyzylorda station),-3277880.53,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0037,P2,2025-02-16,Trident Power Cooperative (Taraz site),5814535.19,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P3-0007,P3,2025-02-16,Eastgate Utility LLC (Semey base),-3024115.38,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P10-0011,P10,2025-02-17,Eurasia Insurance Company JSC,-248663.19,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P7-0024,P7,2025-02-17,Kingsley Power Holdings (Pavlodar block),7470397.90,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0039,P9,2025-02-17,Eastgate Stationery LLC (Karaganda yard),-437402.03,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P9-0049,P9,2025-02-17,Foxridge Maintenance Holdings (Atyrau terminal),-4128626.07,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P1-0041,P1,2025-02-18,Hartley Catering LP (Kostanay centre),-315103.30,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B1-0022,B1,2025-02-19,Foxridge Facilities Solutions,832732.80,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0028,P2,2025-02-19,Development Bank of Kazakhstan JSC,4882117.46,financing_inflow,,borrower,0,,шаг 10: financing_inflow,1.00
+TXN-P4-0034,P4,2025-02-19,Ironwood Office Supplies Group,-507883.52,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P5-0019,P5,2025-02-19,Hartley Courier Corp,-377075.55,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P6-0053,P6,2025-02-19,Crown City Water Board (Astana branch),-6391398.14,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P8-0002,P8,2025-02-19,Ashford Utility Corp (Aktobe hub),-472953.75,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B1-0002,B1,2025-02-20,Initech Software Licenses,7123935.64,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0027,P6,2025-02-20,Glenwood Catering Group (Semey base),-7193523.88,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0031,P9,2025-02-20,Glenwood Janitorial LP,-7227726.32,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P5-0003,P5,2025-02-22,Ironwood Printing Ltd,-3604100.77,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0016,P9,2025-02-22,Bridgeport Insurance Partners Works,-1187685.09,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P5-0043,P5,2025-02-24,Glenwood Insurance Ltd Ltd,-10114207.63,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P6-0022,P6,2025-02-24,Ural Grinding Works LLP,-1482663.28,capex,,borrower,0,,шаг 10: capex,1.00
+TXN-B1-0011,B1,2025-02-25,Cedarville Leasing (Kostanay centre),1888842.15,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0037,P10,2025-02-25,Juniper Property Services Group,-301167.04,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0056,P2,2025-02-25,Cedarville Waste Systems Inc (Atyrau terminal),485636.32,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0025,P7,2025-02-26,Juniper Payroll Associates,647074.31,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P1-0025,P1,2025-02-27,Harborview Properties (Turkistan point),-214382.05,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0050,P1,2025-02-27,Bridgeport Water Works LP,-10611759.48,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-B1-0006,B1,2025-02-28,Eastgate Cleaning Corp Enterprise,-2819887.45,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0040,B1,2025-02-28,Ironwood Supply Associates (Turkistan point),-274731.84,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B4-0004,B4,2025-03-01,Bridgeport Uniforms Trust (Kostanay centre),-6446696.54,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0022,B4,2025-03-01,Vanguard Payroll Co (Pavlodar block),-7223836.57,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B4-0029,B4,2025-03-01,Dunmore Waste Systems LLC Works (Zhezkazgan compound),177288.48,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B4-0036,B4,2025-03-01,Hartley Courier Corp Ltd,-8526280.28,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0057,B4,2025-03-01,Juniper Office Supplies LP (Semey base),-400286.74,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P8-0050,P8,2025-03-02,Bridgeport Facilities LLC (Kostanay centre),-6295087.15,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0021,B1,2025-03-03,Eastgate Office Supplies Solutions (Uralsk annex),-1292105.71,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0041,B1,2025-03-03,Ironwood Realty Services (Karaganda yard),-544568.74,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0052,P1,2025-03-03,Bridgeport Courier Solutions (Astana branch),-379368.05,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0036,B1,2025-03-04,Glenwood Consulting Inc,275823.54,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0036,P4,2025-03-04,Dunmore Janitorial Services Service Centre,-476301.74,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0003,P6,2025-03-04,Hartley Power Associates,-495164.18,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P7-0028,P7,2025-03-04,Eastgate Facilities Trust Ltd,-515506.87,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P1-0014,P1,2025-03-05,Aktau Terminal Properties LLP,-918443.27,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0034,P7,2025-03-05,Juniper Cleaning (Taraz site),-275069.81,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P2-0021,P2,2025-03-06,Ironwood Stationery Solutions (Uralsk annex),-11913971.27,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0007,P4,2025-03-06,Ashford Property Co (Almaty office),2325457.12,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P6-0004,P6,2025-03-06,Taraz Cement Personnel LLP,-1482663.19,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P7-0055,P7,2025-03-06,Dunmore Courier Services LLP,-2773434.34,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P3-0051,P3,2025-03-07,Bridgeport Janitorial Solutions (Aktobe hub),-10938732.68,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P5-0022,P5,2025-03-07,Statewide Tax Authority (Semey base),13837909.93,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0001,B1,2025-03-08,Bridgeport Property Ltd Service Centre,1656712.15,revenue,,borrower,0,,шаг 10: revenue,1.00
+TXN-P1-0028,P1,2025-03-08,Eastgate Utility LLC Group,3575522.74,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P1-0047,P1,2025-03-08,Ironwood Stationery Solutions Trading House,-2697744.03,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P2-0055,P2,2025-03-08,Bridgeport Office Supplies,7382549.74,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0035,P3,2025-03-09,Foxridge Supply Inc Enterprise,-193979.88,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P2-0002,P2,2025-03-10,Bridgeport Security Associates Enterprise,-421881.82,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P8-0038,P8,2025-03-11,Ironwood Payroll (Almaty office),3505589.65,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0021,P10,2025-03-12,Saryarka Terminal Properties LLP,-1204663.28,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P1-0022,P1,2025-03-13,Juniper Printing Inc Supply (Turkistan point),-593594.68,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B1-0017,B1,2025-03-14,Juniper Power Solutions,4465117.37,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0011,B4,2025-03-14,Eastgate Consulting Co (Oskemen unit),-103731.12,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0038,P1,2025-03-14,Bridgeport Office Supplies (Uralsk annex),7831364.09,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P6-0012,P6,2025-03-14,Kingsley Insurance Associates Holding,-574236.97,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P7-0007,P7,2025-03-15,Lakeshore Insurance Brokers Company,-483665.07,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0020,P1,2025-03-17,Bridgeport Payroll Group (Almaty office),3066637.42,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P3-0002,P3,2025-03-18,Development Bank of Kazakhstan JSC,5442118.93,financing_inflow,,borrower,0,,шаг 10: financing_inflow,1.00
+TXN-P7-0048,P7,2025-03-18,Dunmore Insurance LP,-156386.63,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0053,P4,2025-03-19,Ural Conveyor Works LLP,-1652704.31,capex,,borrower,0,,шаг 10: capex,1.00
+TXN-P7-0040,P7,2025-03-19,Halcyon Facilities Group (Taraz site),1979183.84,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0030,B4,2025-03-20,Shymkent Fuel Distributors LLP,2048994.35,revenue,related,borrower,0,,шаг 10: revenue; связанная сторона (Shymkent Fuel Distributors LLP),1.00
+TXN-P2-0039,P2,2025-03-20,Cedarville Courier Holdings Supply,803966.93,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0047,P6,2025-03-20,Glenwood Catering Group (Turkistan point),124433.76,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P8-0020,P8,2025-03-21,Foxridge Realty Trust (Shymkent depot),1885336.06,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0013,B1,2025-03-22,Ashford Printing Solutions (Kyzylorda station),-438406.28,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0026,P6,2025-03-22,Maple Grove Telecom (Zhezkazgan compound),303758.54,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0042,P3,2025-03-23,Bridgeport Courier Solutions (Kostanay centre),-1150561.42,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0015,P4,2025-03-24,Oakmont Property Management,1113342.05,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P2-0022,P2,2025-03-25,Dunmore Tax Advisory Group JSC (Karaganda yard),2083129.43,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P8-0013,P8,2025-03-25,Bridgeport Uniforms Trust (Kostanay centre),3031930.94,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0031,P7,2025-03-27,Atyrau Pump Station Services LLP,-6418003.77,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-P1-0006,P1,2025-03-28,Cedarville Utility Ltd,3045764.68,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P5-0011,P5,2025-03-28,Ironwood Office Supplies Group (Kyzylorda station),-2275280.58,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P7-0002,P7,2025-03-31,Oakmont Property Management (Ekibastuz block B),3450194.70,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0059,P10,2025-04-01,Glenwood Janitorial LP (Oskemen unit),-7141284.38,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0008,P6,2025-04-01,Juniper Uniforms Co Company,168948.43,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P8-0023,P8,2025-04-01,Juniper Landscaping LLC Service Centre,1670416.50,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P2-0033,P2,2025-04-02,Eastgate Stationery LLC Enterprise,-2212134.41,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P9-0012,P9,2025-04-02,Kazakhmys Smelting JSC,8442118.53,revenue,,borrower,0,,шаг 10: revenue,1.00
+TXN-B4-0035,B4,2025-04-03,Eastgate Landscaping LP Works (Aktobe hub),-4095362.14,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P1-0049,P1,2025-04-03,Eastgate Power Inc (Atyrau terminal),336187.63,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P3-0039,P3,2025-04-04,Cedarville Utility Ltd Enterprise (Semey base),-421727.66,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0050,P4,2025-04-04,Kingsley Utility Services Supply,-256282.03,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P1-0034,P1,2025-04-05,Foxridge Catering Partners (Kostanay centre),-798220.24,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P9-0018,P9,2025-04-05,Trident Power Cooperative JSC (Karaganda yard),769698.08,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P1-0009,P1,2025-04-06,Juniper Telecom Inc Trading House (Karaganda yard),5085393.95,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P10-0001,P10,2025-04-06,Dunmore Stationery Inc (Zhezkazgan compound),9427346.24,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0018,P10,2025-04-06,Ashford Realty Ltd (Taraz site),-8250780.17,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P9-0014,P9,2025-04-06,Ironwood Janitorial Co Company,1658141.07,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0028,P9,2025-04-06,Hartley Consulting LLC,-1737553.39,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0054,P9,2025-04-06,Eastgate Security Holdings (Atyrau terminal),-5269798.67,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P1-0015,P1,2025-04-08,Ironwood Telecom Ltd,-1648814.64,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0042,P10,2025-04-08,Hartley Property Solutions (Uralsk annex),-7753648.35,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0003,P3,2025-04-08,Ashford Leasing Inc Service Centre (Semey base),-2169716.95,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P3-0055,P3,2025-04-08,Cedarville Power Co,-581776.66,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0054,P4,2025-04-08,Aktobe Elevator Services LLP,-4431662.19,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-P7-0038,P7,2025-04-08,Summit Telecom Group Company,-6898199.03,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P10-0020,P10,2025-04-09,Karaganda Terminal Personnel LLP,-1204118.53,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P10-0034,P10,2025-04-09,Ashford Utility Corp (Shymkent depot),-1089287.71,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0010,P4,2025-04-09,Hartley Landscaping Ltd,-5441959.99,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P1-0003,P1,2025-04-11,Ashford Supply Group Company,-237578.58,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P1-0054,P1,2025-04-11,Ironwood Insurance LLC (Semey base),-9798966.39,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B4-0044,B4,2025-04-12,Ashford Uniforms Associates,-1443998.23,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0024,P10,2025-04-12,Cedarville Waste Systems Inc Partners (Karaganda yard),-554670.12,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0036,P10,2025-04-12,Kingsley Tax Advisory,-14351927.14,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0035,P2,2025-04-12,Cedarville Landscaping Partners (Karaganda yard),-2241407.97,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0055,P4,2025-04-12,Glenwood Catering Group,-130150.18,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0008,P8,2025-04-12,Bridgeport Power Corp (Taraz site),-14664945.37,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0055,P8,2025-04-12,Juniper Logistics Solutions JSC (Karaganda yard),-412328.26,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0013,P9,2025-04-14,Foxridge Cleaning Co (Taraz site),1159582.85,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0055,P1,2025-04-15,Ashford Supply Group Company,-9623763.90,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0041,P6,2025-04-16,Taraz Kiln Services LLP,-4204663.19,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-B1-0007,B1,2025-04-17,Glenwood Security Partners Group (Atyrau terminal),-4274240.02,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0023,P1,2025-04-18,Bridgeport Consulting Group (Kostanay centre),-16437674.68,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B1-0018,B1,2025-04-19,Hartley Catering LP Supply,-1832832.89,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0014,P6,2025-04-19,Hartley Supply Service Centre (Atyrau terminal),-322203.44,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0019,P7,2025-04-20,Riverside Realty Trust,-250594.53,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0010,P7,2025-04-21,State Revenue Committee,-402118.64,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P9-0024,P9,2025-04-22,Bridgeport Building Services Inc,-2416937.23,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P2-0036,P2,2025-04-23,Ural Refrigeration Works LLP,-3204881.55,capex,,borrower,0,,шаг 10: capex,1.00
+TXN-P10-0040,P10,2025-04-24,Cedarville Landscaping Partners (Kostanay centre),-9073805.60,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0053,P2,2025-04-25,Juniper Property Services (Taraz site),2003454.47,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0017,B4,2025-04-26,Hartley Consulting LLC (Taraz site),-208965.57,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0021,P8,2025-04-26,Cedarville Cleaning Group,-656000.44,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0047,B1,2025-04-27,Juniper Cleaning (Semey base),-13167834.89,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0019,P4,2025-04-28,Foxridge Cleaning Co (Zhezkazgan compound),-1200898.70,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P5-0006,P5,2025-04-28,Cedarville Printing Services Partners,-588857.22,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P8-0006,P8,2025-04-29,Globex Telecom (Kostanay centre),-14750061.50,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P8-0028,P8,2025-04-29,Ashford Cleaning Services (Aktobe hub),-2203370.15,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P1-0035,P1,2025-04-30,Bridgeport Telecom Holdings,2149964.79,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P10-0035,P10,2025-04-30,Sterling Office Solutions Supply,-6013823.74,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P7-0027,P7,2025-04-30,Bridgeport Office Supplies (Almaty office),-8988242.94,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P8-0017,P8,2025-04-30,Hartley Printing Co (Ekibastuz block B),-2389464.20,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0025,P10,2025-05-01,Cedarville Leasing Enterprise,-471290.81,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0006,P7,2025-05-01,Eastgate Leasing Trust Partners (Taraz site),350168.96,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P9-0007,P9,2025-05-01,Cedarville Maintenance Associates Company,-1560142.52,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0029,B1,2025-05-02,Ironwood Property Holdings Enterprise,-1083896.21,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P10-0029,P10,2025-05-02,Glenwood Facilities Holdings (Pavlodar block),2226006.45,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P7-0046,P7,2025-05-02,Glenwood Property Trust (Kostanay centre),7530287.69,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0025,P2,2025-05-03,Glenwood Office Supplies Services (Uralsk annex),-2709060.20,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0033,P4,2025-05-03,Ashford Consulting Partners Company,-534014.43,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B4-0038,B4,2025-05-04,Cedarville Supply Corp (Pavlodar block),-140831.96,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P9-0038,P9,2025-05-04,Cedarville Insurance Group JSC,-12010518.44,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-B4-0003,B4,2025-05-05,Foxridge Waste Systems Associates Ltd,753049.60,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0006,P4,2025-05-06,Glenwood Catering Group (Oskemen unit),-2162141.22,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0040,P4,2025-05-06,Eastgate Realty Associates Works (Almaty office),8624275.06,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P7-0041,P7,2025-05-06,Stalwart Mutual Insurance Trading House,-1088379.48,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P3-0024,P3,2025-05-07,Rheinland Katalyse Service GmbH,-710945.73,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-P6-0019,P6,2025-05-07,Ashford Realty Ltd (Shymkent depot),1508915.83,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P10-0055,P10,2025-05-08,Karaganda Distribution Group JSC,7204882.16,revenue,,borrower,0,,шаг 10: revenue,1.00
+TXN-P9-0055,P9,2025-05-08,Dunmore Stationery Inc Supply (Oskemen unit),1579816.38,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0033,P3,2025-05-09,Initech Software Licenses (Zhezkazgan compound),10156687.58,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0006,P6,2025-05-11,Foxridge Telecom LP Holding (Ekibastuz block B),-5793220.79,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0020,B1,2025-05-12,Irtysh Advisory Bureau,-592296.10,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-P4-0041,P4,2025-05-12,Ashford Waste Systems Co Service Centre,-282672.77,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-B4-0021,B4,2025-05-14,Atyrau Pipeline Engineering LLP,-1527726.21,capex,,borrower,0,,шаг 10: capex,1.00
+TXN-P8-0015,P8,2025-05-14,KazMunayGas Exploration JSC,7884663.19,revenue,,borrower,0,,шаг 10: revenue,1.00
+TXN-P3-0005,P3,2025-05-15,Juniper Supply Trust (Zhezkazgan compound),-383631.48,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P10-0049,P10,2025-05-16,Juniper Logistics Solutions (Astana branch),-6085007.92,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0028,B4,2025-05-17,Foxridge Payroll Ltd Group (Shymkent depot),-209971.26,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0008,B1,2025-05-20,Dunmore Janitorial Services Works,-543539.55,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0010,P1,2025-05-21,Ural Crane Works LLP,-1842006.44,capex,,borrower,0,,шаг 10: capex,1.00
+TXN-P6-0049,P6,2025-05-22,Hartley Courier Corp Works,-378905.34,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P7-0051,P7,2025-05-22,Dunmore Power Ltd (Oskemen unit),12945088.83,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P3-0052,P3,2025-05-23,Cedarville Uniforms Solutions Ltd,-228635.30,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0047,P5,2025-05-23,Juniper Logistics Solutions (Kostanay centre),-5592558.22,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P9-0001,P9,2025-05-23,Juniper Cleaning (Turkistan point),-4862428.02,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P2-0052,P2,2025-05-24,Dunmore Utility Inc (Zhezkazgan compound),-11545820.91,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B4-0006,B4,2025-05-25,Juniper Realty Partners (Atyrau terminal),-337734.89,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P8-0014,P8,2025-05-25,Bridgeport Payroll Group Company,-600603.54,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P10-0057,P10,2025-05-26,Ironwood Security LP (Shymkent depot),-5446990.56,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0046,P3,2025-05-26,Ironwood Insurance LLC,2729387.09,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P5-0031,P5,2025-05-27,Pavlodar Plant Services LLP,-5902447.13,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-P9-0048,P9,2025-05-27,Bridgeport Telecom Holdings JSC (Kostanay centre),-2310249.16,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P2-0010,P2,2025-05-30,Foxridge Security Services (Kyzylorda station),-2085018.52,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P5-0023,P5,2025-05-31,Cedarville Facilities LLP,-1138417.23,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0015,P6,2025-05-31,Ashford Janitorial Trust (Almaty office),-412793.66,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0030,P6,2025-05-31,Glenwood Courier LP JSC (Atyrau terminal),-462362.61,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0044,P9,2025-05-31,City Power & Light (Astana branch),-3688611.83,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0005,B1,2025-06-01,Foxridge Supply Inc,-791398.17,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0033,P1,2025-06-01,Ironwood Waste Systems Holdings (Pavlodar block),-367648.64,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P5-0030,P5,2025-06-01,Glenwood Realty Solutions Enterprise,1813871.42,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0026,P3,2025-06-02,Cedarville Leasing (Karaganda yard),-1755396.91,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0025,P4,2025-06-02,Ilek Restoration Works LLP,-481247.63,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-P6-0011,P6,2025-06-03,Bridgeport Leasing LLC,-6874501.52,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0055,P6,2025-06-03,Ironwood Maintenance Group Holding,969224.15,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0017,P10,2025-06-04,Tengiz Risk Engineering Bureau,-142118.64,insurance,,borrower,0,,шаг 10: opex; переклассифицировано аудитором п.7.1: opex → insurance,1.00
+TXN-P1-0021,P1,2025-06-06,Kingsley Property Partners,-715630.22,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P4-0045,P4,2025-06-06,Dunmore Courier Services JSC,-1391968.36,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0001,P6,2025-06-06,Fairfield Leasing Partners Ltd (Kyzylorda station),-228711.35,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P9-0032,P9,2025-06-06,Bridgeport Janitorial Solutions (Karaganda yard),6150985.43,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P10-0031,P10,2025-06-07,Glenwood Power,-6519514.97,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0014,P5,2025-06-07,Ashford Maintenance LLC (Zhezkazgan compound),235761.83,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P1-0024,P1,2025-06-08,Cedarville Payroll LP Enterprise (Turkistan point),-360127.31,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0039,P6,2025-06-08,Foxridge Insurance Co,-7250114.44,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0005,B4,2025-06-09,Foxridge Cleaning Co,-2649671.17,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P2-0054,P2,2025-06-09,Hartley Power Associates Company,-248898.41,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P8-0048,P8,2025-06-10,Ashford Tax Advisory Holdings (Almaty office),-337300.48,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0049,P8,2025-06-10,Juniper Telecom Inc (Karaganda yard),447798.93,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0037,B1,2025-06-11,Ashford Insurance Services,-4540095.35,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0003,P10,2025-06-11,Hartley Realty Holdings Company,102465.77,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0032,P7,2025-06-11,KazTransOil Trunk Systems JSC,9146882.53,revenue,,borrower,0,,шаг 10: revenue,1.00
+TXN-P3-0014,P3,2025-06-13,Hartley Utility Trust (Aktobe hub),-786416.28,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B4-0047,B4,2025-06-14,Foxridge Insurance Co (Zhezkazgan compound),-7575422.84,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0036,P1,2025-06-14,Glenwood Facilities Holdings Works (Karaganda yard),-428818.65,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0004,P9,2025-06-14,Foxridge Waste Systems Associates (Atyrau terminal),-1171613.50,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P2-0014,P2,2025-06-15,Eastgate Office Supplies Solutions,-2708057.37,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P5-0005,P5,2025-06-15,Ashford Tax Advisory Holdings Company,-492990.46,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P2-0023,P2,2025-06-16,Fairfield Leasing Partners (Uralsk annex),-211784.77,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P3-0029,P3,2025-06-16,Cedarville Leasing (Karaganda yard),-3728972.76,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0016,B1,2025-06-17,Foxridge Cleaning Co (Almaty office),-1950365.39,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0042,P1,2025-06-17,Mangystau Berth Services LLP,-3104882.61,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-B4-0046,B4,2025-06-18,Juniper Payroll Associates JSC,-1891463.60,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P10-0056,P10,2025-06-18,Ironwood Stationery Solutions,-4902905.23,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0044,B1,2025-06-19,Ashford Power LP (Shymkent depot),208288.37,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B4-0049,B4,2025-06-19,Cedarville Office Supplies Associates (Oskemen unit),4266048.26,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P5-0017,P5,2025-06-20,Cedarville Waste Systems Inc,-1820587.83,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0004,P4,2025-06-21,Bridgeport Power Corp Trading House,-386521.16,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0029,P7,2025-06-21,Initech Software Licenses Company (Astana branch),-783998.76,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0035,B1,2025-06-24,Bridgeport Tax Advisory Services Works,-9975348.37,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P3-0028,P3,2025-06-24,Shymkent Plant Services LLP,-4218006.51,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-P5-0034,P5,2025-06-24,Beacon Tax Advisors (Aktobe hub),-1583057.76,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B4-0015,B4,2025-06-25,Shymkent Fuel Distributors LLP,1943580.97,revenue,related,borrower,0,,шаг 10: revenue; связанная сторона (Shymkent Fuel Distributors LLP),1.00
+TXN-P1-0044,P1,2025-06-25,Fairfield Leasing Partners,-5732393.39,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P3-0020,P3,2025-06-25,Foxridge Payroll Ltd (Pavlodar block),1625020.42,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P3-0050,P3,2025-06-25,Hartley Consulting LLC (Semey base),-2189408.24,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0035,P9,2025-06-26,Ural Haul Systems LLP,-1204663.28,capex,,borrower,0,,шаг 10: capex,1.00
+TXN-P3-0016,P3,2025-06-27,Eastgate Catering Services Enterprise (Kostanay centre),1644942.02,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0022,P4,2025-06-27,Bridgeport Building Services Inc Holding,-13147917.01,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P2-0032,P2,2025-06-28,Dunmore Janitorial Services,-418971.20,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P2-0046,P2,2025-06-28,Capital Stationers (Astana branch),617744.38,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P10-0005,P10,2025-06-29,Dunmore Consulting Corp (Turkistan point),171985.87,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P3-0017,P3,2025-06-29,Ironwood Payroll Trading House (Almaty office),-2596172.03,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B1-0023,B1,2025-06-30,Pavlodar Plant Services LLP,-6166592.66,opex,,borrower,0,,шаг 10: opex,1.00
+TXN-B1-0045,B1,2025-06-30,Eastgate Property Service Centre,1941069.25,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0009,P2,2025-06-30,Almaty Chill Logistics LLP,-5918004.37,opex,,borrower,0,,шаг 10: opex,0.95
+TXN-P2-0038,P2,2025-06-30,Eastgate Office Supplies Solutions,1406628.57,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P4-0024,P4,2025-06-30,Ashford Maintenance LLC Service Centre,-329065.77,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0058,P10,2025-07-01,Dunmore Utility Inc Group,-353541.29,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0036,P9,2025-07-01,Hartley Consulting LLC,-3066892.61,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P1-0056,P1,2025-07-02,Dunmore Insurance LP (Astana branch),-6407989.14,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0011,P3,2025-07-03,Bridgeport Payroll Group,-4276964.85,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0003,P4,2025-07-03,Ironwood Consulting,-1197501.59,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P6-0031,P6,2025-07-03,Zhambyl Construction Supply JSC,6918204.37,revenue,,borrower,0,,шаг 10: revenue,0.95
+TXN-B4-0051,B4,2025-07-04,Dunmore Printing Partners (Ekibastuz block B),-10662291.32,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P4-0035,P4,2025-07-04,Dunmore Realty (Uralsk annex),9095881.90,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0002,B4,2025-07-05,Glenwood Power (Almaty office),-10554084.92,lease,,borrower,0,,шаг 10: lease,0.95
+TXN-P10-0045,P10,2025-07-05,Ashford Power LP (Turkistan point),-1692135.44,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0018,P5,2025-07-05,Kingsley Tax Advisory Service Centre,-481847.14,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P9-0019,P9,2025-07-07,Eastgate Payroll Co (Turkistan point),-2546037.24,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0009,B4,2025-07-08,Kazyna Capital LLP,-303949.09,opex,related,borrower,0,,шаг 10: opex; связанная сторона (Kazyna Capital LLP.),0.90
+TXN-P4-0008,P4,2025-07-08,Riverside Realty Trust (Aktobe hub),-1089098.65,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P5-0001,P5,2025-07-08,Dunmore Maintenance Trust (Ekibastuz block B),-168229.01,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P1-0031,P1,2025-07-09,Aktau Holdings L.L.P.,-283664.18,opex,related,borrower,0,,шаг 10: opex; связанная сторона (Aktau Holdings LLP),0.90
+TXN-P5-0027,P5,2025-07-12,Glenwood Water Works LLC (Aktobe hub),-473767.96,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P6-0035,P6,2025-07-14,Foxridge Telecom LP (Turkistan point),-659026.99,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0033,B1,2025-07-15,Halyk Bank of Kazakhstan JSC,-1540833.29,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-B4-0037,B4,2025-07-15,Hartley Tax Advisory Ltd,-3884663.27,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P2-0040,P2,2025-07-15,Tien Shan Advisory Bureau,-1104663.28,opex,,borrower,0,,шаг 10: opex; переклассифицировано аудитором п.9.1: opex → opex,0.90
+TXN-P3-0031,P3,2025-07-15,Cedarville Water Works Corp (Pavlodar block),-8490398.35,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0025,B1,2025-07-16,Kingsley Insurance Associates (Aktobe hub),7126963.03,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0048,P1,2025-07-17,Hartley Building Services Holdings (Turkistan point),-6335501.35,taxes,,borrower,0,,шаг 10: taxes,0.95
+TXN-P4-0009,P4,2025-07-17,Bridgeport Water Works LP (Pavlodar block),-1450062.90,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0004,P7,2025-07-19,Glenwood Stationery Associates (Shymkent depot),-194993.73,lease,,borrower,0,,шаг 10: lease,0.95
+TXN-P9-0040,P9,2025-07-19,Ulytau Capital LLP,-268447.19,opex,related,borrower,0,,шаг 10: opex; связанная сторона (Ulytau Capital LLP.),0.90
+TXN-P9-0052,P9,2025-07-19,Ashford Tax Advisory Holdings Trading House (Ekibastuz block B),-2020740.39,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0045,P5,2025-07-21,Ironwood Realty Services (Uralsk annex),-253926.10,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0006,P9,2025-07-21,Ashford Facilities Inc Group,-995146.56,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0009,P9,2025-07-21,Juniper Janitorial Ltd Company,-4454367.27,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0047,P9,2025-07-21,Eastgate Security Holdings,-2950277.64,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0051,P10,2025-07-22,Bridgeport Waste Systems Ltd LLP,-1931018.29,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0001,P4,2025-07-22,Zhaiyk Dredging LLP,-251338.94,opex,,borrower,0,,шаг 10: opex,0.90
+TXN-P4-0027,P4,2025-07-22,Ashford Facilities Inc (Ekibastuz block B),-175317.45,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P2-0024,P2,2025-07-23,Glenwood Stationery Associates,-2530653.81,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P9-0050,P9,2025-07-24,Hartley Realty Holdings Partners,-5200652.58,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P2-0011,P2,2025-07-26,Bridgeport Maintenance,-10753717.14,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0011,P7,2025-07-26,Ironwood Realty Services Holding,-209806.28,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P7-0052,P7,2025-07-26,Juniper Property Services (Astana branch),480144.23,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P5-0015,P5,2025-07-27,Juniper Telecom Inc (Turkistan point),-739003.21,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P5-0038,P5,2025-07-27,Ashford Tax Advisory Holdings Company,2115841.63,revenue,,borrower,0,,шаг 10: revenue,1.00
+TXN-P8-0040,P8,2025-07-27,Juniper Landscaping LLC,-819861.31,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0053,P1,2025-07-28,Glenwood Utility Associates,-2554455.78,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P2-0045,P2,2025-07-28,Eastgate Landscaping LP Works,-296053.42,taxes,,borrower,0,,шаг 10: taxes,0.95
+TXN-P7-0056,P7,2025-07-28,Ashford Printing Solutions Service Centre,-422679.64,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-B1-0038,B1,2025-07-29,Foxridge Property Associates (Kyzylorda station),1364584.65,taxes,,borrower,0,,шаг 10: taxes,0.95
+TXN-P6-0024,P6,2025-07-29,Ironwood Courier Co (Uralsk annex),-5904723.65,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0038,P6,2025-07-29,Glenwood Security Partners,-414120.52,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0054,P6,2025-07-29,Eastgate Janitorial Partners (Uralsk annex),1516332.49,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P6-0042,P6,2025-07-30,Cedarville Utility Ltd (Astana branch),-16213615.60,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0030,P8,2025-07-30,Ural Rig Manufacturing LLP,-1918204.36,capex,,borrower,0,,шаг 10: capex,0.95
+TXN-B4-0013,B4,2025-07-31,Hartley Utility Trust (Almaty office),-4256600.29,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0038,P3,2025-08-01,Eastgate Landscaping LP,-4413158.15,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P6-0037,P6,2025-08-01,Hartley Power Associates (Aktobe hub),-630356.25,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0057,P4,2025-08-02,Foxridge Janitorial Group Company,-451994.51,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0010,B1,2025-08-03,Eastgate Payroll Co JSC,-1411145.48,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0044,P4,2025-08-04,Hartley Facilities Services,-173405.98,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0012,P5,2025-08-04,Cedarville Property Inc (Kostanay centre),493698.57,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B1-0053,B1,2025-08-05,Eastgate Utility LLC,2448170.56,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B4-0041,B4,2025-08-05,Foxridge Payroll Ltd (Pavlodar block),-2884401.48,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P3-0001,P3,2025-08-05,Turan Capital LLP,-264117.82,opex,related,borrower,0,,"шаг 10: opex; связанная сторона (""Turan Capital"" LLP)",0.90
+TXN-P7-0001,P7,2025-08-05,Eastgate Catering Services Works,2044034.58,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B4-0025,B4,2025-08-06,Crown City Water Board (Astana branch),-957136.92,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0040,B4,2025-08-06,Juniper Printing Inc,-452734.56,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0047,P7,2025-08-06,Atyrau Energy Supply JSC,-91447.35,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P9-0037,P9,2025-08-06,Bridgeport Stationery Co (Atyrau terminal),-813144.97,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P9-0053,P9,2025-08-06,Ironwood Building Services Services (Uralsk annex),-5905387.59,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0022,P8,2025-08-07,Capital Stationers Enterprise,1336879.34,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P8-0045,P8,2025-08-07,Ashford Courier Trust (Aktobe hub),1763809.47,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P7-0045,P7,2025-08-08,Foxridge Consulting Ltd (Astana branch),-2500083.92,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B1-0052,B1,2025-08-09,Ashford Cleaning Services Partners,317985.30,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P1-0040,P1,2025-08-09,Hartley Building Services Holdings (Turkistan point),-4159259.63,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P2-0027,P2,2025-08-10,Bridgeport Building Services Inc Partners,-3128248.17,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0045,P1,2025-08-12,Kaspi Marine Engineering LLP,-612884.19,opex,,borrower,1,"аудитор, п.7.1: Операция TXN-P1-0045 относится к услугам, оказанным в период с 2026-01-15 по 2026-03-20 (первый квартал 2026 года).",шаг 10: opex,0.90
+TXN-B1-0009,B1,2025-08-13,Hartley Logistics Associates (Shymkent depot),-777155.65,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P9-0045,P9,2025-08-13,Blue Ridge Payroll Services,-123507.23,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B4-0052,B4,2025-08-15,Ironwood Tax Advisory Inc (Aktobe hub),623285.69,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P3-0054,P3,2025-08-16,Juniper Logistics Solutions (Ekibastuz block B),-5578735.29,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0029,P6,2025-08-16,Beacon Tax Advisors (Semey base),-295096.87,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0026,P4,2025-08-17,Hartley Power Associates LLP,-712038.74,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B4-0031,B4,2025-08-19,Cedarville Courier Holdings (Shymkent depot),6432115.08,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P2-0004,P2,2025-08-19,Juniper Supply Trust Service Centre,-364089.30,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P2-0047,P2,2025-08-19,Juniper Uniforms Co,-434092.69,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0049,P4,2025-08-19,Ironwood Waste Systems Holdings Company,-6859157.98,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P5-0013,P5,2025-08-19,KEGOC Grid Operations JSC,8214663.28,revenue,,borrower,0,,шаг 10: revenue,0.95
+TXN-P6-0028,P6,2025-08-19,Pioneer Payroll Bureau,-477669.52,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B1-0030,B1,2025-08-20,Ertis Capital LLP,-307018.08,opex,related,borrower,0,,"шаг 10: opex; связанная сторона (Ertis Capital, LLP)",0.90
+TXN-P10-0064,P10,2025-08-21,Karaganda Energy Supply JSC,-418204.37,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P5-0053,P5,2025-08-21,Ironwood Waste Systems Holdings (Turkistan point),-2474305.62,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0054,P7,2025-08-21,Juniper Consulting Associates Trading House,530231.33,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0019,P1,2025-08-22,Ironwood Catering Corp (Karaganda yard),-2010790.30,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P3-0043,P3,2025-08-22,Statewide Tax Authority,1999985.81,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P8-0041,P8,2025-08-22,Kingsley Utility Services Works,-550568.07,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P8-0053,P8,2025-08-23,Granger Utilities Holding Partners,-980969.76,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0039,P10,2025-08-24,Dunmore Office Supplies Trust (Kostanay centre),1290329.01,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P10-0050,P10,2025-08-24,Bridgeport Payroll Group (Aktobe hub),-13084947.11,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0013,P7,2025-08-26,Dunmore Janitorial Services (Pavlodar block),-1944353.79,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0002,P9,2025-08-26,Cedarville Landscaping Partners,-152206.60,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0003,B1,2025-08-27,Juniper Printing Inc Ltd (Pavlodar block),-674063.75,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P2-0012,P2,2025-08-27,Zhetysu Capital Partners LLP,-271884.36,opex,related,borrower,0,,шаг 10: opex; связанная сторона (Zhetysu Capital Partners LLP),0.90
+TXN-P5-0029,P5,2025-08-27,Eastgate Waste Systems Group (Uralsk annex),8829255.05,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0051,P6,2025-08-27,Foxridge Payroll Ltd (Karaganda yard),-14699557.16,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P7-0053,P7,2025-08-27,Cedarville Tax Advisory Partners Enterprise (Karaganda yard),-2187384.84,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-B1-0051,B1,2025-08-28,Ashford Waste Systems Co,4465315.58,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P5-0050,P5,2025-08-28,Hartley Stationery Trust,-2871464.98,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P4-0047,P4,2025-08-29,Ironwood Payroll,1186007.46,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0010,B4,2025-08-30,Ashford Realty Ltd Enterprise (Ekibastuz block B),-1067182.83,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0055,B4,2025-08-30,Juniper Consulting Associates (Oskemen unit),-6987897.37,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P4-0051,P4,2025-08-31,Eastgate Catering Services (Uralsk annex),103086.37,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0046,P1,2025-09-02,Hartley Maintenance Partners (Atyrau terminal),3054795.52,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P10-0048,P10,2025-09-02,Glenwood Telecom Corp Ltd,1427380.72,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P4-0023,P4,2025-09-03,Aral Freight Arbitration Bureau,-342905.28,opex,,borrower,0,,шаг 10: opex,0.90
+TXN-P2-0042,P2,2025-09-06,Ashford Stationery Corp (Kyzylorda station),411214.48,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P1-0013,P1,2025-09-07,Ironwood Printing Ltd (Almaty office),-986275.52,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0046,P4,2025-09-07,Dunmore Waste Systems LLC (Taraz site),-9371640.53,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P2-0043,P2,2025-09-08,Hartley Payroll LLC,-2065898.10,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P3-0009,P3,2025-09-08,Foxridge Tax Advisory Corp Partners (Karaganda yard),-6836857.12,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P7-0015,P7,2025-09-08,Ironwood Office Supplies Group (Ekibastuz block B),-9689150.70,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P9-0025,P9,2025-09-08,Zhezkazgan Processing Holdings LLP,-418204.37,capex,,borrower,0,,шаг 10: capex,0.90
+TXN-P9-0042,P9,2025-09-08,Eastgate Property Works,-5971062.37,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P7-0021,P7,2025-09-09,Hartley Water Works Company (Almaty office),-959841.63,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P8-0003,P8,2025-09-09,Kingsley Utility Services Works,-7531552.68,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0011,P8,2025-09-09,Ashford Leasing Inc,-13795865.18,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0032,B1,2025-09-10,Hartley Catering LP Supply,-7683788.65,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0018,B4,2025-09-10,Dunmore Landscaping Group,-2434137.65,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0016,P1,2025-09-10,Dunmore Realty,-5004933.43,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P9-0003,P9,2025-09-10,Acme Office Supplies,-11973391.14,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0010,P3,2025-09-11,KazMunayGas Refining JSC,8104772.36,revenue,,borrower,0,,шаг 10: revenue,0.95
+TXN-P7-0020,P7,2025-09-12,Ironwood Courier Co,4981367.79,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P8-0054,P8,2025-09-13,Juniper Landscaping LLC Service Centre,834559.44,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0014,P4,2025-09-14,Glenwood Consulting Inc (Almaty office),-399050.15,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P10-0063,P10,2025-09-15,State Revenue Committee,-882447.19,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B1-0012,B1,2025-09-16,Ironwood Maintenance Group,-421686.32,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0024,B4,2025-09-16,Dunmore Security Solutions Partners (Almaty office),1801311.03,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P6-0056,P6,2025-09-16,Eastgate Supply Ltd (Almaty office),-192438.20,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0034,B4,2025-09-17,Foxridge Insurance Co Holding (Taraz site),-822556.55,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0016,P8,2025-09-17,Syrdarya Capital Holding LLP,-342118.65,opex,related,borrower,0,,"шаг 10: opex; связанная сторона (Syrdarya Capital Holding, LLP)",0.90
+TXN-B4-0033,B4,2025-09-18,Glenwood Water Works LLC Supply (Zhezkazgan compound),-9899396.01,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B4-0050,B4,2025-09-19,Ironwood Uniforms Corp,-462194.83,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P2-0031,P2,2025-09-19,Bridgeport Cleaning Partners,-6057047.46,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P5-0052,P5,2025-09-19,Ashford Landscaping Holdings Enterprise,163904.34,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P9-0026,P9,2025-09-19,Ironwood Uniforms Corp Service Centre (Karaganda yard),-936660.21,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0018,P6,2025-09-20,Dunmore Utility Inc Enterprise,-1140952.33,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-B4-0054,B4,2025-09-21,Juniper Cleaning (Ekibastuz block B),-792090.02,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0037,P7,2025-09-21,Eastgate Building Services Associates (Taraz site),-1731446.13,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0056,B4,2025-09-22,Shymkent Fuel Distributors LLP,1946791.21,revenue,related,borrower,0,,шаг 10: revenue; связанная сторона (Shymkent Fuel Distributors LLP),0.95
+TXN-P3-0019,P3,2025-09-22,Hartley Insurance Inc JSC,-8962583.42,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P5-0002,P5,2025-09-22,Glenwood Realty Solutions Group,4581118.74,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B4-0019,B4,2025-09-23,Dunmore Security Solutions Partners (Almaty office),-2217144.91,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P2-0007,P2,2025-09-23,Ashford Tax Advisory Holdings Enterprise (Semey base),5043155.21,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P8-0026,P8,2025-09-23,Cedarville Courier Holdings Service Centre,-603369.52,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P3-0018,P3,2025-09-24,Cedarville Telecom Services (Ekibastuz block B),2503692.36,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0034,P6,2025-09-24,Glenwood Office Supplies Services (Oskemen unit),-780505.67,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B4-0048,B4,2025-09-25,Sentinel Insurance Group (Semey base),-940663.75,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P10-0052,P10,2025-09-25,Cedarville Security Trust Company (Uralsk annex),-12549219.99,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P7-0003,P7,2025-09-25,Kingsley Utility Services Enterprise,-2024164.80,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P9-0010,P9,2025-09-25,Trident Power Cooperative,-2364158.76,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-B4-0042,B4,2025-09-26,Dunmore Building Services (Atyrau terminal),10258572.62,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0030,P1,2025-09-26,Caspian Shipping Lines JSC,6842117.53,revenue,,borrower,0,,шаг 10: revenue,0.95
+TXN-P10-0046,P10,2025-09-26,Eastgate Consulting Co (Aktobe hub),-363633.55,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0020,P9,2025-09-26,Dunmore Telecom Partners Holding,-488762.10,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P9-0029,P9,2025-09-26,Eastgate Stationery LLC,1492367.61,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P3-0012,P3,2025-09-27,Sentinel Insurance Group,-211861.67,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P3-0047,P3,2025-09-28,Eastgate Building Services Associates (Shymkent depot),-8776423.17,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0009,P5,2025-09-28,Eastgate Consulting Co Holding,-5956057.98,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0005,P4,2025-09-29,Hartley Office Supplies Partners,10831373.90,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P5-0024,P5,2025-09-29,Ironwood Building Services Services Service Centre (Taraz site),624176.29,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P6-0017,P6,2025-09-29,Cedarville Leasing (Pavlodar block),-2350075.41,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P6-0040,P6,2025-09-29,Taraz Holding Group LLP,-418662.44,opex,related,borrower,0,,"шаг 10: opex; связанная сторона (""Taraz Holding Group"" LLP)",0.90
+TXN-B1-0026,B1,2025-09-30,KEGOC National Grid JSC,9741934.78,revenue,,borrower,0,,шаг 10: revenue,0.95
+TXN-P6-0007,P6,2025-09-30,Bridgeport Stationery Co (Kyzylorda station),-5978181.15,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P2-0020,P2,2025-10-01,Glenwood Tax Advisory Co,-7734227.11,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0023,P7,2025-10-01,Hartley Security Group,9251557.75,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P9-0041,P9,2025-10-01,Juniper Janitorial Ltd (Ekibastuz block B),-640514.24,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P4-0016,P4,2025-10-02,Foxridge Supply Inc LLP (Taraz site),-1401514.80,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P5-0004,P5,2025-10-02,Sarybel Capital LLP,-273418.66,opex,related,borrower,0,,шаг 10: opex; связанная сторона (Sarybel Capital LLP.),0.90
+TXN-P1-0017,P1,2025-10-03,Glenwood Leasing Holdings Ltd,577364.91,utilities,,borrower,0,,шаг 10: utilities,0.90
+TXN-P10-0043,P10,2025-10-03,Bridgeport Waste Systems Ltd LLP,-604362.55,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0044,P10,2025-10-03,Juniper Consulting Associates,4500123.14,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0044,P5,2025-10-03,Cedarville Stationery Ltd LLP (Aktobe hub),-471193.18,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P7-0050,P7,2025-10-03,Eastgate Supply Ltd Company,-12884795.90,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0027,P8,2025-10-03,Ashford Payroll Partners (Taraz site),-597868.57,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P3-0006,P3,2025-10-04,Eastgate Uniforms Services (Astana branch),5618786.64,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P6-0048,P6,2025-10-04,Harborview Properties (Aktobe hub),-2644884.35,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0032,P8,2025-10-04,Hartley Facilities Services Group (Oskemen unit),-12763690.64,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P2-0029,P2,2025-10-05,Trident Power Cooperative (Oskemen unit),-500159.90,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P4-0042,P4,2025-10-06,Ashford Security (Astana branch),-541385.27,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0042,P7,2025-10-06,Ironwood Tax Advisory Inc (Turkistan point),-324534.33,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P9-0005,P9,2025-10-06,Foxridge Consulting Ltd,-5473059.73,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0043,P9,2025-10-06,Foxridge Printing LP (Kostanay centre),-647893.84,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P10-0033,P10,2025-10-07,Juniper Realty Partners Supply,-4201250.31,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0020,P4,2025-10-07,Kingsley Payroll Trust (Uralsk annex),-3763541.02,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P8-0039,P8,2025-10-07,Glenwood Courier LP Group,-6590520.51,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0009,P10,2025-10-08,Ashford Catering Associates Company,-1678314.80,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P2-0034,P2,2025-10-08,Magnum Distribution JSC,7214663.82,revenue,,borrower,0,,шаг 10: revenue,0.95
+TXN-P4-0002,P4,2025-10-08,Eastgate Janitorial Partners (Taraz site),-429843.42,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0017,P4,2025-10-08,Bridgeport Tax Advisory Services (Aktobe hub),-1100235.57,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P2-0016,P2,2025-10-09,Sterling Office Solutions Partners (Uralsk annex),-1406217.85,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P7-0035,P7,2025-10-09,Atyrau Holding Group LLP,-291663.82,opex,related,borrower,0,,шаг 10: opex; связанная сторона (Atyrau Holding Group L.L.P.),0.90
+TXN-P8-0044,P8,2025-10-09,Cedarville Utility Ltd Company (Taraz site),-3012006.14,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P8-0046,P8,2025-10-09,Crown City Water Board (Semey base),-3457494.06,marketing,,borrower,0,,шаг 10: marketing,0.95
+TXN-P5-0021,P5,2025-10-10,Globex Telecom (Astana branch),3303750.35,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-B1-0050,B1,2025-10-11,Hartley Office Supplies Partners (Atyrau terminal),-8163734.77,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P3-0015,P3,2025-10-11,Cedarville Janitorial Holdings (Zhezkazgan compound),-214847.98,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0028,P5,2025-10-11,Eastgate Catering Services (Karaganda yard),-179362.30,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P3-0025,P3,2025-10-12,Ashford Payroll Partners (Kyzylorda station),-7000023.62,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0001,P2,2025-10-13,Glenwood Janitorial LP Company,-838159.45,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P4-0043,P4,2025-10-14,Kazakhstan Grain Union JSC,7004318.47,revenue,,borrower,0,,шаг 10: revenue,0.95
+TXN-B4-0014,B4,2025-10-15,Shymkent Fuel Distributors LLP,3084375.68,revenue,related,borrower,0,,шаг 10: revenue; связанная сторона (Shymkent Fuel Distributors LLP),0.95
+TXN-B4-0053,B4,2025-10-15,Ashford Office Supplies LLC JSC,-1072102.81,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P1-0001,P1,2025-10-15,Eastgate Landscaping LP (Ekibastuz block B),-5137567.61,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0008,P1,2025-10-15,Dunmore Stationery Inc (Almaty office),338758.87,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P2-0018,P2,2025-10-18,Kingsley Property Partners (Semey base),-11088144.33,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P5-0025,P5,2025-10-19,Cedarville Utility Ltd (Almaty office),-608672.57,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P8-0052,P8,2025-10-19,Vanguard Payroll Co Enterprise,238324.18,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P9-0034,P9,2025-10-22,Hartley Cleaning Inc (Oskemen unit),-2590432.34,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P10-0019,P10,2025-10-23,Hartley Cleaning Inc,-2025228.01,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P1-0029,P1,2025-10-24,Ashford Utility Corp Partners,-2970109.83,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P4-0037,P4,2025-10-24,Dunmore Printing Partners Trading House,1702959.30,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0027,P10,2025-10-25,Ashford Catering Associates (Ekibastuz block B),-12702609.36,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0050,P2,2025-10-26,Ironwood Power Trust,-853285.29,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P3-0037,P3,2025-10-26,Eastgate Building Services Associates,-308379.19,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0057,B1,2025-10-27,Juniper Stationery Holdings,-8561654.27,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P10-0012,P10,2025-10-27,Altyn Fire Protection LLP,-118447.52,opex,,borrower,0,,шаг 10: opex,0.90
+TXN-P3-0013,P3,2025-10-27,Ironwood Waste Systems Holdings,712948.55,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0028,P4,2025-10-27,Ashford Telecom Solutions (Atyrau terminal),-5210092.53,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0029,P8,2025-10-27,Bridgeport Catering Trust (Aktobe hub),358996.46,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0049,P2,2025-10-28,Kingsley Office Supplies Corp,-2189336.30,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P9-0033,P9,2025-10-28,Dunmore Leasing Associates (Karaganda yard),-290163.25,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0043,B4,2025-10-29,Eastgate Cleaning Corp (Oskemen unit),-4098925.47,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P10-0041,P10,2025-10-29,Bridgeport Realty Inc (Semey base),-1101422.08,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0012,P4,2025-10-29,Ironclad Security Services (Kyzylorda station),-207247.26,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P5-0010,P5,2025-10-29,Cedarville Courier Holdings (Almaty office),-7484552.01,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0033,P8,2025-10-29,Dunmore Insurance LP (Ekibastuz block B),-4122177.44,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P6-0046,P6,2025-10-30,Foxridge Supply Inc (Karaganda yard),12073018.78,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P7-0030,P7,2025-10-30,Dunmore Cleaning LP Ltd,543377.47,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P5-0035,P5,2025-10-31,Glenwood Security Partners (Kostanay centre),-6947736.24,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P6-0021,P6,2025-10-31,Halcyon Facilities Group (Uralsk annex),-387703.94,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0008,P7,2025-10-31,Ashford Power LP,676445.14,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P1-0004,P1,2025-11-01,Bridgeport Telecom Holdings Supply,-9801187.71,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0039,P5,2025-11-01,Dunmore Logistics Ltd Trading House,-5109787.19,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P2-0005,P2,2025-11-02,Bridgeport Printing Holdings (Kyzylorda station),12986601.59,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0037,P5,2025-11-02,Hartley Tax Advisory Ltd Holding,-186150.30,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0040,P5,2025-11-03,Juniper Property Services Trading House,3017451.17,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0014,B1,2025-11-04,Pavlodar Regional Grid LLP,-937215.88,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-B1-0039,B1,2025-11-04,Ironwood Cleaning LLC (Atyrau terminal),4875575.45,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P10-0061,P10,2025-11-04,Bridgeport Landscaping Services,-243999.82,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-B1-0028,B1,2025-11-05,Lakeshore Insurance Brokers (Pavlodar block),-150143.68,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B1-0055,B1,2025-11-05,Cedarville Building Services LLC,-4643753.93,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B4-0027,B4,2025-11-06,Eastgate Water Works Ltd (Oskemen unit),-1550172.67,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P4-0048,P4,2025-11-06,Aral Capital Partners LLP,-288417.52,opex,related,borrower,0,,"шаг 10: opex; связанная сторона (Aral Capital Partners, LLP)",0.90
+TXN-P9-0030,P9,2025-11-07,Glenwood Telecom Corp,-11213884.09,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P10-0032,P10,2025-11-08,Ashford Utility Corp Supply (Ekibastuz block B),-4860904.56,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P5-0036,P5,2025-11-10,Ashford Water Works Group (Almaty office),-199779.81,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P5-0049,P5,2025-11-10,Hartley Tax Advisory Ltd Holding,956767.61,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0041,P2,2025-11-11,Bridgeport Landscaping Services Ltd,-2278643.59,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P2-0051,P2,2025-11-11,Cascade Water Utility Enterprise (Atyrau terminal),-395108.58,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P7-0049,P7,2025-11-12,Glenwood Consulting Inc (Karaganda yard),-2240747.97,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0017,P9,2025-11-12,Zhezkazgan Conveyor Assets LLP,-302118.64,capex,,borrower,0,,шаг 10: capex,0.90
+TXN-P8-0037,P8,2025-11-13,Eastgate Leasing Trust,1124814.37,revenue,,borrower,0,,шаг 10: revenue,1.00
+TXN-P2-0015,P2,2025-11-14,Ironwood Landscaping Inc (Taraz site),-5744675.93,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P7-0012,P7,2025-11-14,Kingsley Office Supplies Corp Ltd,-16087757.97,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P7-0043,P7,2025-11-15,Hartley Utility Trust,-2795654.36,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P4-0032,P4,2025-11-16,Cedarville Office Supplies Associates (Oskemen unit),9841998.95,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P6-0002,P6,2025-11-16,Foxridge Insurance Co (Uralsk annex),-197837.64,lease,,borrower,0,,шаг 10: lease,0.95
+TXN-P1-0005,P1,2025-11-17,Juniper Insurance,-1569229.87,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P6-0050,P6,2025-11-17,Glenwood Building Services Solutions (Shymkent depot),-366031.92,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P7-0033,P7,2025-11-18,State Revenue Committee,-486204.19,taxes,,borrower,0,,шаг 10: taxes,0.95
+TXN-P7-0018,P7,2025-11-19,Blue Ridge Payroll Services Group (Aktobe hub),-2196374.68,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0026,B4,2025-11-20,Turkistan Petroleum Traders LLP,979403.89,revenue,,borrower,1,"аудитор, п.9.1: Операция TXN-B4-0026 исключена из ковенантного периода 2025 года, так как право собственности и риски по грузу переходят",шаг 10: revenue,0.95
+TXN-P10-0006,P10,2025-11-20,Crown City Water Board JSC,1306899.64,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0013,P2,2025-11-20,Bridgeport Printing Holdings (Semey base),-2152472.71,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P2-0003,P2,2025-11-21,Hartley Uniforms LP (Shymkent depot),-10988013.78,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P5-0020,P5,2025-11-21,Foxridge Office Supplies Holdings (Oskemen unit),-422062.54,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P7-0017,P7,2025-11-22,Ashford Realty Ltd Partners (Kyzylorda station),352424.19,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P3-0036,P3,2025-11-23,Dunmore Waste Systems LLC Enterprise,167405.83,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P1-0043,P1,2025-11-24,Foxridge Utility,-76611.78,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0021,P3,2025-11-24,Hartley Tax Advisory Ltd (Kyzylorda station),8777310.89,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-P3-0049,P3,2025-11-24,Kingsley Office Supplies Corp (Zhezkazgan compound),-708761.82,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P5-0042,P5,2025-11-24,Vanguard Payroll Co (Taraz site),-2544454.09,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P7-0039,P7,2025-11-24,Bridgeport Facilities LLC,7566301.01,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P6-0044,P6,2025-11-25,Zhambyl Energy Supply JSC,-418204.37,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P8-0018,P8,2025-11-25,Dunmore Realty (Aktobe hub),-5553186.31,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P1-0039,P1,2025-11-26,Eastgate Payroll Co (Zhezkazgan compound),-1096125.15,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P10-0016,P10,2025-11-26,Ironclad Security Services (Taraz site),-639303.58,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P3-0034,P3,2025-11-26,Ashford Tax Advisory Holdings,-9958958.72,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P3-0027,P3,2025-11-27,Bridgeport Logistics Corp,-238441.92,marketing,,borrower,0,,шаг 10: marketing,0.95
+TXN-P8-0036,P8,2025-11-27,Hartley Security Group (Pavlodar block),2790305.49,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P8-0042,P8,2025-11-27,Juniper Janitorial Ltd,-7408064.41,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P10-0047,P10,2025-11-29,Glenwood Cleaning Ltd,-13105437.79,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0008,P3,2025-11-30,Ironwood Facilities Partners,-731378.19,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P5-0032,P5,2025-11-30,Eastgate Water Works Ltd (Almaty office),-481640.90,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P9-0046,P9,2025-11-30,Sentinel Insurance Group Group,371181.10,utilities,,borrower,0,,шаг 10: utilities,1.00
+TXN-B4-0008,B4,2025-12-01,Harborview Properties Partners (Ekibastuz block B),-680514.75,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0027,P1,2025-12-01,Juniper Property Services Company,-82098.81,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P2-0026,P2,2025-12-01,Ironwood Leasing Partners (Atyrau terminal),2163185.04,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P10-0002,P10,2025-12-02,Saryarka Capital Partners LLP,-318663.44,opex,related,borrower,0,,"шаг 10: opex; связанная сторона (""Saryarka Capital Partners"" LLP)",0.90
+TXN-P4-0052,P4,2025-12-02,Ironwood Realty Services,-1099617.09,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P5-0008,P5,2025-12-02,Cedarville Logistics Co (Karaganda yard),-696594.44,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-B4-0001,B4,2025-12-03,Hartley Catering LP Supply,4109763.55,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-P3-0030,P3,2025-12-03,Glenwood Waste Systems Trust Group,-13690215.11,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0031,P8,2025-12-04,Kyzylorda Drilling Personnel LLP,-884204.16,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-P9-0027,P9,2025-12-04,Juniper Courier Ltd,-340336.85,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-B4-0032,B4,2025-12-05,Dunmore Realty Company,-1066700.84,insurance,,borrower,0,,шаг 10: insurance,0.95
+TXN-P8-0025,P8,2025-12-06,Dunmore Power Ltd,-416003.65,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P8-0047,P8,2025-12-06,Ironwood Landscaping Inc Service Centre (Pavlodar block),3534594.74,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P10-0007,P10,2025-12-07,Hartley Catering LP (Shymkent depot),316925.24,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P8-0019,P8,2025-12-07,Ironwood Catering Corp (Shymkent depot),-1992329.27,marketing,,borrower,0,,шаг 10: marketing,0.95
+TXN-P5-0041,P5,2025-12-08,Ironwood Utility Solutions Ltd,-486439.35,taxes,,borrower,0,,шаг 10: taxes,0.95
+TXN-P3-0048,P3,2025-12-09,Cedarville Maintenance Associates,-1802146.12,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P4-0021,P4,2025-12-09,Ironwood Maintenance Group Works,-211891.24,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0007,B4,2025-12-11,Dunmore Leasing Associates (Kostanay centre),3156040.76,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0018,P1,2025-12-11,Eastgate Logistics Inc (Uralsk annex),-5488222.58,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0051,P8,2025-12-11,Hartley Property Solutions Trading House,394816.89,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P7-0036,P7,2025-12-12,Glenwood Waste Systems Trust Company,1821189.40,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0010,P8,2025-12-12,Juniper Logistics Solutions,6918308.23,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B4-0020,B4,2025-12-13,Vanguard Payroll Co (Pavlodar block),-4272373.11,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P3-0004,P3,2025-12-13,Cedarville Printing Services JSC (Ekibastuz block B),-607809.53,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P8-0009,P8,2025-12-13,Ashford Landscaping Holdings (Oskemen unit),182205.42,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0012,B4,2025-12-14,Ashford Leasing Inc (Almaty office),-11367594.98,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P1-0011,P1,2025-12-17,Bridgeport Realty Inc Group,2224775.30,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P6-0043,P6,2025-12-17,Kingsley Facilities LP (Zhezkazgan compound),-561992.88,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B1-0043,B1,2025-12-19,Cedarville Consulting LP Partners (Pavlodar block),-602698.98,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P1-0051,P1,2025-12-19,Ashford Utility Corp Trading House,-1507081.12,utilities,,borrower,0,,шаг 10: utilities,0.95
+TXN-P2-0044,P2,2025-12-19,Dunmore Maintenance Trust Service Centre (Almaty office),-1333221.39,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0025,P6,2025-12-21,Eastgate Building Services Associates (Zhezkazgan compound),2472615.89,insurance,,borrower,0,,шаг 10: insurance,1.00
+TXN-B1-0004,B1,2025-12-22,Pavlodar Personnel Bureau LLP,-1284663.42,payroll,,borrower,0,,шаг 10: payroll,0.95
+TXN-B1-0024,B1,2025-12-22,Juniper Janitorial Ltd (Kostanay centre),-379295.13,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P10-0054,P10,2025-12-22,Ironwood Insurance LLC (Zhezkazgan compound),-321571.43,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P3-0022,P3,2025-12-22,Sentinel Insurance Group JSC,-408073.64,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0032,P6,2025-12-22,Hartley Insurance Inc (Kostanay centre),-4123428.79,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-B4-0023,B4,2025-12-23,Juniper Office Supplies LP Ltd,-8272816.97,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P2-0048,P2,2025-12-23,Dunmore Courier Services Holding,-245067.17,taxes,,borrower,0,,шаг 10: taxes,0.95
+TXN-P4-0011,P4,2025-12-23,Hartley Logistics Associates (Atyrau terminal),8005272.76,taxes,,borrower,0,,шаг 10: taxes,0.95
+TXN-P9-0051,P9,2025-12-24,Hartley Logistics Associates,-680651.10,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P9-0008,P9,2025-12-25,Hartley Consulting LLC,5133778.18,taxes,,borrower,0,,шаг 10: taxes,0.90
+TXN-B4-0045,B4,2025-12-26,Foxridge Power LLC Works,438746.22,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P3-0044,P3,2025-12-26,Cedarville Property Inc,-3331769.29,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P7-0005,P7,2025-12-26,Pioneer Payroll Bureau (Kyzylorda station),-6770546.94,payroll,,borrower,0,,шаг 10: payroll,1.00
+TXN-P10-0015,P10,2025-12-28,Beacon Tax Advisors,-920041.07,interest,,borrower,0,,шаг 10: interest,1.00
+TXN-P6-0010,P6,2025-12-29,Dunmore Property LLC Holding,-2100935.52,taxes,,borrower,0,,шаг 10: taxes,1.00
+TXN-P7-0016,P7,2025-12-29,Dunmore Payroll Corp (Pavlodar block),-4160796.31,lease,,borrower,0,,шаг 10: lease,1.00
+TXN-P8-0035,P8,2025-12-29,Ironwood Courier Co (Oskemen unit),-142950.51,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P7-0014,P7,2025-12-31,Glenwood Building Services Solutions Enterprise (Semey base),-1021668.67,interest,,borrower,0,,шаг 10: interest,0.95
+TXN-P8-0034,P8,2025-12-31,Foxridge Tax Advisory Corp,-323730.94,marketing,,borrower,0,,шаг 10: marketing,1.00
+TXN-P8-0043,P8,2025-12-31,Ironwood Water Works Associates,-1059444.21,insurance,,borrower,0,,шаг 10: insurance,1.00

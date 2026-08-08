@@ -1,0 +1,400 @@
+{
+  "alarms": [],
+  "problems": [],
+  "scenarios": {
+    "B1": {
+      "scenario_id": "B1",
+      "doc_id": "a16d7a619f87",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": false,
+      "applied_ids": [],
+      "notes": [
+        {
+          "note_id": "9.1",
+          "kind": "reclassification",
+          "status": "referred_elsewhere",
+          "description": "Сумма была отобрана для проверки классификации. Вывод изложен в отчёте № AR-2025-0634 и не повторяется.",
+          "quote": "Сумма в размере $592,296.10, выплаченная контрагенту Irtysh Advisory Bureau, была отобрана для проверки классификации. Вывод по данной сумме изложен в отчёте о выполнении согласованных процедур № AR-2025-0634 и в настоящих примечаниях не повторяется.",
+          "target_txn_id": null,
+          "target_counterparty": "Irtysh Advisory Bureau",
+          "from_category": null,
+          "to_category": null,
+          "value_usd": 592296.1,
+          "sign": null,
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": "статус referred_elsewhere"
+        }
+      ],
+      "problems": [],
+      "remarks": []
+    },
+    "B4": {
+      "scenario_id": "B4",
+      "doc_id": "e334c4d4d3ea",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": false,
+      "applied_ids": [
+        "9.1"
+      ],
+      "notes": [
+        {
+          "note_id": "9.1",
+          "kind": "cutoff",
+          "status": "applied",
+          "description": "Операция TXN-B4-0026 исключена из ковенантного периода 2025 года, так как право собственности и риски по грузу переходят в январе 2026 года.",
+          "quote": "Операция TXN-B4-0026, датированная 2025-11-20, исключена из ковенантного периода 2025 года.\nОснование: Право собственности и риски по грузу переходят только в январе 2026 года; авансовое поступление отсрочено и исключено из ковенантного периода 2025 года.",
+          "target_txn_id": "TXN-B4-0026",
+          "target_counterparty": null,
+          "from_category": null,
+          "to_category": null,
+          "value_usd": null,
+          "sign": null,
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": null
+        }
+      ],
+      "problems": [],
+      "remarks": []
+    },
+    "P1": {
+      "scenario_id": "P1",
+      "doc_id": "896b7933db48",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": false,
+      "applied_ids": [
+        "7.1"
+      ],
+      "notes": [
+        {
+          "note_id": "7",
+          "kind": "revenue_recognition",
+          "status": "informational",
+          "description": "Правило признания выручки: выручка признаётся в том ковенантном периоде, в котором фактически оказаны услуги.",
+          "quote": "Выручка признаётся в том ковенантном периоде, в котором фактически оказаны услуги, независимо от даты счёта-фактуры и даты поступления денежных средств.",
+          "target_txn_id": null,
+          "target_counterparty": null,
+          "from_category": null,
+          "to_category": null,
+          "value_usd": null,
+          "sign": null,
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": "статус informational"
+        },
+        {
+          "note_id": "7.1",
+          "kind": "cutoff",
+          "status": "applied",
+          "description": "Операция TXN-P1-0045 относится к услугам, оказанным в период с 2026-01-15 по 2026-03-20 (первый квартал 2026 года).",
+          "quote": "(7.1) Операция TXN-P1-0045 (счёт-фактура от 2025-08-12) относится к услугам, оказанным в период с 2026-01-15 по 2026-03-20. Основание: Обследование причальной стенки проводится в первом квартале 2026 года.",
+          "target_txn_id": "TXN-P1-0045",
+          "target_counterparty": null,
+          "from_category": null,
+          "to_category": "revenue",
+          "value_usd": null,
+          "sign": null,
+          "period_start": "2026-01-15",
+          "period_end": "2026-03-20",
+          "material": true,
+          "skipped_because": null
+        }
+      ],
+      "problems": [],
+      "remarks": []
+    },
+    "P10": {
+      "scenario_id": "P10",
+      "doc_id": "4db1d630055f",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": false,
+      "applied_ids": [
+        "7.1"
+      ],
+      "notes": [
+        {
+          "note_id": "7.1",
+          "kind": "reclassification",
+          "status": "applied",
+          "description": "Сумма, выплаченная Tengiz Risk Engineering Bureau, переклассифицирована из Операционных расходов в Страховые премии.",
+          "quote": "(7.1) Сумма в размере $142,118.64, выплаченная контрагенту Tengiz Risk Engineering Bureau, первоначально учтённая как Операционные расходы, переклассифицирована для целей соблюдения ковенантов как Страховые премии.",
+          "target_txn_id": null,
+          "target_counterparty": "Tengiz Risk Engineering Bureau",
+          "from_category": "opex",
+          "to_category": "insurance",
+          "value_usd": 142118.64,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": null
+        },
+        {
+          "note_id": "7.2",
+          "kind": "reclassification",
+          "status": "considered_but_rejected",
+          "description": "Операция рассматривалась на предмет возможной переклассификации в Страховые премии, но первоначальная классификация (Операционные расходы) сохранена.",
+          "quote": "(7.2) Операция TXN-P10-0012, первоначально учтённая как Операционные расходы ($118,447.52), рассматривалась на предмет возможной переклассификации как Страховые премии; по итогам разъяснений руководства первоначальная классификация (Операционные расходы) сохраняется, и корректировка для целей ковенантов не производилась.",
+          "target_txn_id": "TXN-P10-0012",
+          "target_counterparty": null,
+          "from_category": "opex",
+          "to_category": "insurance",
+          "value_usd": 118447.52,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": "статус considered_but_rejected"
+        },
+        {
+          "note_id": "8.1",
+          "kind": "reclassification",
+          "status": "considered_but_rejected",
+          "description": "Операция была проверена, корректировка не требуется, первоначальная классификация сохраняется.",
+          "quote": "(8.1) Операция TXN-P10-0021 ($1,204,663.28, Saryarka Terminal Properties LLP) была запрошена кредитором и проверена; корректировка для целей ковенантов не требуется, и её первоначальная классификация сохраняется.",
+          "target_txn_id": "TXN-P10-0021",
+          "target_counterparty": "Saryarka Terminal Properties LLP",
+          "from_category": null,
+          "to_category": null,
+          "value_usd": 1204663.28,
+          "sign": null,
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": "статус considered_but_rejected"
+        }
+      ],
+      "problems": [],
+      "remarks": []
+    },
+    "P2": {
+      "scenario_id": "P2",
+      "doc_id": "3fd0d34546b5",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": false,
+      "applied_ids": [
+        "9.1"
+      ],
+      "notes": [
+        {
+          "note_id": "9.1",
+          "kind": "reclassification",
+          "status": "applied",
+          "description": "Переклассификация суммы, выплаченной Tien Shan Advisory Bureau, из консультационных услуг в операционные расходы.",
+          "quote": "(9.1) Сумма в размере $1,104,663.28, выплаченная контрагенту Tien Shan Advisory Bureau, первоначально учтённая как Консультационные услуги, переклассифицирована для целей соблюдения ковенантов как Операционные расходы.",
+          "target_txn_id": null,
+          "target_counterparty": "Tien Shan Advisory Bureau",
+          "from_category": "other",
+          "to_category": "opex",
+          "value_usd": 1104663.28,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": null
+        }
+      ],
+      "problems": [],
+      "remarks": []
+    },
+    "P3": {
+      "scenario_id": "P3",
+      "doc_id": "6f1c06f8479a",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": true,
+      "applied_ids": [],
+      "notes": [
+        {
+          "note_id": "9.1",
+          "kind": "fx_translation",
+          "status": "informational",
+          "description": "Расчёты с контрагентом Rheinland Katalyse Service GmbH: счёт на сумму 72,146.75 EUR урегулирован платежом в долларах США в размере $83,690.23.",
+          "quote": "(9.1) Расчёты с контрагентом «Rheinland Katalyse Service GmbH»: счёт на сумму 72,146.75 EUR урегулирован платежом в долларах США в размере $83,690.23.",
+          "target_txn_id": null,
+          "target_counterparty": "Rheinland Katalyse Service GmbH",
+          "from_category": null,
+          "to_category": null,
+          "value_usd": 83690.23,
+          "sign": null,
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": "статус informational"
+        }
+      ],
+      "problems": [],
+      "remarks": []
+    },
+    "P4": {
+      "scenario_id": "P4",
+      "doc_id": "2ed0b2ee4b57",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": 300000.0,
+      "no_adjustments_stated": false,
+      "applied_ids": [
+        "8.2",
+        "8.3"
+      ],
+      "notes": [
+        {
+          "note_id": "8.1",
+          "kind": "ebitda_adjustment",
+          "status": "applied",
+          "description": "Очистка причального дна от наносов",
+          "quote": "Очистка причального дна от наносов | «Zhaiyk Dredging LLP» | $251,338.94",
+          "target_txn_id": null,
+          "target_counterparty": "Zhaiyk Dredging LLP",
+          "from_category": "opex",
+          "to_category": null,
+          "value_usd": 251338.94,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": false,
+          "skipped_because": "251,338.94 ниже порога существенности 300,000.00"
+        },
+        {
+          "note_id": "8.2",
+          "kind": "ebitda_adjustment",
+          "status": "applied",
+          "description": "Урегулирование спора по демереджу",
+          "quote": "Урегулирование спора по демереджу | «Aral Freight Arbitration Bureau» | $342,905.28",
+          "target_txn_id": null,
+          "target_counterparty": "Aral Freight Arbitration Bureau",
+          "from_category": "opex",
+          "to_category": null,
+          "value_usd": 342905.28,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": null
+        },
+        {
+          "note_id": "8.3",
+          "kind": "ebitda_adjustment",
+          "status": "applied",
+          "description": "Устранение последствий паводка на силосном комплексе",
+          "quote": "Устранение последствий паводка на силосном комплексе | «Ilek Restoration Works LLP» | $481,247.63",
+          "target_txn_id": null,
+          "target_counterparty": "Ilek Restoration Works LLP",
+          "from_category": "opex",
+          "to_category": null,
+          "value_usd": 481247.63,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": null
+        }
+      ],
+      "problems": [],
+      "remarks": [
+        "8.1: 251,338.94 ниже порога 300,000.00 — к EBITDA не прибавляется"
+      ]
+    },
+    "P5": {
+      "scenario_id": "P5",
+      "doc_id": "ea8d8bac3e62",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": true,
+      "applied_ids": [],
+      "notes": [],
+      "problems": [],
+      "remarks": []
+    },
+    "P6": {
+      "scenario_id": "P6",
+      "doc_id": "3963dfb04b2a",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": true,
+      "applied_ids": [],
+      "notes": [],
+      "problems": [],
+      "remarks": []
+    },
+    "P7": {
+      "scenario_id": "P7",
+      "doc_id": "596a5d8b04f5",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": true,
+      "applied_ids": [],
+      "notes": [],
+      "problems": [],
+      "remarks": []
+    },
+    "P8": {
+      "scenario_id": "P8",
+      "doc_id": "bf9b7bffc514",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": false,
+      "applied_ids": [
+        "7.1",
+        "8.1"
+      ],
+      "notes": [
+        {
+          "note_id": "7.1",
+          "kind": "off_ledger",
+          "status": "applied",
+          "description": "Совокупное обязательство по программе выходных пособий раскрывается для целей ковенантов без отдельной записи в бухгалтерской книге",
+          "quote": "(7.1) Для целей агрегирования по ковенантам совокупное обязательство по программе выходных пособий в размере $918,447.52 раскрывается и не отражается отдельной операцией в бухгалтерской книге.",
+          "target_txn_id": null,
+          "target_counterparty": null,
+          "from_category": null,
+          "to_category": "payroll",
+          "value_usd": 918447.52,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": null
+        },
+        {
+          "note_id": "8.1",
+          "kind": "off_ledger",
+          "status": "applied",
+          "description": "Операция не отражена в выгрузке реестра, добавлены фактические расходы",
+          "quote": "(8.1) Операция TXN-P8-0031 (Kyzylorda Drilling Personnel LLP): сумма не отражена в выгрузке реестра; фактическая сумма операции составляет $884,204.16 (расход).",
+          "target_txn_id": "TXN-P8-0031",
+          "target_counterparty": "Kyzylorda Drilling Personnel LLP",
+          "from_category": null,
+          "to_category": "other",
+          "value_usd": 884204.16,
+          "sign": "expense",
+          "period_start": null,
+          "period_end": null,
+          "material": true,
+          "skipped_because": null
+        }
+      ],
+      "problems": [],
+      "remarks": []
+    },
+    "P9": {
+      "scenario_id": "P9",
+      "doc_id": "7903e7d18e94",
+      "section_anchor": "ДОПОЛНЕНИЕ О СОБЛЮДЕНИИ КОВЕНАНТОВ",
+      "materiality_threshold_usd": null,
+      "no_adjustments_stated": true,
+      "applied_ids": [],
+      "notes": [],
+      "problems": [],
+      "remarks": []
+    }
+  }
+}

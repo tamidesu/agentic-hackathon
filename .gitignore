@@ -23,6 +23,12 @@ runs/
 **/artifacts/
 **/cache/
 **/logs/
+
+# ИСКЛЮЧЕНИЕ: замороженный снимок артефактов для offline-оценки.
+# Он в репозитории намеренно — позволяет измерять регрессию расчёта
+# сразу после git pull, не тратя квоту на шаги 5, 7, 8 и 10.
+!solution/fixtures/
+!solution/fixtures/**
 out.txt
 submission.json
 

@@ -1,0 +1,2045 @@
+{
+  "counts": {
+    "BACKGROUND": 148,
+    "KYC": 12,
+    "LOAN": 24,
+    "AUDIT_DRAFT": 5,
+    "TREASURY_MEMO": 1,
+    "AUDIT_FINAL": 12
+  },
+  "alarms": [],
+  "collisions": [
+    "07e1a2a0275d: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "22c1707dad45: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "2bdb134db53c: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "2dd8671ac405: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "63e162bd710b: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "6dd84ab9ef0e: ['loan', 'kyc_phrase'] -> loan",
+    "85afaaca89ad: ['loan', 'kyc_phrase'] -> loan",
+    "89af6ae7964f: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "8d878af064f2: ['loan', 'kyc_phrase'] -> loan",
+    "9f1a89a5ed42: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "a144690a213c: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "aaf665cbc612: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "ba475cfc33a4: ['loan', 'kyc_phrase'] -> loan",
+    "bc5451f75caf: ['loan', 'kyc_phrase'] -> loan",
+    "c66b5b638410: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "e16b5e6532b5: ['loan', 'kyc_phrase'] -> loan",
+    "ee32532e1126: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "f3fa6d20c8a1: ['kyc_code', 'kyc_phrase'] -> kyc_code",
+    "ffb3a98e3733: ['loan', 'kyc_phrase'] -> loan"
+  ],
+  "fallback_notes": [],
+  "documents": {
+    "028324997d3c": {
+      "doc_id": "028324997d3c",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "045516b1b434": {
+      "doc_id": "045516b1b434",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "069f03fe8db5": {
+      "doc_id": "069f03fe8db5",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "06a5a45987c4": {
+      "doc_id": "06a5a45987c4",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "06bbabc91646": {
+      "doc_id": "06bbabc91646",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "06f67099769a": {
+      "doc_id": "06f67099769a",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "07e1a2a0275d": {
+      "doc_id": "07e1a2a0275d",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "101b4788f276": {
+      "doc_id": "101b4788f276",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "12727d4e3f31": {
+      "doc_id": "12727d4e3f31",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "12c9a176278a": {
+      "doc_id": "12c9a176278a",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "12ddbbdffc72": {
+      "doc_id": "12ddbbdffc72",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "1d262694c308": {
+      "doc_id": "1d262694c308",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "1e3d464f7db1": {
+      "doc_id": "1e3d464f7db1",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "2239b6b58f06": {
+      "doc_id": "2239b6b58f06",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "22c1707dad45": {
+      "doc_id": "22c1707dad45",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "2334efbbdd1e": {
+      "doc_id": "2334efbbdd1e",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "265c91f8f86c": {
+      "doc_id": "265c91f8f86c",
+      "type": "AUDIT_DRAFT",
+      "rule": "audit_draft",
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": []
+    },
+    "26acfab1e58b": {
+      "doc_id": "26acfab1e58b",
+      "type": "TREASURY_MEMO",
+      "rule": "treasury_memo",
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": []
+    },
+    "26b7c3e1bb27": {
+      "doc_id": "26b7c3e1bb27",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "26cec8516b00": {
+      "doc_id": "26cec8516b00",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "2762d1c605e6": {
+      "doc_id": "2762d1c605e6",
+      "type": "AUDIT_DRAFT",
+      "rule": "audit_draft",
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": []
+    },
+    "2bdb134db53c": {
+      "doc_id": "2bdb134db53c",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "2d42722d9dec": {
+      "doc_id": "2d42722d9dec",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "2d44bdf2437c": {
+      "doc_id": "2d44bdf2437c",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "2dd8671ac405": {
+      "doc_id": "2dd8671ac405",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "2ed0b2ee4b57": {
+      "doc_id": "2ed0b2ee4b57",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "2f77cc1329b5": {
+      "doc_id": "2f77cc1329b5",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "2fe3878667db": {
+      "doc_id": "2fe3878667db",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "30fa9f2d79a7": {
+      "doc_id": "30fa9f2d79a7",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "318689bd98b8": {
+      "doc_id": "318689bd98b8",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "329e188a2c9d": {
+      "doc_id": "329e188a2c9d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "32ed58777a1e": {
+      "doc_id": "32ed58777a1e",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "383b36dd42ba": {
+      "doc_id": "383b36dd42ba",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "3963dfb04b2a": {
+      "doc_id": "3963dfb04b2a",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "3a4aa2dbd6c4": {
+      "doc_id": "3a4aa2dbd6c4",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "3c7841365bf3": {
+      "doc_id": "3c7841365bf3",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "3c8ebcc791c3": {
+      "doc_id": "3c8ebcc791c3",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "3dab6081e592": {
+      "doc_id": "3dab6081e592",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "3fd0d34546b5": {
+      "doc_id": "3fd0d34546b5",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "4086afeba3ee": {
+      "doc_id": "4086afeba3ee",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "42213fb6062d": {
+      "doc_id": "42213fb6062d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "446392f86dc9": {
+      "doc_id": "446392f86dc9",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "448b59e12768": {
+      "doc_id": "448b59e12768",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": []
+    },
+    "45ee408eed79": {
+      "doc_id": "45ee408eed79",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "46587c5f8e49": {
+      "doc_id": "46587c5f8e49",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "4666dc16c4d7": {
+      "doc_id": "4666dc16c4d7",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "489af91a1c3d": {
+      "doc_id": "489af91a1c3d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "4908afb7c12c": {
+      "doc_id": "4908afb7c12c",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "4a08260debe0": {
+      "doc_id": "4a08260debe0",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "4a5315740e89": {
+      "doc_id": "4a5315740e89",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "4d3091ed5420": {
+      "doc_id": "4d3091ed5420",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "4d8359facdb0": {
+      "doc_id": "4d8359facdb0",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "4db1d630055f": {
+      "doc_id": "4db1d630055f",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "4db419cab24b": {
+      "doc_id": "4db419cab24b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "4def636484eb": {
+      "doc_id": "4def636484eb",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "5082f6a594a4": {
+      "doc_id": "5082f6a594a4",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "52e0fbb71aeb": {
+      "doc_id": "52e0fbb71aeb",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "5372628c3788": {
+      "doc_id": "5372628c3788",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "540ad61311f1": {
+      "doc_id": "540ad61311f1",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "574d17b3a40b": {
+      "doc_id": "574d17b3a40b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "5797acb4d7e2": {
+      "doc_id": "5797acb4d7e2",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "57a1d81c8b17": {
+      "doc_id": "57a1d81c8b17",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "596a5d8b04f5": {
+      "doc_id": "596a5d8b04f5",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "59b12585b7ec": {
+      "doc_id": "59b12585b7ec",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "5f1aff0e8590": {
+      "doc_id": "5f1aff0e8590",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "603a0251f913": {
+      "doc_id": "603a0251f913",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "61dfc54675dc": {
+      "doc_id": "61dfc54675dc",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "6387d5cd9c00": {
+      "doc_id": "6387d5cd9c00",
+      "type": "AUDIT_DRAFT",
+      "rule": "audit_draft",
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": []
+    },
+    "63e162bd710b": {
+      "doc_id": "63e162bd710b",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "65890f0c577c": {
+      "doc_id": "65890f0c577c",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "6686c0493014": {
+      "doc_id": "6686c0493014",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "68d200eca6b9": {
+      "doc_id": "68d200eca6b9",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "69585c338a66": {
+      "doc_id": "69585c338a66",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "6963dfd94d4c": {
+      "doc_id": "6963dfd94d4c",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "6acb5bbc3e70": {
+      "doc_id": "6acb5bbc3e70",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "6ad34a2726b1": {
+      "doc_id": "6ad34a2726b1",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "6dd84ab9ef0e": {
+      "doc_id": "6dd84ab9ef0e",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "6f1c06f8479a": {
+      "doc_id": "6f1c06f8479a",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "73937c1e9347": {
+      "doc_id": "73937c1e9347",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "75cf2363377b": {
+      "doc_id": "75cf2363377b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "75d09b747402": {
+      "doc_id": "75d09b747402",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "760626f5247c": {
+      "doc_id": "760626f5247c",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "76e6d88d0444": {
+      "doc_id": "76e6d88d0444",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "77628b8b3cab": {
+      "doc_id": "77628b8b3cab",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "782513c9c89d": {
+      "doc_id": "782513c9c89d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "78d55cf4e938": {
+      "doc_id": "78d55cf4e938",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "7903e7d18e94": {
+      "doc_id": "7903e7d18e94",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "7965d4e85cb1": {
+      "doc_id": "7965d4e85cb1",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "7b9cafe845ae": {
+      "doc_id": "7b9cafe845ae",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "7c871235eb76": {
+      "doc_id": "7c871235eb76",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "7cd2f8a812cd": {
+      "doc_id": "7cd2f8a812cd",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "7db6db025e61": {
+      "doc_id": "7db6db025e61",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "7dfc1b7d6b82": {
+      "doc_id": "7dfc1b7d6b82",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "7e8cfd7b977f": {
+      "doc_id": "7e8cfd7b977f",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "8016dee930c0": {
+      "doc_id": "8016dee930c0",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "82954f7cc62a": {
+      "doc_id": "82954f7cc62a",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "82c3690a6abd": {
+      "doc_id": "82c3690a6abd",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "82ed830621e9": {
+      "doc_id": "82ed830621e9",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "831f003ca3cc": {
+      "doc_id": "831f003ca3cc",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "832e580c962f": {
+      "doc_id": "832e580c962f",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "85486bfc847f": {
+      "doc_id": "85486bfc847f",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "85afaaca89ad": {
+      "doc_id": "85afaaca89ad",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "896b7933db48": {
+      "doc_id": "896b7933db48",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "89af6ae7964f": {
+      "doc_id": "89af6ae7964f",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "8a2cdb66f18b": {
+      "doc_id": "8a2cdb66f18b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "8af2d7044491": {
+      "doc_id": "8af2d7044491",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "8b05e54f627a": {
+      "doc_id": "8b05e54f627a",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "8ba1a3214d2b": {
+      "doc_id": "8ba1a3214d2b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "8d878af064f2": {
+      "doc_id": "8d878af064f2",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "8fe082eccf3f": {
+      "doc_id": "8fe082eccf3f",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "904dea48b34b": {
+      "doc_id": "904dea48b34b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "90f5d5633b97": {
+      "doc_id": "90f5d5633b97",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "922a5d5de364": {
+      "doc_id": "922a5d5de364",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "932effc6f886": {
+      "doc_id": "932effc6f886",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "979fdc1f43a3": {
+      "doc_id": "979fdc1f43a3",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "9929ab063c67": {
+      "doc_id": "9929ab063c67",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "993880c995f0": {
+      "doc_id": "993880c995f0",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "99648d24c6ec": {
+      "doc_id": "99648d24c6ec",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "9975fa09f79c": {
+      "doc_id": "9975fa09f79c",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "9ab2bb104c8d": {
+      "doc_id": "9ab2bb104c8d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "9c85e7d76921": {
+      "doc_id": "9c85e7d76921",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "9f1a89a5ed42": {
+      "doc_id": "9f1a89a5ed42",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "a0af1fae76dc": {
+      "doc_id": "a0af1fae76dc",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "a144690a213c": {
+      "doc_id": "a144690a213c",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "a16d7a619f87": {
+      "doc_id": "a16d7a619f87",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "a1bc2ea19594": {
+      "doc_id": "a1bc2ea19594",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "a23a9326efe4": {
+      "doc_id": "a23a9326efe4",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "a2ca5ce24acb": {
+      "doc_id": "a2ca5ce24acb",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "a2f88c901ae1": {
+      "doc_id": "a2f88c901ae1",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "a5cc1400b640": {
+      "doc_id": "a5cc1400b640",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "a6e96851b6d2": {
+      "doc_id": "a6e96851b6d2",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "a6f8f8c87936": {
+      "doc_id": "a6f8f8c87936",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "a81217cea0a1": {
+      "doc_id": "a81217cea0a1",
+      "type": "AUDIT_DRAFT",
+      "rule": "audit_draft",
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": []
+    },
+    "a96fe7b0cbb0": {
+      "doc_id": "a96fe7b0cbb0",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "aaf665cbc612": {
+      "doc_id": "aaf665cbc612",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "aaff7bd53ea8": {
+      "doc_id": "aaff7bd53ea8",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "abe2474bd443": {
+      "doc_id": "abe2474bd443",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ad991140ab81": {
+      "doc_id": "ad991140ab81",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "adf71c64ab80": {
+      "doc_id": "adf71c64ab80",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ae477cc510f9": {
+      "doc_id": "ae477cc510f9",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "aef9b4667acd": {
+      "doc_id": "aef9b4667acd",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "af54efbfc0bd": {
+      "doc_id": "af54efbfc0bd",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "af9b9484cfd5": {
+      "doc_id": "af9b9484cfd5",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "b084add0e80a": {
+      "doc_id": "b084add0e80a",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "b08e5ef1725e": {
+      "doc_id": "b08e5ef1725e",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "b2519c8e3ea4": {
+      "doc_id": "b2519c8e3ea4",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "b38facf69a94": {
+      "doc_id": "b38facf69a94",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "b43708a40daa": {
+      "doc_id": "b43708a40daa",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "b5aecff2bbf2": {
+      "doc_id": "b5aecff2bbf2",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "b5ccff3af55d": {
+      "doc_id": "b5ccff3af55d",
+      "type": "AUDIT_DRAFT",
+      "rule": "audit_draft",
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": []
+    },
+    "b6612c17e4a1": {
+      "doc_id": "b6612c17e4a1",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "b9f3f94caab2": {
+      "doc_id": "b9f3f94caab2",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ba475cfc33a4": {
+      "doc_id": "ba475cfc33a4",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "bac990fa3090": {
+      "doc_id": "bac990fa3090",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "bc5451f75caf": {
+      "doc_id": "bc5451f75caf",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "bd680edc8455": {
+      "doc_id": "bd680edc8455",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "be1e2186c99d": {
+      "doc_id": "be1e2186c99d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "be7c1bba8940": {
+      "doc_id": "be7c1bba8940",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "bf9b7bffc514": {
+      "doc_id": "bf9b7bffc514",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "c10ebf055fa5": {
+      "doc_id": "c10ebf055fa5",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "c282688e2e6f": {
+      "doc_id": "c282688e2e6f",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "c28da1ee7a38": {
+      "doc_id": "c28da1ee7a38",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "c2c9382c9168": {
+      "doc_id": "c2c9382c9168",
+      "type": "LOAN_ACTIVE",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P9",
+      "notes": [
+        "период договора: 2025-01-01..2025-12-31",
+        "дата документа: 2025-01-01"
+      ]
+    },
+    "c3ede730047b": {
+      "doc_id": "c3ede730047b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "c459a9940b23": {
+      "doc_id": "c459a9940b23",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "c45c84b0bada": {
+      "doc_id": "c45c84b0bada",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P7",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "c66b5b638410": {
+      "doc_id": "c66b5b638410",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "c7cf684da3bd": {
+      "doc_id": "c7cf684da3bd",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "cc0bf6c6ef5d": {
+      "doc_id": "cc0bf6c6ef5d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ce43cf0374a7": {
+      "doc_id": "ce43cf0374a7",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "cf217b0114e7": {
+      "doc_id": "cf217b0114e7",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "cf741bbf7688": {
+      "doc_id": "cf741bbf7688",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "d4e9f2bbf3e9": {
+      "doc_id": "d4e9f2bbf3e9",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "d759709e3fe8": {
+      "doc_id": "d759709e3fe8",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "dbec9933b41d": {
+      "doc_id": "dbec9933b41d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "dd2d1ddba258": {
+      "doc_id": "dd2d1ddba258",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "e16b5e6532b5": {
+      "doc_id": "e16b5e6532b5",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "e32b7c0f53e2": {
+      "doc_id": "e32b7c0f53e2",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "e334c4d4d3ea": {
+      "doc_id": "e334c4d4d3ea",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "e3b0ed1db08f": {
+      "doc_id": "e3b0ed1db08f",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "e597b53c19b4": {
+      "doc_id": "e597b53c19b4",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "e6503fd13537": {
+      "doc_id": "e6503fd13537",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "e96ad38e6a71": {
+      "doc_id": "e96ad38e6a71",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ea458c3cad3b": {
+      "doc_id": "ea458c3cad3b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ea586aea1d28": {
+      "doc_id": "ea586aea1d28",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ea8d8bac3e62": {
+      "doc_id": "ea8d8bac3e62",
+      "type": "AUDIT_FINAL",
+      "rule": "audit_final",
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "eaf5ba5804c5": {
+      "doc_id": "eaf5ba5804c5",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": null,
+      "notes": []
+    },
+    "eafab79c5e4d": {
+      "doc_id": "eafab79c5e4d",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "eb2ec67083cf": {
+      "doc_id": "eb2ec67083cf",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P10",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "edfab0e95f79": {
+      "doc_id": "edfab0e95f79",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P8",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "ee0a57db71cc": {
+      "doc_id": "ee0a57db71cc",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ee32532e1126": {
+      "doc_id": "ee32532e1126",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "f082cbbc33fb": {
+      "doc_id": "f082cbbc33fb",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "f205353029f2": {
+      "doc_id": "f205353029f2",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P2",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "f3fa6d20c8a1": {
+      "doc_id": "f3fa6d20c8a1",
+      "type": "KYC",
+      "rule": "kyc_code",
+      "confidence": 1.0,
+      "scenario_id": "P6",
+      "notes": [
+        "дата документа: 2025-12-31"
+      ]
+    },
+    "f4dfb4296f93": {
+      "doc_id": "f4dfb4296f93",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "f5e315b390df": {
+      "doc_id": "f5e315b390df",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "B1",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "f5ff7f578228": {
+      "doc_id": "f5ff7f578228",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "f892239d39eb": {
+      "doc_id": "f892239d39eb",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P5",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "f8bea9e2a224": {
+      "doc_id": "f8bea9e2a224",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    },
+    "ffb3a98e3733": {
+      "doc_id": "ffb3a98e3733",
+      "type": "LOAN_SUPERSEDED",
+      "rule": "loan",
+      "confidence": 1.0,
+      "scenario_id": "P3",
+      "notes": [
+        "присутствует пометка об отмене редакции",
+        "период договора: 2024-01-01..2024-12-31"
+      ]
+    },
+    "ffb902ce0a5b": {
+      "doc_id": "ffb902ce0a5b",
+      "type": "BACKGROUND",
+      "rule": null,
+      "confidence": 1.0,
+      "scenario_id": "P4",
+      "notes": [
+        "привязан по названию компании, счёт в тексте отсутствует"
+      ]
+    }
+  }
+}

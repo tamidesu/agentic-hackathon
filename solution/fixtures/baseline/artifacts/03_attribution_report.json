@@ -1,0 +1,117 @@
+{
+  "scenarios": [
+    "B1",
+    "B4",
+    "P1",
+    "P10",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9"
+  ],
+  "account_to_scenario": {
+    "ACC-7801": "P1",
+    "ACC-7804": "P4",
+    "ACC-7806": "P6",
+    "ACC-7808": "P8",
+    "ACC-7201": "B1",
+    "ACC-7807": "P7",
+    "ACC-7204": "B4",
+    "ACC-7810": "P10",
+    "ACC-7802": "P2",
+    "ACC-7803": "P3",
+    "ACC-7805": "P5",
+    "ACC-7809": "P9"
+  },
+  "learned_names": {
+    "P10": [
+      "Karaganda Logistics Terminal JSC",
+      "KARAGANDA LOGISTICS TERMINAL JSC",
+      "Saryarka Terminal Properties LLP"
+    ],
+    "P5": [
+      "EKIBASTUZ POWER SERVICES JSC",
+      "Ekibastuz Power Services JSC"
+    ],
+    "P8": [
+      "Kyzylorda Drilling Personnel LLP",
+      "Kyzylorda Drilling Services JSC",
+      "KYZYLORDA DRILLING SERVICES JSC"
+    ],
+    "P9": [
+      "ZHEZKAZGAN MINING SERVICES JSC",
+      "Zhezkazgan Mining Services JSC",
+      "Zhezkazgan MiningServices JSC"
+    ],
+    "P7": [
+      "Atyrau Pipeline Services JSC",
+      "ATYRAU PIPELINE SERVICES JSC"
+    ],
+    "B1": [
+      "Ekibastuz Energy JSC",
+      "EKIBASTUZ ENERGY JSC"
+    ],
+    "P1": [
+      "Aktau Port Services JSC",
+      "AKTAU PORT SERVICES JSC"
+    ],
+    "P4": [
+      "Aktobe Grain Terminal JSC",
+      "AKTOBE GRAIN TERMINAL JSC"
+    ],
+    "P6": [
+      "TARAZ CEMENT WORKS JSC",
+      "Taraz Cement Works JSC"
+    ],
+    "P2": [
+      "ALMATY COLD CHAIN JSC",
+      "Almaty Cold Chain JSC"
+    ],
+    "P3": [
+      "SHYMKENT REFINERY SERVICES JSC",
+      "Shymkent Refinery Services JSC"
+    ],
+    "B4": [
+      "Shymkent Refinery JSC",
+      "SHYMKENT REFINERY JSC"
+    ]
+  },
+  "attributed_by_account": 55,
+  "attributed_by_name": 137,
+  "orphans": [
+    "069f03fe8db5",
+    "06f67099769a",
+    "2239b6b58f06",
+    "4a5315740e89",
+    "574d17b3a40b",
+    "69585c338a66",
+    "6963dfd94d4c",
+    "904dea48b34b",
+    "ae477cc510f9",
+    "eaf5ba5804c5"
+  ],
+  "ambiguous": [],
+  "problems": [],
+  "reporting_period": [
+    "2025-01-02",
+    "2025-12-31"
+  ],
+  "revisions": [
+    "B1: договоров 2, действующим принят b38facf69a94 (период ('2025-01-01', '2025-12-31'))",
+    "B4: договоров 2, действующим принят bc5451f75caf (период ('2025-01-01', '2025-12-31'))",
+    "P1: договоров 2, действующим принят 8d878af064f2 (период ('2025-01-01', '2025-12-31'))",
+    "P10: договоров 2, действующим принят ba475cfc33a4 (период ('2025-01-01', '2025-12-31'))",
+    "P2: договоров 2, действующим принят b2519c8e3ea4 (период ('2025-01-01', '2025-12-31'))",
+    "P3: договоров 2, действующим принят 85afaaca89ad (период ('2025-01-01', '2025-12-31'))",
+    "P4: договоров 2, действующим принят 3a4aa2dbd6c4 (период ('2025-01-01', '2025-12-31'))",
+    "P5: договоров 2, действующим принят 1d262694c308 (период ('2025-01-01', '2025-12-31'))",
+    "P6: договоров 2, действующим принят be7c1bba8940 (период ('2025-01-01', '2025-12-31'))",
+    "P7: договоров 2, действующим принят 6acb5bbc3e70 (период ('2025-01-01', '2025-12-31'))",
+    "P8: договоров 2, действующим принят 61dfc54675dc (период ('2025-01-01', '2025-12-31'))",
+    "P9: договоров 2, действующим принят c2c9382c9168 (период ('2025-01-01', '2025-12-31'))"
+  ]
+}

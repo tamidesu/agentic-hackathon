@@ -1,0 +1,1605 @@
+{
+  "B1": {
+    "6.1": {
+      "scenario_id": "B1",
+      "point": "6.1",
+      "status": "COMPLIANT",
+      "actual": 2.81,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 2.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 11398646.93,
+          "txn_ids": [
+            "TXN-B1-0001",
+            "TXN-B1-0026"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 3,
+          "value": 7065906.84,
+          "txn_ids": [
+            "TXN-B1-0020",
+            "TXN-B1-0023",
+            "TXN-B1-0030"
+          ]
+        },
+        {
+          "category": "interest",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1540833.29,
+          "txn_ids": [
+            "TXN-B1-0033"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Ekibastuz Energy JSC, обязуется не допускать снижения Коэффициента покрытия процентов ниже величины 2.00x за период с 2025-01-01 по 2025-12-31.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "B1",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 1284663.42,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 1500000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "payroll",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1284663.42,
+          "txn_ids": [
+            "TXN-B1-0004"
+          ]
+        },
+        {
+          "category": "utilities",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 937215.88,
+          "txn_ids": [
+            "TXN-B1-0014"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Ekibastuz Energy JSC, обязуется не допускать, чтобы какая-либо отдельная статья накладных расходов превышала $1,500,000.00 за период с 2025-01-01 по 2025-12-31.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "B1",
+      "point": "6.3",
+      "status": "COMPLIANT",
+      "actual": 307018.08,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 500000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 307018.08,
+          "txn_ids": [
+            "TXN-B1-0030"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "За период с 2025-01-01 по 2025-12-31 совокупные платежи Заёмщика (Ekibastuz Energy JSC) в адрес аффилированных и связанных сторон не должны превышать $500,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    }
+  },
+  "B4": {
+    "6.1": {
+      "scenario_id": "B4",
+      "point": "6.1",
+      "status": "BREACH",
+      "actual": 3084375.68,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 3500000.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-10-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 3084375.68,
+          "txn_ids": [
+            "TXN-B4-0014"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Shymkent Refinery JSC, обязуется обеспечить Выручку за четвёртый финансовый квартал периода, оканчивающегося 2025-12-31, в размере не менее $3,500,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "B4",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 1527726.21,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 2000000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1527726.21,
+          "txn_ids": [
+            "TXN-B4-0021"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Shymkent Refinery JSC не вправе допускать, чтобы такие совокупные расходы за период с 2025-01-01 по 2025-12-31 превысили $2,000,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "B4",
+      "point": "6.3",
+      "status": "BREACH",
+      "actual": 8719793.12,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 500000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 5,
+          "value": 8719793.12,
+          "txn_ids": [
+            "TXN-B4-0030",
+            "TXN-B4-0015",
+            "TXN-B4-0009",
+            "TXN-B4-0056",
+            "TXN-B4-0014"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Shymkent Refinery JSC обязуется не допускать, чтобы совокупный размер Ограниченных платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал $500,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    }
+  },
+  "P1": {
+    "6.1": {
+      "scenario_id": "P1",
+      "point": "6.1",
+      "status": "BREACH",
+      "actual": 0.43,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.42,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1842006.44,
+          "txn_ids": [
+            "TXN-P1-0010"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 3388546.79,
+          "txn_ids": [
+            "TXN-P1-0042",
+            "TXN-P1-0031"
+          ]
+        },
+        {
+          "category": "lease",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 918443.27,
+          "txn_ids": [
+            "TXN-P1-0014"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.1 Maximum Capital Intensity Ratio. Заёмщик, Aktau Port Services JSC, обязуется не допускать, чтобы коэффициент капиталоёмкости за период с 2025-01-01 по 2025-12-31 превышал 0.42x.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P1",
+      "point": "6.2",
+      "status": "BREACH",
+      "actual": 6842117.53,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 7100000.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 6842117.53,
+          "txn_ids": [
+            "TXN-P1-0030"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Aktau Port Services JSC обязуется поддерживать совокупный объём таких поступлений за период с 2025-01-01 по 2025-12-31 на уровне не менее $7,100,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P1",
+      "point": "6.3",
+      "status": "COMPLIANT",
+      "actual": 283664.18,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 450000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 283664.18,
+          "txn_ids": [
+            "TXN-P1-0031"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.3 Максимальные платежи связанным сторонам. Заёмщик, Aktau Port Services JSC, обязуется не допускать, чтобы совокупный объём платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал $450,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    }
+  },
+  "P10": {
+    "6.1": {
+      "scenario_id": "P10",
+      "point": "6.1",
+      "status": "COMPLIANT",
+      "actual": 0.24,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.2,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "insurance",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 390781.83,
+          "txn_ids": [
+            "TXN-P10-0011",
+            "TXN-P10-0017"
+          ]
+        },
+        {
+          "category": "lease",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1204663.28,
+          "txn_ids": [
+            "TXN-P10-0021"
+          ]
+        },
+        {
+          "category": "utilities",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 418204.37,
+          "txn_ids": [
+            "TXN-P10-0064"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.1 Минимальное страховое покрытие расходов на содержание помещений. На протяжении периода с 2025-01-01 по 2025-12-31 Karaganda Logistics Terminal JSC обеспечивает, чтобы отношение Страховых премий к сумме Арендных и Коммунальных расходов составляло не менее 0.20x.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P10",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 6000763.63,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 5000000.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 7204882.16,
+          "txn_ids": [
+            "TXN-P10-0055"
+          ]
+        },
+        {
+          "category": "payroll",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1204118.53,
+          "txn_ids": [
+            "TXN-P10-0020"
+          ]
+        },
+        {
+          "category": "taxes",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 882447.19,
+          "txn_ids": [
+            "TXN-P10-0063"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.2 Минимальная выручка за вычетом наибольшей статьи накладных расходов. На протяжении периода с 2025-01-01 по 2025-12-31 Karaganda Logistics Terminal JSC обеспечивает, чтобы Выручка за вычетом наибольшей из величин Расходов на оплату труда и Налогов составляла не менее $5,000,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P10",
+      "point": "6.3",
+      "status": "COMPLIANT",
+      "actual": 0.04,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.05,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 318663.44,
+          "txn_ids": [
+            "TXN-P10-0002"
+          ]
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 7204882.16,
+          "txn_ids": [
+            "TXN-P10-0055"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.3 Maximum Related-Party Payments as a Proportion of Revenue. Концентрация расчётов со связанными сторонами. За период с 2025-01-01 по 2025-12-31 Karaganda Logistics Terminal JSC не вправе допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц составили более 0.05x от выручки за тот же период.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    }
+  },
+  "P2": {
+    "6.1": {
+      "scenario_id": "P2",
+      "point": "6.1",
+      "status": "BREACH",
+      "actual": 1.15,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 1.2,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 7214663.82,
+          "txn_ids": [
+            "TXN-P2-0034"
+          ]
+        },
+        {
+          "category": "financing_inflow",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 4882117.46,
+          "txn_ids": [
+            "TXN-P2-0028"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 3,
+          "value": 7294552.01,
+          "txn_ids": [
+            "TXN-P2-0009",
+            "TXN-P2-0040",
+            "TXN-P2-0012"
+          ]
+        },
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 3204881.55,
+          "txn_ids": [
+            "TXN-P2-0036"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.1 Minimum Cover of Applications by Sources. Отношение суммы выручки и поступлений по финансированию Заёмщика (Almaty Cold Chain JSC) к сумме операционных и капитальных затрат за период с 2025-01-01 по 2025-12-31 должно составлять не менее 1.20x.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P2",
+      "point": "6.2",
+      "status": "BREACH",
+      "actual": 3204881.55,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 3000000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 3204881.55,
+          "txn_ids": [
+            "TXN-P2-0036"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.2 Максимальные расходы по категории. Для целей настоящего ковенанта под расходами по статье «Капитальные затраты» понимаются суммы, отнесённые к данной статье в аудированной финансовой отчётности Заёмщика, включая суммы, переквалифицированные в неё независимым аудитором Заёмщика, и за вычетом сумм, переквалифицированных аудитором из данной статьи. Almaty Cold Chain JSC не вправе допускать, чтобы такие совокупные расходы за период с 2025-01-01 по 2025-12-31 превысили $3,000,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P2",
+      "point": "6.3",
+      "status": "BREACH",
+      "actual": 0.04,
+      "evidence_txn_id": "TXN-P2-0012",
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.03,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 271884.36,
+          "txn_ids": [
+            "TXN-P2-0012"
+          ]
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 7214663.82,
+          "txn_ids": [
+            "TXN-P2-0034"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.3 Maximum Related-Party Payments as a Proportion of Revenue. Заёмщик, Almaty Cold Chain JSC, обязуется не допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц за период с 2025-01-01 по 2025-12-31 превышали 0.03x от выручки за тот же период.",
+      "evidence_basis": "related_party",
+      "evidence_decisive": [
+        "TXN-P2-0012"
+      ]
+    }
+  },
+  "P3": {
+    "6.1": {
+      "scenario_id": "P3",
+      "point": "6.1",
+      "status": "BREACH",
+      "actual": 1.87,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 1.7,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "financing_inflow",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 5442118.93,
+          "txn_ids": [
+            "TXN-P3-0002"
+          ]
+        },
+        {
+          "category": "financing_inflow",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 5442118.93,
+          "txn_ids": [
+            "TXN-P3-0002"
+          ]
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 8104772.36,
+          "txn_ids": [
+            "TXN-P3-0010"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 3,
+          "value": 5193070.06,
+          "txn_ids": [
+            "TXN-P3-0024",
+            "TXN-P3-0028",
+            "TXN-P3-0001"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.1 Springing Drawdown Leverage Test. Ограничение отношения поступлений по финансированию к EBITDA величиной 1.70x за период с 2025-01-01 по 2025-12-31 применяется к Заёмщику (Shymkent Refinery Services JSC) только при условии, что совокупные поступления по финансированию превышают $4,000,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P3",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 8104772.36,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 6500000.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 8104772.36,
+          "txn_ids": [
+            "TXN-P3-0010"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.2 Минимальная выручка по категории. Минимальный объём по статье «Выручка». Условием предоставления заёмных средств является то, что совокупные поступления Shymkent Refinery Services JSC по указанной статье за период с 2025-01-01 по 2025-12-31 будут не ниже $6,500,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P3",
+      "point": "6.3",
+      "status": "COMPLIANT",
+      "actual": 264117.82,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 400000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 264117.82,
+          "txn_ids": [
+            "TXN-P3-0001"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Shymkent Refinery Services JSC обязуется не допускать, чтобы совокупный размер Ограниченных платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал $400,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    }
+  },
+  "P4": {
+    "6.1": {
+      "scenario_id": "P4",
+      "point": "6.1",
+      "status": "BREACH",
+      "actual": 0.17,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.28,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 7004318.47,
+          "txn_ids": [
+            "TXN-P4-0043"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 5,
+          "value": 5795571.56,
+          "txn_ids": [
+            "TXN-P4-0054",
+            "TXN-P4-0025",
+            "TXN-P4-0001",
+            "TXN-P4-0023",
+            "TXN-P4-0048"
+          ]
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 7004318.47,
+          "txn_ids": [
+            "TXN-P4-0043"
+          ]
+        }
+      ],
+      "problems": [
+        "агрегат disclosed:auditor_one_off_addbacks пуст — вероятно расхождение словаря категорий между спецификацией ковенанта и категоризацией транзакций"
+      ],
+      "quote": "На протяжении периода с 2025-01-01 по 2025-12-31 Aktobe Grain Terminal JSC обеспечивает, чтобы отношение Скорректированной EBITDA к Выручке составляло не менее 0.28x.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P4",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 1652704.31,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 1800000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1652704.31,
+          "txn_ids": [
+            "TXN-P4-0053"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Aktobe Grain Terminal JSC обязуется обеспечить, чтобы совокупные расходы по указанной статье, понесённые в период с 2025-01-01 по 2025-12-31, не превышали $1,800,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P4",
+      "point": "6.3",
+      "status": "BREACH",
+      "actual": 0.04,
+      "evidence_txn_id": "TXN-P4-0048",
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.04,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 288417.52,
+          "txn_ids": [
+            "TXN-P4-0048"
+          ]
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 7004318.47,
+          "txn_ids": [
+            "TXN-P4-0043"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Aktobe Grain Terminal JSC, обязуется не допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц за период с 2025-01-01 по 2025-12-31 превышали 0.04x от выручки за тот же период.",
+      "evidence_basis": "related_party",
+      "evidence_decisive": [
+        "TXN-P4-0048"
+      ]
+    }
+  },
+  "P5": {
+    "6.1": {
+      "scenario_id": "P5",
+      "point": "6.1",
+      "status": "COMPLIANT",
+      "actual": 0.0,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 9.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "group",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 0,
+          "value": 0,
+          "txn_ids": []
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 10330504.91,
+          "txn_ids": [
+            "TXN-P5-0038",
+            "TXN-P5-0013"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 6175865.79,
+          "txn_ids": [
+            "TXN-P5-0031",
+            "TXN-P5-0004"
+          ]
+        }
+      ],
+      "problems": [
+        "агрегат capex/group пуст — вероятно расхождение словаря категорий между спецификацией ковенанта и категоризацией транзакций"
+      ],
+      "quote": "На протяжении периода с 2025-01-01 по 2025-12-31 Ekibastuz Power Services JSC обеспечивает, чтобы отношение совокупных капитальных затрат Группы к EBITDA Заёмщика не превышало 9.00x.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P5",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 10330504.91,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 7500000.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 10330504.91,
+          "txn_ids": [
+            "TXN-P5-0038",
+            "TXN-P5-0013"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Ekibastuz Power Services JSC обязуется поддерживать совокупный объём таких поступлений за период с 2025-01-01 по 2025-12-31 на уровне не менее $7,500,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P5",
+      "point": "6.3",
+      "status": "BREACH",
+      "actual": 273418.66,
+      "evidence_txn_id": "TXN-P5-0004",
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 260000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 273418.66,
+          "txn_ids": [
+            "TXN-P5-0004"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "За период с 2025-01-01 по 2025-12-31 совокупные платежи Заёмщика (Ekibastuz Power Services JSC) в адрес аффилированных и связанных сторон не должны превышать $260,000.00.",
+      "evidence_basis": "related_party",
+      "evidence_decisive": [
+        "TXN-P5-0004"
+      ]
+    }
+  },
+  "P6": {
+    "6.1": {
+      "scenario_id": "P6",
+      "point": "6.1",
+      "status": "BREACH",
+      "actual": 0.09,
+      "evidence_txn_id": "TXN-P6-0040",
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.08,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 418662.44,
+          "txn_ids": [
+            "TXN-P6-0040"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 4623325.63,
+          "txn_ids": [
+            "TXN-P6-0041",
+            "TXN-P6-0040"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Taraz Cement Works JSC, обязуется не допускать, чтобы совокупный объём платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал 0.08x Операционных расходов Заёмщика за этот период.",
+      "evidence_basis": "related_party",
+      "evidence_decisive": [
+        "TXN-P6-0040"
+      ]
+    },
+    "6.2": {
+      "scenario_id": "P6",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 3.64,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 3.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 6918204.37,
+          "txn_ids": [
+            "TXN-P6-0031"
+          ]
+        },
+        {
+          "category": "payroll",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1482663.19,
+          "txn_ids": [
+            "TXN-P6-0004"
+          ]
+        },
+        {
+          "category": "utilities",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 418204.37,
+          "txn_ids": [
+            "TXN-P6-0044"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Taraz Cement Works JSC, обеспечивает, чтобы Выручка за период с 2025-01-01 по 2025-12-31 составляла не менее 3.00x совокупной величины Расходов на оплату труда и Коммунальных расходов за этот период.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P6",
+      "point": "6.3",
+      "status": "COMPLIANT",
+      "actual": 1482663.28,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 1600000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1482663.28,
+          "txn_ids": [
+            "TXN-P6-0022"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Taraz Cement Works JSC, обязуется не допускать, чтобы совокупный объём расходов по статье «Капитальные затраты» за период с 2025-01-01 по 2025-12-31 превышал $1,600,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    }
+  },
+  "P7": {
+    "6.1": {
+      "scenario_id": "P7",
+      "point": "6.1",
+      "status": "BREACH",
+      "actual": 0.4,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.3,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "taxes",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 888322.83,
+          "txn_ids": [
+            "TXN-P7-0010",
+            "TXN-P7-0033"
+          ]
+        },
+        {
+          "category": "utilities",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 91447.35,
+          "txn_ids": [
+            "TXN-P7-0047"
+          ]
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 9146882.53,
+          "txn_ids": [
+            "TXN-P7-0032"
+          ]
+        },
+        {
+          "category": "opex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 6709667.59,
+          "txn_ids": [
+            "TXN-P7-0031",
+            "TXN-P7-0035"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "На протяжении периода с 2025-01-01 по 2025-12-31 Atyrau Pipeline Services JSC обеспечивает, чтобы отношение суммы Налогов и Коммунальных расходов к EBITDA не превышало 0.30x.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P7",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 9146882.53,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 8700000.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 9146882.53,
+          "txn_ids": [
+            "TXN-P7-0032"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Atyrau Pipeline Services JSC обязуется обеспечить, чтобы совокупные поступления по статье «Выручка» за период с 2025-01-01 по 2025-12-31 составляли не менее $8,700,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P7",
+      "point": "6.3",
+      "status": "BREACH",
+      "actual": 291663.82,
+      "evidence_txn_id": "TXN-P7-0035",
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 275000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 291663.82,
+          "txn_ids": [
+            "TXN-P7-0035"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "За исключением случаев, прямо согласованных Кредитором в письменной форме, Atyrau Pipeline Services JSC не вправе прямо или косвенно перечислять, передавать или иным образом предоставлять связанным сторонам суммы, совокупный размер которых за период с 2025-01-01 по 2025-12-31 превышает $275,000.00.",
+      "evidence_basis": "related_party",
+      "evidence_decisive": [
+        "TXN-P7-0035"
+      ]
+    }
+  },
+  "P8": {
+    "6.1": {
+      "scenario_id": "P8",
+      "point": "6.1",
+      "status": "COMPLIANT",
+      "actual": 3302867.43,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 4000000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "payroll",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 3302867.43,
+          "txn_ids": [
+            "TXN-P8-0005",
+            "TXN-P8-0031"
+          ]
+        }
+      ],
+      "problems": [
+        "агрегат disclosed:severance_programme_obligations пуст — вероятно расхождение словаря категорий между спецификацией ковенанта и категоризацией транзакций"
+      ],
+      "quote": "Пункт 6.1 Максимальные совокупные обязательства по персоналу. Заёмщик, Kyzylorda Drilling Services JSC, обязуется не допускать, чтобы Совокупные обязательства по персоналу по состоянию на 2025-12-31 превышали $4,000,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P8",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 1918204.36,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 2100000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 1918204.36,
+          "txn_ids": [
+            "TXN-P8-0030"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.2 Максимальные расходы по категории. Заёмщик, Kyzylorda Drilling Services JSC, обязуется не допускать, чтобы совокупный объём расходов по статье «Капитальные затраты» за период с 2025-01-01 по 2025-12-31 превышал $2,100,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P8",
+      "point": "6.3",
+      "status": "COMPLIANT",
+      "actual": 0.04,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.04,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 342118.65,
+          "txn_ids": [
+            "TXN-P8-0016"
+          ]
+        },
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 2,
+          "value": 9009477.56,
+          "txn_ids": [
+            "TXN-P8-0015",
+            "TXN-P8-0037"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Пункт 6.3 Maximum Related-Party Payments as a Proportion of Revenue. Заёмщик, Kyzylorda Drilling Services JSC, обязуется не допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц за период с 2025-01-01 по 2025-12-31 превышали 0.04x от выручки за тот же период.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    }
+  },
+  "P9": {
+    "6.1": {
+      "scenario_id": "P9",
+      "point": "6.1",
+      "status": "COMPLIANT",
+      "actual": 0.0,
+      "evidence_txn_id": null,
+      "unit": "ratio",
+      "condition_met": true,
+      "threshold": 0.15,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": "unrestricted_subsidiary",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 0,
+          "value": 0,
+          "txn_ids": []
+        },
+        {
+          "category": "capex",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 3,
+          "value": 1924986.29,
+          "txn_ids": [
+            "TXN-P9-0035",
+            "TXN-P9-0025",
+            "TXN-P9-0017"
+          ]
+        }
+      ],
+      "problems": [
+        "агрегат party=unrestricted_subsidiary (ни одной операции) пуст — вероятно расхождение словаря категорий между спецификацией ковенанта и категоризацией транзакций"
+      ],
+      "quote": "Заёмщик, Zhezkazgan Mining Services JSC, обязуется не допускать, чтобы совокупная стоимость капитальных активов, переданных Неограниченным дочерним организациям за период с 2025-01-01 по 2025-12-31, превышала 0.15x совокупных капитальных затрат Заёмщика за этот период.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.2": {
+      "scenario_id": "P9",
+      "point": "6.2",
+      "status": "COMPLIANT",
+      "actual": 8442118.53,
+      "evidence_txn_id": null,
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 6900000.0,
+      "direction": "min",
+      "trace": [
+        {
+          "category": "revenue",
+          "scope": "borrower",
+          "party": null,
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 8442118.53,
+          "txn_ids": [
+            "TXN-P9-0012"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "Заёмщик, Zhezkazgan Mining Services JSC, обязуется обеспечить, чтобы совокупная выручка по статье «Выручка» за период с 2025-01-01 по 2025-12-31 составляла не менее $6,900,000.00.",
+      "evidence_basis": null,
+      "evidence_decisive": []
+    },
+    "6.3": {
+      "scenario_id": "P9",
+      "point": "6.3",
+      "status": "BREACH",
+      "actual": 268447.19,
+      "evidence_txn_id": "TXN-P9-0040",
+      "unit": "amount",
+      "condition_met": true,
+      "threshold": 225000.0,
+      "direction": "max",
+      "trace": [
+        {
+          "category": "any",
+          "scope": "borrower",
+          "party": "related",
+          "period": [
+            "2025-01-01",
+            "2025-12-31"
+          ],
+          "n_txns": 1,
+          "value": 268447.19,
+          "txn_ids": [
+            "TXN-P9-0040"
+          ]
+        }
+      ],
+      "problems": [],
+      "quote": "В период с 2025-01-01 по 2025-12-31 Zhezkazgan Mining Services JSC не вправе совершать Ограниченные платежи в пользу связанных сторон на совокупную сумму свыше $225,000.00.",
+      "evidence_basis": "related_party",
+      "evidence_decisive": [
+        "TXN-P9-0040"
+      ]
+    }
+  }
+}

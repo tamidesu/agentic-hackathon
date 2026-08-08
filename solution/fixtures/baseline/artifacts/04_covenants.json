@@ -1,0 +1,1847 @@
+{
+  "alarms": [],
+  "problems": [],
+  "scenarios": {
+    "B1": {
+      "scenario_id": "B1",
+      "doc_id": "b38facf69a94",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Минимальный коэффициент покрытия процентов",
+          "direction": "min",
+          "threshold": 2.0,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Коэффициент покрытия процентов: EBITDA (Выручка за вычетом Операционных расходов) / Процентные расходы",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "ebitda",
+                "interest"
+              ]
+            },
+            {
+              "id": "ebitda",
+              "op": "SUB",
+              "args": [
+                "revenue",
+                "opex"
+              ]
+            },
+            {
+              "id": "revenue",
+              "op": "AGG",
+              "category": "revenue",
+              "scope": "borrower"
+            },
+            {
+              "id": "opex",
+              "op": "AGG",
+              "category": "opex",
+              "scope": "borrower"
+            },
+            {
+              "id": "interest",
+              "op": "AGG",
+              "category": "interest",
+              "scope": "borrower"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Заёмщик, Ekibastuz Energy JSC, обязуется не допускать снижения Коэффициента покрытия процентов ниже величины 2.00x за период с 2025-01-01 по 2025-12-31.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "SUB",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "revenue",
+                    "scope": "borrower"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "opex",
+                    "scope": "borrower"
+                  }
+                ]
+              },
+              {
+                "op": "AGG",
+                "category": "interest",
+                "scope": "borrower"
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Individual Overhead Line Ceiling",
+          "direction": "max",
+          "threshold": 1500000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Наибольшая из двух статей накладных расходов: расходы на оплату труда или расходы на коммунальные услуги",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "MAX",
+              "args": [
+                "payroll",
+                "utilities"
+              ]
+            },
+            {
+              "id": "payroll",
+              "op": "AGG",
+              "category": "payroll",
+              "scope": "borrower"
+            },
+            {
+              "id": "utilities",
+              "op": "AGG",
+              "category": "utilities",
+              "scope": "borrower"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Заёмщик, Ekibastuz Energy JSC, обязуется не допускать, чтобы какая-либо отдельная статья накладных расходов превышала $1,500,000.00 за период с 2025-01-01 по 2025-12-31.",
+          "metric": {
+            "op": "MAX",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "payroll",
+                "scope": "borrower"
+              },
+              {
+                "op": "AGG",
+                "category": "utilities",
+                "scope": "borrower"
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные платежи связанным сторонам",
+          "direction": "max",
+          "threshold": 500000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные платежи связанным и аффилированным сторонам",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "any",
+              "scope": "borrower",
+              "party": "related"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "За период с 2025-01-01 по 2025-12-31 совокупные платежи Заёмщика (Ekibastuz Energy JSC) в адрес аффилированных и связанных сторон не должны превышать $500,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "any",
+            "scope": "borrower",
+            "party": "related"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1479 знаков"
+      ]
+    },
+    "B4": {
+      "scenario_id": "B4",
+      "doc_id": "bc5451f75caf",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Минимальная выручка за четвёртый квартал",
+          "direction": "min",
+          "threshold": 3500000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Выручка за четвёртый квартал",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "AGG",
+              "category": "revenue",
+              "period": [
+                "2025-10-01",
+                "2025-12-31"
+              ]
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "carve_outs": [],
+          "quote": "Заёмщик, Shymkent Refinery JSC, обязуется обеспечить Выручку за четвёртый финансовый квартал периода, оканчивающегося 2025-12-31, в размере не менее $3,500,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "revenue",
+            "period": [
+              "2025-10-01",
+              "2025-12-31"
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Максимальные расходы по категории",
+          "direction": "max",
+          "threshold": 2000000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные расходы по статье «Капитальные затраты»",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "AGG",
+              "category": "capex"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "carve_outs": [],
+          "quote": "Shymkent Refinery JSC не вправе допускать, чтобы такие совокупные расходы за период с 2025-01-01 по 2025-12-31 превысили $2,000,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "capex"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные платежи связанным сторонам",
+          "direction": "max",
+          "threshold": 500000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный размер платежей в пользу связанных сторон",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "carve_outs": [],
+          "quote": "Shymkent Refinery JSC обязуется не допускать, чтобы совокупный размер Ограниченных платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал $500,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "any",
+            "party": "related"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1508 знаков"
+      ]
+    },
+    "P1": {
+      "scenario_id": "P1",
+      "doc_id": "8d878af064f2",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Maximum Capital Intensity Ratio",
+          "direction": "max",
+          "threshold": 0.42,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Коэффициент капиталоёмкости (Капитальные затраты / (Операционные расходы + Арендные платежи))",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "capex",
+                "denom"
+              ]
+            },
+            {
+              "id": "capex",
+              "op": "AGG",
+              "category": "capex"
+            },
+            {
+              "id": "denom",
+              "op": "ADD",
+              "args": [
+                "opex",
+                "lease"
+              ]
+            },
+            {
+              "id": "opex",
+              "op": "AGG",
+              "category": "opex"
+            },
+            {
+              "id": "lease",
+              "op": "AGG",
+              "category": "lease"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.1 Maximum Capital Intensity Ratio. Заёмщик, Aktau Port Services JSC, обязуется не допускать, чтобы коэффициент капиталоёмкости за период с 2025-01-01 по 2025-12-31 превышал 0.42x.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "capex"
+              },
+              {
+                "op": "ADD",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "opex"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "lease"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Минимальная выручка по категории",
+          "direction": "min",
+          "threshold": 7100000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный объём поступлений по статье «Выручка»",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Aktau Port Services JSC обязуется поддерживать совокупный объём таких поступлений за период с 2025-01-01 по 2025-12-31 на уровне не менее $7,100,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "revenue"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные платежи связанным сторонам",
+          "direction": "max",
+          "threshold": 450000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный объём платежей в пользу связанных сторон",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.3 Максимальные платежи связанным сторонам. Заёмщик, Aktau Port Services JSC, обязуется не допускать, чтобы совокупный объём платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал $450,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "any",
+            "party": "related"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1295 знаков"
+      ]
+    },
+    "P10": {
+      "scenario_id": "P10",
+      "doc_id": "ba475cfc33a4",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Минимальное страховое покрытие расходов на содержание помещений",
+          "direction": "min",
+          "threshold": 0.2,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение Страховых премий к сумме Арендных и Коммунальных расходов",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "DIV",
+              "args": [
+                "n2",
+                "n3"
+              ]
+            },
+            {
+              "id": "n2",
+              "op": "AGG",
+              "category": "insurance"
+            },
+            {
+              "id": "n3",
+              "op": "ADD",
+              "args": [
+                "n4",
+                "n5"
+              ]
+            },
+            {
+              "id": "n4",
+              "op": "AGG",
+              "category": "lease"
+            },
+            {
+              "id": "n5",
+              "op": "AGG",
+              "category": "utilities"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "quote": "Пункт 6.1 Минимальное страховое покрытие расходов на содержание помещений. На протяжении периода с 2025-01-01 по 2025-12-31 Karaganda Logistics Terminal JSC обеспечивает, чтобы отношение Страховых премий к сумме Арендных и Коммунальных расходов составляло не менее 0.20x.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "insurance"
+              },
+              {
+                "op": "ADD",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "lease"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "utilities"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Минимальная выручка за вычетом наибольшей статьи накладных расходов",
+          "direction": "min",
+          "threshold": 5000000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Выручка за вычетом наибольшей из величин Расходов на оплату труда и Налогов",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "SUB",
+              "args": [
+                "n2",
+                "n3"
+              ]
+            },
+            {
+              "id": "n2",
+              "op": "AGG",
+              "category": "revenue"
+            },
+            {
+              "id": "n3",
+              "op": "MAX",
+              "args": [
+                "n4",
+                "n5"
+              ]
+            },
+            {
+              "id": "n4",
+              "op": "AGG",
+              "category": "payroll"
+            },
+            {
+              "id": "n5",
+              "op": "AGG",
+              "category": "taxes"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "quote": "Пункт 6.2 Минимальная выручка за вычетом наибольшей статьи накладных расходов. На протяжении периода с 2025-01-01 по 2025-12-31 Karaganda Logistics Terminal JSC обеспечивает, чтобы Выручка за вычетом наибольшей из величин Расходов на оплату труда и Налогов составляла не менее $5,000,000.00.",
+          "metric": {
+            "op": "SUB",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "revenue"
+              },
+              {
+                "op": "MAX",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "payroll"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "taxes"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Maximum Related-Party Payments as a Proportion of Revenue",
+          "direction": "max",
+          "threshold": 0.05,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение платежей в пользу аффилированных лиц к выручке",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "DIV",
+              "args": [
+                "n2",
+                "n3"
+              ]
+            },
+            {
+              "id": "n2",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            },
+            {
+              "id": "n3",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "quote": "Пункт 6.3 Maximum Related-Party Payments as a Proportion of Revenue. Концентрация расчётов со связанными сторонами. За период с 2025-01-01 по 2025-12-31 Karaganda Logistics Terminal JSC не вправе допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц составили более 0.05x от выручки за тот же период.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "any",
+                "party": "related"
+              },
+              {
+                "op": "AGG",
+                "category": "revenue"
+              }
+            ]
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1290 знаков"
+      ]
+    },
+    "P2": {
+      "scenario_id": "P2",
+      "doc_id": "b2519c8e3ea4",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Minimum Cover of Applications by Sources",
+          "direction": "min",
+          "threshold": 1.2,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение суммы выручки и поступлений по финансированию к сумме операционных и капитальных затрат",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "num",
+                "den"
+              ]
+            },
+            {
+              "id": "num",
+              "op": "ADD",
+              "args": [
+                "rev",
+                "fin"
+              ]
+            },
+            {
+              "id": "rev",
+              "op": "AGG",
+              "category": "revenue"
+            },
+            {
+              "id": "fin",
+              "op": "AGG",
+              "category": "financing_inflow"
+            },
+            {
+              "id": "den",
+              "op": "ADD",
+              "args": [
+                "opex",
+                "capex"
+              ]
+            },
+            {
+              "id": "opex",
+              "op": "AGG",
+              "category": "opex"
+            },
+            {
+              "id": "capex",
+              "op": "AGG",
+              "category": "capex"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.1 Minimum Cover of Applications by Sources. Отношение суммы выручки и поступлений по финансированию Заёмщика (Almaty Cold Chain JSC) к сумме операционных и капитальных затрат за период с 2025-01-01 по 2025-12-31 должно составлять не менее 1.20x.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "ADD",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "revenue"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "financing_inflow"
+                  }
+                ]
+              },
+              {
+                "op": "ADD",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "opex"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "capex"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Максимальные расходы по категории",
+          "direction": "max",
+          "threshold": 3000000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные расходы по статье «Капитальные затраты» за период",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "capex"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.2 Максимальные расходы по категории. Для целей настоящего ковенанта под расходами по статье «Капитальные затраты» понимаются суммы, отнесённые к данной статье в аудированной финансовой отчётности Заёмщика, включая суммы, переквалифицированные в неё независимым аудитором Заёмщика, и за вычетом сумм, переквалифицированных аудитором из данной статьи. Almaty Cold Chain JSC не вправе допускать, чтобы такие совокупные расходы за период с 2025-01-01 по 2025-12-31 превысили $3,000,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "capex"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Maximum Related-Party Payments as a Proportion of Revenue",
+          "direction": "max",
+          "threshold": 0.03,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение совокупных платежей в пользу аффилированных лиц к выручке за тот же период",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "related_payments",
+                "rev"
+              ]
+            },
+            {
+              "id": "related_payments",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            },
+            {
+              "id": "rev",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.3 Maximum Related-Party Payments as a Proportion of Revenue. Заёмщик, Almaty Cold Chain JSC, обязуется не допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц за период с 2025-01-01 по 2025-12-31 превышали 0.03x от выручки за тот же период.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "any",
+                "party": "related"
+              },
+              {
+                "op": "AGG",
+                "category": "revenue"
+              }
+            ]
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1244 знаков"
+      ]
+    },
+    "P3": {
+      "scenario_id": "P3",
+      "doc_id": "85afaaca89ad",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Springing Drawdown Leverage Test",
+          "direction": "max",
+          "threshold": 1.7,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение поступлений по финансированию к EBITDA (Выручка минус Операционные расходы)",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "fin_inflow",
+                "ebitda"
+              ]
+            },
+            {
+              "id": "fin_inflow",
+              "op": "AGG",
+              "category": "financing_inflow",
+              "scope": "borrower"
+            },
+            {
+              "id": "ebitda",
+              "op": "SUB",
+              "args": [
+                "rev",
+                "opx"
+              ]
+            },
+            {
+              "id": "rev",
+              "op": "AGG",
+              "category": "revenue",
+              "scope": "borrower"
+            },
+            {
+              "id": "opx",
+              "op": "AGG",
+              "category": "opex",
+              "scope": "borrower"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": true,
+          "condition_nodes": [
+            {
+              "id": "cond_root",
+              "op": "AGG",
+              "category": "financing_inflow",
+              "scope": "borrower"
+            }
+          ],
+          "condition_root": "cond_root",
+          "condition_direction": "max",
+          "condition_threshold": 4000000.0,
+          "condition_description": "Применяется только при условии, что совокупные поступления по финансированию превышают $4,000,000.00",
+          "carve_outs": [],
+          "quote": "Пункт 6.1 Springing Drawdown Leverage Test. Ограничение отношения поступлений по финансированию к EBITDA величиной 1.70x за период с 2025-01-01 по 2025-12-31 применяется к Заёмщику (Shymkent Refinery Services JSC) только при условии, что совокупные поступления по финансированию превышают $4,000,000.00.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "financing_inflow",
+                "scope": "borrower"
+              },
+              {
+                "op": "SUB",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "revenue",
+                    "scope": "borrower"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "opex",
+                    "scope": "borrower"
+                  }
+                ]
+              }
+            ]
+          },
+          "condition_metric": {
+            "op": "AGG",
+            "category": "financing_inflow",
+            "scope": "borrower"
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Минимальная выручка по категории",
+          "direction": "min",
+          "threshold": 6500000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные поступления по статье Выручка",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "revenue",
+              "scope": "borrower"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "condition_nodes": [],
+          "condition_root": "",
+          "condition_direction": "min",
+          "condition_threshold": null,
+          "condition_description": null,
+          "carve_outs": [
+            "Суммы, переквалифицированные независимым аудитором Заёмщика в состав финансовых или иных неоперационных статей, в счёт исполнения настоящего ковенанта не засчитываются"
+          ],
+          "quote": "Пункт 6.2 Минимальная выручка по категории. Минимальный объём по статье «Выручка». Условием предоставления заёмных средств является то, что совокупные поступления Shymkent Refinery Services JSC по указанной статье за период с 2025-01-01 по 2025-12-31 будут не ниже $6,500,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "revenue",
+            "scope": "borrower"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные платежи связанным сторонам",
+          "direction": "max",
+          "threshold": 400000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный размер Ограниченных платежей в пользу связанных сторон",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "any",
+              "party": "related",
+              "key": "related_party_payments"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "condition_nodes": [],
+          "condition_root": "",
+          "condition_direction": "max",
+          "condition_threshold": null,
+          "condition_description": null,
+          "carve_outs": [],
+          "quote": "Shymkent Refinery Services JSC обязуется не допускать, чтобы совокупный размер Ограниченных платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал $400,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "any",
+            "party": "related",
+            "key": "related_party_payments"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1371 знаков"
+      ]
+    },
+    "P4": {
+      "scenario_id": "P4",
+      "doc_id": "3a4aa2dbd6c4",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Минимальная скорректированная рентабельность по EBITDA",
+          "direction": "min",
+          "threshold": 0.28,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение Скорректированной EBITDA (Выручка минус Операционные расходы плюс разовые статьи, признанные аудиторами) к Выручке",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "DIV",
+              "args": [
+                "n2",
+                "n6"
+              ]
+            },
+            {
+              "id": "n2",
+              "op": "ADD",
+              "args": [
+                "n3",
+                "n5"
+              ]
+            },
+            {
+              "id": "n3",
+              "op": "SUB",
+              "args": [
+                "n6",
+                "n4"
+              ]
+            },
+            {
+              "id": "n4",
+              "op": "AGG",
+              "category": "opex"
+            },
+            {
+              "id": "n5",
+              "op": "DISCLOSED",
+              "key": "auditor_one_off_addbacks"
+            },
+            {
+              "id": "n6",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "quote": "На протяжении периода с 2025-01-01 по 2025-12-31 Aktobe Grain Terminal JSC обеспечивает, чтобы отношение Скорректированной EBITDA к Выручке составляло не менее 0.28x.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "ADD",
+                "args": [
+                  {
+                    "op": "SUB",
+                    "args": [
+                      {
+                        "op": "AGG",
+                        "category": "revenue"
+                      },
+                      {
+                        "op": "AGG",
+                        "category": "opex"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "DISCLOSED",
+                    "key": "auditor_one_off_addbacks"
+                  }
+                ]
+              },
+              {
+                "op": "AGG",
+                "category": "revenue"
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Максимальные расходы по категории",
+          "direction": "max",
+          "threshold": 1800000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные расходы по статье «Капитальные затраты»",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "AGG",
+              "category": "capex"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "quote": "Aktobe Grain Terminal JSC обязуется обеспечить, чтобы совокупные расходы по указанной статье, понесённые в период с 2025-01-01 по 2025-12-31, не превышали $1,800,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "capex"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Maximum Related-Party Payments as a Proportion of Revenue",
+          "direction": "max",
+          "threshold": 0.04,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные платежи в пользу аффилированных лиц, деленные на Выручку",
+          "metric_nodes": [
+            {
+              "id": "n1",
+              "op": "DIV",
+              "args": [
+                "n2",
+                "n3"
+              ]
+            },
+            {
+              "id": "n2",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            },
+            {
+              "id": "n3",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "n1",
+          "is_conditional": false,
+          "quote": "Заёмщик, Aktobe Grain Terminal JSC, обязуется не допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц за период с 2025-01-01 по 2025-12-31 превышали 0.04x от выручки за тот же период.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "any",
+                "party": "related"
+              },
+              {
+                "op": "AGG",
+                "category": "revenue"
+              }
+            ]
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1493 знаков"
+      ]
+    },
+    "P5": {
+      "scenario_id": "P5",
+      "doc_id": "1d262694c308",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Максимальное отношение капитальных затрат Группы к EBITDA Заёмщика",
+          "direction": "max",
+          "threshold": 9.0,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение совокупных капитальных затрат Группы к EBITDA Заёмщика (Выручка минус Операционные расходы)",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "capex_group",
+                "ebitda"
+              ]
+            },
+            {
+              "id": "capex_group",
+              "op": "AGG",
+              "category": "capex",
+              "scope": "group"
+            },
+            {
+              "id": "ebitda",
+              "op": "SUB",
+              "args": [
+                "rev",
+                "opex"
+              ]
+            },
+            {
+              "id": "rev",
+              "op": "AGG",
+              "category": "revenue"
+            },
+            {
+              "id": "opex",
+              "op": "AGG",
+              "category": "opex"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "На протяжении периода с 2025-01-01 по 2025-12-31 Ekibastuz Power Services JSC обеспечивает, чтобы отношение совокупных капитальных затрат Группы к EBITDA Заёмщика не превышало 9.00x.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "capex",
+                "scope": "group"
+              },
+              {
+                "op": "SUB",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "revenue"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "opex"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Минимальная выручка по категории",
+          "direction": "min",
+          "threshold": 7500000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный объём поступлений по статье Выручка Заёмщика",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Ekibastuz Power Services JSC обязуется поддерживать совокупный объём таких поступлений за период с 2025-01-01 по 2025-12-31 на уровне не менее $7,500,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "revenue"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные платежи связанным сторонам",
+          "direction": "max",
+          "threshold": 260000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные платежи Заёмщика в адрес аффилированных и связанных сторон",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "За период с 2025-01-01 по 2025-12-31 совокупные платежи Заёмщика (Ekibastuz Power Services JSC) в адрес аффилированных и связанных сторон не должны превышать $260,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "any",
+            "party": "related"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1328 знаков"
+      ]
+    },
+    "P6": {
+      "scenario_id": "P6",
+      "doc_id": "be7c1bba8940",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Максимальная доля платежей связанным сторонам в операционных расходах",
+          "direction": "max",
+          "threshold": 0.08,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный объём платежей в пользу связанных сторон, делённый на Операционные расходы Заёмщика",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "related_payments",
+                "opex"
+              ]
+            },
+            {
+              "id": "related_payments",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            },
+            {
+              "id": "opex",
+              "op": "AGG",
+              "category": "opex"
+            }
+          ],
+          "metric_root": "root",
+          "quote": "Заёмщик, Taraz Cement Works JSC, обязуется не допускать, чтобы совокупный объём платежей в пользу связанных сторон за период с 2025-01-01 по 2025-12-31 превышал 0.08x Операционных расходов Заёмщика за этот период.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "any",
+                "party": "related"
+              },
+              {
+                "op": "AGG",
+                "category": "opex"
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Минимальное покрытие расходов на персонал и коммунальные услуги выручкой",
+          "direction": "min",
+          "threshold": 3.0,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Выручка, делённая на сумму расходов на оплату труда и коммунальных расходов",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "rev",
+                "costs_sum"
+              ]
+            },
+            {
+              "id": "rev",
+              "op": "AGG",
+              "category": "revenue"
+            },
+            {
+              "id": "costs_sum",
+              "op": "ADD",
+              "args": [
+                "payroll",
+                "utilities"
+              ]
+            },
+            {
+              "id": "payroll",
+              "op": "AGG",
+              "category": "payroll"
+            },
+            {
+              "id": "utilities",
+              "op": "AGG",
+              "category": "utilities"
+            }
+          ],
+          "metric_root": "root",
+          "quote": "Заёмщик, Taraz Cement Works JSC, обеспечивает, чтобы Выручка за период с 2025-01-01 по 2025-12-31 составляла не менее 3.00x совокупной величины Расходов на оплату труда и Коммунальных расходов за этот период.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "revenue"
+              },
+              {
+                "op": "ADD",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "payroll"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "utilities"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные расходы по категории",
+          "direction": "max",
+          "threshold": 1600000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный объём расходов по статье «Капитальные затраты»",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "capex"
+            }
+          ],
+          "metric_root": "root",
+          "quote": "Заёмщик, Taraz Cement Works JSC, обязуется не допускать, чтобы совокупный объём расходов по статье «Капитальные затраты» за период с 2025-01-01 по 2025-12-31 превышал $1,600,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "capex"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1771 знаков"
+      ]
+    },
+    "P7": {
+      "scenario_id": "P7",
+      "doc_id": "6acb5bbc3e70",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Максимальное отношение налоговой и коммунальной нагрузки к EBITDA",
+          "direction": "max",
+          "threshold": 0.3,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение суммы Налогов и Коммунальных расходов к EBITDA (Выручка минус Операционные расходы)",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "tax_util",
+                "ebitda"
+              ]
+            },
+            {
+              "id": "tax_util",
+              "op": "ADD",
+              "args": [
+                "tax",
+                "util"
+              ]
+            },
+            {
+              "id": "tax",
+              "op": "AGG",
+              "category": "taxes"
+            },
+            {
+              "id": "util",
+              "op": "AGG",
+              "category": "utilities"
+            },
+            {
+              "id": "ebitda",
+              "op": "SUB",
+              "args": [
+                "rev",
+                "opex"
+              ]
+            },
+            {
+              "id": "rev",
+              "op": "AGG",
+              "category": "revenue"
+            },
+            {
+              "id": "opex",
+              "op": "AGG",
+              "category": "opex"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "На протяжении периода с 2025-01-01 по 2025-12-31 Atyrau Pipeline Services JSC обеспечивает, чтобы отношение суммы Налогов и Коммунальных расходов к EBITDA не превышало 0.30x.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "ADD",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "taxes"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "utilities"
+                  }
+                ]
+              },
+              {
+                "op": "SUB",
+                "args": [
+                  {
+                    "op": "AGG",
+                    "category": "revenue"
+                  },
+                  {
+                    "op": "AGG",
+                    "category": "opex"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Минимальная выручка по категории",
+          "direction": "min",
+          "threshold": 8700000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупные поступления по статье Выручка",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Atyrau Pipeline Services JSC обязуется обеспечить, чтобы совокупные поступления по статье «Выручка» за период с 2025-01-01 по 2025-12-31 составляли не менее $8,700,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "revenue"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные платежи связанным сторонам",
+          "direction": "max",
+          "threshold": 275000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный размер платежей связанным сторонам",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "carve_outs": [
+            "За исключением случаев, прямо согласованных Кредитором в письменной форме"
+          ],
+          "quote": "За исключением случаев, прямо согласованных Кредитором в письменной форме, Atyrau Pipeline Services JSC не вправе прямо или косвенно перечислять, передавать или иным образом предоставлять связанным сторонам суммы, совокупный размер которых за период с 2025-01-01 по 2025-12-31 превышает $275,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "any",
+            "party": "related"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1435 знаков"
+      ]
+    },
+    "P8": {
+      "scenario_id": "P8",
+      "doc_id": "61dfc54675dc",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Максимальные совокупные обязательства по персоналу",
+          "direction": "max",
+          "threshold": 4000000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Сумма расходов на оплату труда Заёмщика и совокупного обязательства по программе выходных пособий",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "ADD",
+              "args": [
+                "payroll_agg",
+                "severance_disclosed"
+              ]
+            },
+            {
+              "id": "payroll_agg",
+              "op": "AGG",
+              "category": "payroll",
+              "scope": "borrower"
+            },
+            {
+              "id": "severance_disclosed",
+              "op": "DISCLOSED",
+              "key": "severance_programme_obligations"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.1 Максимальные совокупные обязательства по персоналу. Заёмщик, Kyzylorda Drilling Services JSC, обязуется не допускать, чтобы Совокупные обязательства по персоналу по состоянию на 2025-12-31 превышали $4,000,000.00.",
+          "metric": {
+            "op": "ADD",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "payroll",
+                "scope": "borrower"
+              },
+              {
+                "op": "DISCLOSED",
+                "key": "severance_programme_obligations"
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Максимальные расходы по категории",
+          "direction": "max",
+          "threshold": 2100000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупный объём расходов по статье Капитальные затраты за период",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "capex",
+              "scope": "borrower"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.2 Максимальные расходы по категории. Заёмщик, Kyzylorda Drilling Services JSC, обязуется не допускать, чтобы совокупный объём расходов по статье «Капитальные затраты» за период с 2025-01-01 по 2025-12-31 превышал $2,100,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "capex",
+            "scope": "borrower"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Maximum Related-Party Payments as a Proportion of Revenue",
+          "direction": "max",
+          "threshold": 0.04,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Отношение совокупных платежей в пользу аффилированных лиц к выручке за тот же период",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "related_payments",
+                "revenue_agg"
+              ]
+            },
+            {
+              "id": "related_payments",
+              "op": "AGG",
+              "category": "any",
+              "party": "related",
+              "key": "",
+              "value": 0,
+              "args": []
+            },
+            {
+              "id": "revenue_agg",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "Пункт 6.3 Maximum Related-Party Payments as a Proportion of Revenue. Заёмщик, Kyzylorda Drilling Services JSC, обязуется не допускать, чтобы совокупные Ограниченные платежи в пользу аффилированных лиц за период с 2025-01-01 по 2025-12-31 превышали 0.04x от выручки за тот же период.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "any",
+                "party": "related",
+                "key": "",
+                "value": 0
+              },
+              {
+                "op": "AGG",
+                "category": "revenue"
+              }
+            ]
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1778 знаков"
+      ]
+    },
+    "P9": {
+      "scenario_id": "P9",
+      "doc_id": "c2c9382c9168",
+      "section_anchor": "Финансовые ковенанты",
+      "points": [
+        "6.1",
+        "6.2",
+        "6.3"
+      ],
+      "covenants": [
+        {
+          "point": "6.1",
+          "title": "Максимальная доля активов, переданных неограниченным дочерним организациям",
+          "direction": "max",
+          "threshold": 0.15,
+          "unit": "ratio",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупная стоимость капитальных активов, переданных неограниченным дочерним организациям, деленная на совокупные капитальные затраты Заёмщика",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "DIV",
+              "args": [
+                "transferred_capex",
+                "total_capex"
+              ]
+            },
+            {
+              "id": "transferred_capex",
+              "op": "AGG",
+              "category": "capex",
+              "party": "unrestricted_subsidiary"
+            },
+            {
+              "id": "total_capex",
+              "op": "AGG",
+              "category": "capex"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "carve_outs": [
+            "передача дочерней организации, сохраняющей статус Ограниченной, в расчёт не включается"
+          ],
+          "quote": "Заёмщик, Zhezkazgan Mining Services JSC, обязуется не допускать, чтобы совокупная стоимость капитальных активов, переданных Неограниченным дочерним организациям за период с 2025-01-01 по 2025-12-31, превышала 0.15x совокупных капитальных затрат Заёмщика за этот период.",
+          "metric": {
+            "op": "DIV",
+            "args": [
+              {
+                "op": "AGG",
+                "category": "capex",
+                "party": "unrestricted_subsidiary"
+              },
+              {
+                "op": "AGG",
+                "category": "capex"
+              }
+            ]
+          }
+        },
+        {
+          "point": "6.2",
+          "title": "Минимальная выручка по категории",
+          "direction": "min",
+          "threshold": 6900000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупная выручка по статье «Выручка»",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "revenue"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "carve_outs": [
+            "Суммы, переклассифицированные аудиторами Заёмщика из указанной категории, исключаются из расчёта"
+          ],
+          "quote": "Заёмщик, Zhezkazgan Mining Services JSC, обязуется обеспечить, чтобы совокупная выручка по статье «Выручка» за период с 2025-01-01 по 2025-12-31 составляла не менее $6,900,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "revenue"
+          }
+        },
+        {
+          "point": "6.3",
+          "title": "Максимальные платежи связанным сторонам",
+          "direction": "max",
+          "threshold": 225000.0,
+          "unit": "amount",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "metric_definition": "Совокупная сумма ограниченных платежей в пользу связанных сторон",
+          "metric_nodes": [
+            {
+              "id": "root",
+              "op": "AGG",
+              "category": "any",
+              "party": "related"
+            }
+          ],
+          "metric_root": "root",
+          "is_conditional": false,
+          "quote": "В период с 2025-01-01 по 2025-12-31 Zhezkazgan Mining Services JSC не вправе совершать Ограниченные платежи в пользу связанных сторон на совокупную сумму свыше $225,000.00.",
+          "metric": {
+            "op": "AGG",
+            "category": "any",
+            "party": "related"
+          }
+        }
+      ],
+      "problems": [],
+      "notes": [
+        "якорь встретился 2 раз (обычно оглавление и сам раздел) — взят фрагмент длиной 1533 знаков"
+      ]
+    }
+  }
+}

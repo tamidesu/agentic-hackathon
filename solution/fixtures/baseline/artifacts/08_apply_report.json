@@ -1,0 +1,48 @@
+{
+  "alarms": [],
+  "problems": [],
+  "counts": {
+    "rows": 673,
+    "reclassified": 2,
+    "excluded": 2,
+    "related_tagged": 16
+  },
+  "reclassified": [
+    "TXN-P10-0017",
+    "TXN-P2-0040"
+  ],
+  "excluded": [
+    "TXN-B4-0026",
+    "TXN-P1-0045"
+  ],
+  "related_tagged": [
+    "TXN-B1-0030",
+    "TXN-B4-0030",
+    "TXN-B4-0015",
+    "TXN-B4-0009",
+    "TXN-B4-0056",
+    "TXN-B4-0014",
+    "TXN-P1-0031",
+    "TXN-P10-0002",
+    "TXN-P2-0012",
+    "TXN-P3-0001",
+    "TXN-P4-0048",
+    "TXN-P5-0004",
+    "TXN-P6-0040",
+    "TXN-P7-0035",
+    "TXN-P8-0016",
+    "TXN-P9-0040"
+  ],
+  "skipped_notes": [
+    "B1 п.9.1: статус referred_elsewhere",
+    "P1 п.7: статус informational",
+    "P10 п.7.2: статус considered_but_rejected",
+    "P10 п.8.1: статус considered_but_rejected",
+    "P3 п.9.1: статус informational",
+    "P4 п.8.1: 251,338.94 ниже порога существенности 300,000.00",
+    "P4 п.8.2: вид ebitda_adjustment не меняет строк реестра",
+    "P4 п.8.3: вид ebitda_adjustment не меняет строк реестра",
+    "P8 п.7.1: не найдена операция (txn=None, контрагент=None, сумма=918447.52)",
+    "P8 п.8.1: вид off_ledger не меняет строк реестра"
+  ]
+}
