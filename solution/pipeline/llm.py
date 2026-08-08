@@ -23,7 +23,7 @@ import threading
 import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any, Callable, Iterable, Sequence
 
@@ -36,12 +36,46 @@ CACHE_EPOCH = "1"
 # эксперимент со сменой модели на шаге 10 не требовал правки кода.
 # Стоимость прогона (~264k входных токенов) не является фактором выбора —
 # ставим сильнейшую доступную модель.
-DEFAULT_MODEL = os.environ.get("LLM_MODEL", "claude-opus-5")
+#: Модель Gemini по умолчанию. Живёт ЗДЕСЬ, а не в gemini.py, потому что
+#: gemini.py импортирует этот модуль: обратная ссылка дала бы цикл при
+#: загрузке. Дублировать значение в двух местах нельзя — копии разъезжаются,
+#: и умолчание клиента начинает отличаться от умолчания скриптов.
+#:
+#: Не preview: у preview-моделей бесплатный тариф даёт 20 запросов в СУТКИ
+#: на проект. Значение — лишь отправная точка, настоящий выбор делает
+#: gemini.verify_model, проверяя модель настоящим вызовом.
+DEFAULT_GEMINI_MODEL = "gemini-3.6-flash"
+
+
+def _default_model() -> str:
+    """Модель по умолчанию зависит от провайдера: имена не пересекаются,
+    и подстановка чужого имени даёт 404 в самый неподходящий момент."""
+    explicit = os.environ.get("LLM_MODEL")
+    if explicit:
+        return explicit
+    if os.environ.get("LLM_MODE", "").lower() in {"gemini", "google"}:
+        return DEFAULT_GEMINI_MODEL
+    return "claude-opus-5"
+
+
+#: ВНИМАНИЕ: значение вычисляется ОДИН РАЗ при импорте модуля, то есть до
+#: того, как скрипт успевает выставить LLM_MODE. Поэтому оно НЕ должно
+#: попадать в запросы как умолчание — именно так извлечение сканов ушло
+#: к `claude-opus-5` на Gemini-ключе и получило 404.
+#:
+#: Запросы оставляют `model` ПУСТЫМ, а подставляет его клиент — уже
+#: проверенной моделью. Константа остаётся только для обратной
+#: совместимости и диагностики.
+DEFAULT_MODEL = _default_model()
 DEFAULT_MAX_TOKENS = 8000
 DEFAULT_TIMEOUT_S = 180.0
 
 # Модели, пригодные для шага 10, где объём вызовов оправдывает эксперимент.
-KNOWN_MODELS = ("claude-opus-5", "claude-sonnet-5", "claude-haiku-4-5-20251001")
+KNOWN_MODELS = (
+    "claude-opus-5", "claude-sonnet-5", "claude-haiku-4-5-20251001", "claude-fable-5",
+    "gemini-3-flash-preview", "gemini-3.5-flash", "gemini-3.6-flash",
+    "gemini-3.1-pro-preview", "gemini-2.5-flash", "gemini-2.5-flash-lite",
+)
 
 # Валидатор возвращает список претензий. Пустой список = всё в порядке.
 Validator = Callable[[dict], list[str]]
@@ -65,7 +99,9 @@ class LLMRequest:
     prompt: str
     schema: dict
     system: str | None = None
-    model: str = DEFAULT_MODEL
+    #: Пустая строка означает «подставит клиент». Жёсткое умолчание здесь
+    #: замораживало бы имя модели на момент импорта модуля.
+    model: str = ""
     max_tokens: int = DEFAULT_MAX_TOKENS
     temperature: float = 0.0
     # Метка версии промпта. Правишь промпт — меняй метку, иначе кэш отдаст старое.
@@ -290,6 +326,8 @@ class LLMClient:
         max_repairs: int = 2,
         base_backoff_s: float = 1.5,
         read_only_cache: bool = False,
+        force: bool = False,
+        model: str | None = None,
     ):
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -299,14 +337,37 @@ class LLMClient:
         self.max_repairs = max_repairs
         self.base_backoff_s = base_backoff_s
         self.read_only_cache = read_only_cache
+        #: Игнорировать НАКОПЛЕННЫЙ кэш, но писать новый. Нужно после правки
+        #: промпта, которую забыли отразить в prompt_version, и для замера
+        #: реального времени прогона: с кэшем шаг 5 идёт за секунду и ничего
+        #: не говорит о том, сколько он займёт в боевом окне.
+        self.force = force
+        #: Модель для запросов, не указавших свою. Задаётся ПОСЛЕ проверки
+        #: доступности (`gemini.verify_model`), поэтому все шаги — включая
+        #: распознавание сканов — работают одной и той же проверенной моделью.
+        self.model = model or _default_model()
         self.usage = Usage()
         self._log_lock = threading.Lock()
 
     @staticmethod
     def _default_provider() -> Provider:
+        """Провайдер выбирается переменной окружения.
+
+        LLM_MODE=mock     — офлайн, без сети (тесты и разработка);
+        LLM_MODE=gemini   — Gemini, есть бесплатный тариф;
+        по умолчанию      — Anthropic.
+
+        Смена провайдера не требует правок в шагах: имя модели входит
+        в ключ кэша, поэтому результаты разных моделей лежат рядом
+        и сравниваются без перезаписи.
+        """
         mode = os.environ.get("LLM_MODE", "").lower()
         if mode == "mock":
             return MockProvider()
+        if mode in {"gemini", "google"}:
+            from .gemini import GeminiProvider
+
+            return GeminiProvider()
         return AnthropicProvider()
 
     # ---------------- кэш ---------------- #
@@ -357,8 +418,13 @@ class LLMClient:
 
     def extract(self, req: LLMRequest, validator: Validator | None = None) -> LLMResult:
         """Один структурированный вызов с кэшем, ретраями и repair-петлёй."""
+        if not req.model:
+            # Подстановка ДО вычисления ключа кэша: имя модели входит в ключ,
+            # и подставить его позже значило бы класть ответы под ключом
+            # с пустой моделью.
+            req = replace(req, model=self.model)
         key = req.cache_key()
-        cached = self._cache_read(key)
+        cached = None if self.force else self._cache_read(key)
         if cached is not None:
             payload = cached["response"]
             problems = validator(payload) if validator else []

@@ -1,5 +1,11 @@
 anthropic>=0.40
+google-genai>=1.0
 pdfplumber>=0.11
 pytest>=8.0
 # OCR — системные пакеты, не pip: poppler-utils (pdftoppm), tesseract-ocr,
 # tesseract-ocr-rus, tesseract-ocr-kaz
+#
+# poppler ОБЯЗАТЕЛЕН: без pdftoppm сканы не рендерятся и не читаются вовсе.
+# Windows: https://github.com/oschwartz10612/poppler-windows/releases —
+# распаковать, добавить ...\Library\bin в PATH, проверить `pdftoppm -v`.
+# tesseract необязателен: основной путь распознавания — vision-модель.
