@@ -373,7 +373,13 @@ def test_rate_limit_is_respected_per_key(monkeypatch):
 
 
 def test_more_keys_mean_proportionally_less_waiting(monkeypatch):
-    """Ради этого и заведено несколько ключей."""
+    """Ради этого и заведено несколько ключей.
+
+    Замеряется ТОЛЬКО ожидание между запросами: конструктор провайдера —
+    вне секундомера. Прежде он был внутри, и на машине, где genai.Client()
+    строится по ~2.5с (Windows), четыре клиента стоили дороже трёх пауз
+    по 0.2с — тест мерил скорость конструктора, а не пользу ключей.
+    """
     import time
 
     from pipeline.gemini import GeminiProvider
@@ -381,15 +387,16 @@ def test_more_keys_mean_proportionally_less_waiting(monkeypatch):
     monkeypatch.setenv("GEMINI_MIN_INTERVAL_S", "0.2")
 
     monkeypatch.setenv("GEMINI_API_KEY", "solo")
-    t0 = time.monotonic()
     one = GeminiProvider()
+    monkeypatch.setenv("GEMINI_API_KEY", "a,b,c,d")
+    many = GeminiProvider()
+
+    t0 = time.monotonic()
     for _ in range(4):
         one._next_client()
     single = time.monotonic() - t0
 
-    monkeypatch.setenv("GEMINI_API_KEY", "a,b,c,d")
     t0 = time.monotonic()
-    many = GeminiProvider()
     for _ in range(4):
         many._next_client()
     quad = time.monotonic() - t0

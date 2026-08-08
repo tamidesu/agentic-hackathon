@@ -129,7 +129,8 @@ def tesseract_languages() -> list[str]:
         return []
     try:
         out = subprocess.run(
-            ["tesseract", "--list-langs"], capture_output=True, text=True, timeout=20
+            ["tesseract", "--list-langs"], capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=20,
         )
     except (OSError, subprocess.SubprocessError):
         return []
@@ -319,9 +320,14 @@ def _tesseract_pages(images: list[bytes], langs: list[str]) -> str:
             fh.write(img)
             tmp = fh.name
         try:
+            # encoding обязателен: tesseract пишет UTF-8, а text=True на
+            # Windows декодирует локальной кодировкой (cp1251). Декодер
+            # падал в читающем потоке subprocess, stdout приходил пустым,
+            # и скан «распознавался» в ноль символов — молча.
             r = subprocess.run(
                 ["tesseract", tmp, "-", "-l", lang],
-                capture_output=True, text=True, timeout=300,
+                capture_output=True, text=True,
+                encoding="utf-8", errors="replace", timeout=300,
             )
             out.append(r.stdout or "")
         finally:
