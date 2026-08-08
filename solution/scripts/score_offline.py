@@ -41,7 +41,7 @@ for stream in (sys.stdout, sys.stderr):
     except (AttributeError, ValueError):
         pass
 
-from pipeline import apply, artifacts as A, assemble, compute, evidence  # noqa: E402
+from pipeline import apply, artifacts as A, assemble, compute, disclosed, evidence  # noqa: E402
 from pipeline.config import RunPaths, discover_dataset  # noqa: E402
 
 SNAPSHOT = SOLUTION / "fixtures" / "baseline" / "artifacts"
@@ -92,7 +92,14 @@ def main(argv: list[str] | None = None) -> int:
 
     dataset = discover_dataset(args.dataset)
 
-    # ---------------- шаги 11–14 ---------------- #
+    # ---------------- шаги 7б, 11–14 ---------------- #
+    # Раскрытые величины — производные от снимка (корректировки + ковенанты
+    # + реестр), поэтому шаг 7б гоняется здесь наравне с расчётом.
+    dreport = disclosed.run(paths)
+    n_disclosed = sum(len(v) for v in dreport.values.values())
+    print(f"шаг 7б: раскрытых величин {n_disclosed} "
+          f"у {len(dreport.values)} заёмщиков")
+
     apreport = apply.run(paths)
     print(f"шаг 11: строк {len(apreport.rows)}, переклассифицировано "
           f"{len(apreport.reclassified)}, исключено {len(apreport.excluded)}, "

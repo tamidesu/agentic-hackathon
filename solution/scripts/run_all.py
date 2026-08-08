@@ -51,6 +51,7 @@ from pipeline import (  # noqa: E402
     classify,
     compute,
     covenants,
+    disclosed,
     entities,
     evidence,
     extract,
@@ -205,6 +206,14 @@ def main() -> int:
          [note for s in areport7.scenarios for note in s.remarks])
     show("ТРЕВОГА", areport7.alarms())
     show("ПРОБЛЕМА", areport7.problems)
+
+    # ---------------- шаг 7б: раскрытые величины ---------------- #
+    banner("шаг 7б", "раскрытые аудитором величины (DISCLOSED)")
+    dreport = disclosed.run(paths)
+    print(f"   величин {sum(len(v) for v in dreport.values.values())} "
+          f"у {len(dreport.values)} заёмщиков")
+    show("учтено", dreport.remarks)
+    show("ТРЕВОГА", dreport.alarms())
 
     # ---------------- шаг 10: категории ---------------- #
     banner("шаг 10", "категоризация транзакций")
