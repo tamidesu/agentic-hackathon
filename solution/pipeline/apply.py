@@ -97,6 +97,8 @@ class ApplyReport:
     reclassified: list[str] = field(default_factory=list)
     excluded: list[str] = field(default_factory=list)
     related_tagged: list[str] = field(default_factory=list)
+    #: Платежи неограниченным дочерним организациям (по досье KYC, шаг 9б).
+    subsidiary_tagged: list[str] = field(default_factory=list)
     skipped_notes: list[str] = field(default_factory=list)
     problems: list[str] = field(default_factory=list)
 
@@ -127,10 +129,12 @@ class ApplyReport:
                 "reclassified": len(self.reclassified),
                 "excluded": len(self.excluded),
                 "related_tagged": len(self.related_tagged),
+                "subsidiary_tagged": len(self.subsidiary_tagged),
             },
             "reclassified": self.reclassified,
             "excluded": self.excluded,
             "related_tagged": self.related_tagged,
+            "subsidiary_tagged": self.subsidiary_tagged,
             "skipped_notes": self.skipped_notes,
         }
 
@@ -241,6 +245,45 @@ def apply_related(
             row.origin += f"; связанная сторона ({entity.name})"
             tagged.append(row.txn_id)
     return tagged
+
+
+def apply_unrestricted(rows: list[FinalRow], graph) -> tuple[list[str], list[str]]:
+    """Отмечает платежи неограниченным дочерним организациям.
+
+    Список организаций разобран шагом 9б из досье KYC (таблица
+    обеспечительного покрытия). Возвращает (отмеченные, проблемы).
+
+    Метка связанной стороны сильнее: она нужна ковенанту 6.3, который
+    есть у всех, а разрез по дочерним — одному ковенанту. Совпадение
+    обеих ролей у одного контрагента — конфликт, о нём сообщается.
+    """
+    from .entities import EntityIndex
+
+    unrestricted = [
+        e for e in getattr(graph, "entities", [])
+        if e.role == "subsidiary" and e.unrestricted
+    ]
+    if not unrestricted:
+        return [], []
+
+    index = EntityIndex(unrestricted)
+    tagged: list[str] = []
+    problems: list[str] = []
+    for row in rows:
+        entity, _how = index.match(row.counterparty)
+        if entity is None:
+            continue
+        if row.party is not None:
+            problems.append(
+                f"{row.txn_id}: контрагент {row.counterparty!r} одновременно "
+                f"{row.party} и неограниченная дочерняя — оставлена метка "
+                f"{row.party}, проверьте вручную"
+            )
+            continue
+        row.party = "unrestricted_subsidiary"
+        row.origin += f"; неограниченная дочерняя ({entity.basis})"
+        tagged.append(row.txn_id)
+    return tagged, problems
 
 
 def apply_adjustments(
@@ -357,11 +400,12 @@ def run(
     adjustments: dict[str, ScenarioAdjustments] | None = None,
 ) -> ApplyReport:
     from . import adjustments as adj_module
-    from . import categorize, related as related_module
+    from . import categorize, entities as entities_module, related as related_module
 
     categories = categories if categories is not None else categorize.load(paths)
     related = related if related is not None else related_module.load(paths)
     adjustments = adjustments if adjustments is not None else adj_module.load(paths)
+    graphs = entities_module.load(paths)
 
     report = ApplyReport(rows=load_clean_rows(paths))
 
@@ -384,6 +428,12 @@ def run(
                 f"{scenario}: нет сведений о связанных сторонах — "
                 f"соответствующие агрегаты дадут ноль"
             )
+
+        graph = graphs.get(scenario)
+        if graph is not None:
+            tagged, problems = apply_unrestricted(rows, graph)
+            report.subsidiary_tagged.extend(tagged)
+            report.problems.extend(problems)
 
         notes = adjustments.get(scenario)
         if notes is not None:

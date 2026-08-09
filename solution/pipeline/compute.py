@@ -75,6 +75,7 @@ class LedgerAggregateSource:
         disclosed: dict[str, float] | None = None,
         exclude: set[str] | None = None,
         overrides: dict[str, dict] | None = None,
+        group_values: dict[str, float] | None = None,
     ):
         self.rows = list(rows)
         self._disclosed = disclosed or {}
@@ -86,8 +87,14 @@ class LedgerAggregateSource:
         #: Для переклассификации это точнее исключения — операция никуда
         #: не исчезала, она лишь была отнесена к другой статье.
         self.overrides = overrides or {}
+        #: Показатели уровня Группы из отчётности материнской компании
+        #: (шаг 9б, derive_group_capex). Реестр операций Группы недоступен,
+        #: поэтому агрегат scope=group без единой строки берётся отсюда.
+        self._group_values = group_values or {}
         self.traces: list[AggregateTrace] = []
         self.missing_categories: set[str] = set()
+        #: Агрегаты, взятые из отчётности Группы, — для трассировки и флагов.
+        self.group_notes: list[str] = []
 
     # ---------------- протокол ---------------- #
 
@@ -121,6 +128,24 @@ class LedgerAggregateSource:
         # Правильная величина статьи — модуль АЛГЕБРАИЧЕСКОЙ суммы: расходы
         # отрицательны, возвраты положительны, и они гасят друг друга сами,
         # без разбора направления по полю flow.
+        # Агрегат уровня Группы без единой строки реестра берётся из
+        # отчётности материнской компании (шаг 9б): у заёмщика нет реестра
+        # операций Группы, и честнее использовать выведенный показатель
+        # с пометкой, чем молча вернуть ноль. Строки со scope=group, если
+        # они когда-нибудь появятся, имеют приоритет — они данные, а не вывод.
+        if not matched and scope == "group" and party is None \
+                and category in self._group_values:
+            value = abs(self._group_values[category])
+            self.group_notes.append(
+                f"{category}/{scope} = {value:,.2f} взят из консолидированной "
+                f"отчётности материнской компании, а не из реестра"
+            )
+            self.traces.append(AggregateTrace(
+                category=category, scope=scope, party=party, period=period,
+                txn_ids=[], value=value,
+            ))
+            return value
+
         value = abs(sum(r.amount_usd for r in matched))
         if not matched:
             if party is not None:
@@ -186,6 +211,7 @@ def compute_cell(
     """Считает одну ячейку и записывает трассировку."""
     source.reset_traces()
     before = set(source.missing_categories)
+    n_group_notes = len(source.group_notes)
     result: TestResult = run_test(test, source)
     new_missing = source.missing_categories - before
 
@@ -195,6 +221,9 @@ def compute_cell(
             f"агрегат {m} пуст — вероятно расхождение словаря категорий "
             f"между спецификацией ковенанта и категоризацией транзакций"
         )
+    # Выведенный показатель Группы — не строки реестра: ячейка обязана
+    # говорить об этом сама, шаг 15 поднимет её в разбор.
+    problems.extend(source.group_notes[n_group_notes:])
     if math.isnan(result.actual):
         problems.append("actual не вычислен — ячейка требует ручного разбора")
 
@@ -323,6 +352,30 @@ def load_tests(path: Path) -> dict[str, list[CovenantTest]]:
     return out
 
 
+def load_group_values(paths: RunPaths) -> dict[str, dict[str, float]]:
+    """Показатели уровня Группы из графа сущностей (шаг 9б).
+
+    {"P5": {"capex": 21847362.55}, ...}; пустой словарь, если графа нет —
+    агрегат scope=group тогда останется пустым и поднимет флаг.
+    """
+    path = paths.artifacts / A.ENTITY_GRAPH
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    out: dict[str, dict[str, float]] = {}
+    for scenario, payload in data.items():
+        values = (payload.get("group") or {}).get("values") if isinstance(payload, dict) else None
+        if values:
+            out[scenario] = {
+                k: float(v) for k, v in values.items()
+                if isinstance(v, (int, float))
+            }
+    return out
+
+
 def run(paths: RunPaths) -> dict[str, list[CellResult]]:
     covenants_path = paths.artifacts / A.COVENANTS
     ledger_path = paths.artifacts / A.LEDGER_FINAL
@@ -336,6 +389,7 @@ def run(paths: RunPaths) -> dict[str, list[CellResult]]:
         json.loads(disclosed_path.read_text(encoding="utf-8"))
         if disclosed_path.exists() else {}
     )
+    group_values_all = load_group_values(paths)
 
     by_scenario: dict[str, list[Row]] = {}
     for r in rows:
@@ -346,6 +400,7 @@ def run(paths: RunPaths) -> dict[str, list[CellResult]]:
         source = LedgerAggregateSource(
             by_scenario.get(scenario, []),
             disclosed=disclosed_all.get(scenario, {}),
+            group_values=group_values_all.get(scenario, {}),
         )
         if not by_scenario.get(scenario):
             log.warning("РАСЧЁТ: у сценария %s нет ни одной операции", scenario)

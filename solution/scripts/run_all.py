@@ -169,12 +169,12 @@ def main() -> int:
     show("восстановлено", lreport.recovered_amounts)
     show("ПРОБЛЕМА", lreport.problems)
 
-    # ---------------- шаг 9б: граф связей ---------------- #
-    banner("шаг 9б", "граф связей сущностей")
-    graphs = entities.run(paths)
-    print(f"   заёмщиков {len(graphs)}")
-
     if args.skip_llm:
+        # Граф без результатов шага 8 неполон, но группа и дочерние
+        # выводятся из текстов — полезно даже в детерминированном прогоне.
+        banner("шаг 9б", "граф связей сущностей")
+        graphs = entities.run(paths)
+        print(f"   заёмщиков {len(graphs)}")
         print("\n--skip-llm: шаги 5, 7, 8, 10 пропущены, расчёт невозможен")
         return 0
 
@@ -197,6 +197,17 @@ def main() -> int:
           f"{ {s.scenario_id: len(s.related_names()) for s in rreport.scenarios} }")
     show("ТРЕВОГА", rreport.alarms())
     show("ПРОБЛЕМА", rreport.problems)
+
+    # ---------------- шаг 9б: граф связей ---------------- #
+    # После шага 8 НАМЕРЕННО: граф читает его артефакт. Прежде шаг 9б шёл
+    # до него, kyc_all оказывался пуст, и весь граф молча выходил пустым.
+    banner("шаг 9б", "граф связей сущностей")
+    graphs = entities.run(paths)
+    print(f"   заёмщиков {len(graphs)}, показатели Группы у "
+          f"{sum(1 for g in graphs.values() if g.group.values)}, "
+          f"неограниченных дочерних "
+          f"{sum(1 for g in graphs.values() for e in g.entities if e.unrestricted)}")
+    show("ПРОБЛЕМА", (f"{s}: {p}" for s, g in graphs.items() for p in g.problems))
 
     # ---------------- шаг 7: корректировки ---------------- #
     banner("шаг 7 ", "аудиторские корректировки")

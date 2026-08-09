@@ -58,6 +58,9 @@ BASIS_WEIGHT: dict[str, int] = {
     "corrected": 4,         # аудитор исправил ошибочно отражённую сумму
     "cutoff": 3,            # операция отнесена к другому периоду
     "related_party": 2,     # контрагент признан связанным по досье, а не по описанию
+    #: Получатель признан неограниченной дочерней по правилу из досье KYC —
+    #: как и related_party, трактовка продиктована документом, а не строкой.
+    "unrestricted_subsidiary": 2,
 }
 
 
@@ -105,13 +108,20 @@ def candidates_from_artifacts(
                       detail=adj.get("description", "")[:160], revert=revert)
         )
 
-    # Включение по признаку связанной стороны: из реквизитов самой операции
+    # Включение по признаку контрагента: из реквизитов самой операции
     # это не следует, признак приходит из досье KYC.
     for r in rows:
         if r.party == "related":
             by_scenario.setdefault(r.scenario_id, []).append(
                 Candidate(txn_id=r.txn_id, basis="related_party",
                           detail=f"контрагент {r.counterparty} признан связанной стороной",
+                          revert={"party": None})
+            )
+        elif r.party == "unrestricted_subsidiary":
+            by_scenario.setdefault(r.scenario_id, []).append(
+                Candidate(txn_id=r.txn_id, basis="unrestricted_subsidiary",
+                          detail=f"получатель {r.counterparty} — неограниченная "
+                                 f"дочерняя по досье KYC",
                           revert={"party": None})
             )
 
@@ -143,22 +153,29 @@ def find_evidence(
     candidates: list[Candidate],
     disclosed: dict[str, float] | None = None,
     baseline_status: str | None = None,
+    group_values: dict[str, float] | None = None,
 ) -> EvidenceResult:
     """Ищет единственную операцию, определяющую исход.
 
     Проверка контрфактуальная: убрать операцию (или вернуть ей исходную
     трактовку) и пересчитать. Если вердикт изменился — операция решает.
+    Показатели Группы передаются те же, что видел шаг 12: контрфакт
+    на другом наборе данных сравнивал бы несравнимое.
     """
-    base_src = LedgerAggregateSource(rows, disclosed=disclosed)
+    base_src = LedgerAggregateSource(rows, disclosed=disclosed,
+                                     group_values=group_values)
     base = baseline_status or run_test(test, base_src).status
 
     decisive: list[Candidate] = []
     for c in candidates:
         if c.revert:
             src = LedgerAggregateSource(rows, disclosed=disclosed,
+                                        group_values=group_values,
                                         overrides={c.txn_id: c.revert})
         else:
-            src = LedgerAggregateSource(rows, disclosed=disclosed, exclude={c.txn_id})
+            src = LedgerAggregateSource(rows, disclosed=disclosed,
+                                        group_values=group_values,
+                                        exclude={c.txn_id})
         if run_test(test, src).status != base:
             decisive.append(c)
 
@@ -226,7 +243,7 @@ def load_adjustment_notes(path: Path) -> list[dict]:
 
 
 def run(paths: RunPaths) -> dict:
-    from .compute import load_rows, load_tests
+    from .compute import load_group_values, load_rows, load_tests
 
     results_path = paths.artifacts / A.RESULTS
     results = json.loads(results_path.read_text(encoding="utf-8"))
@@ -244,6 +261,7 @@ def run(paths: RunPaths) -> dict:
         json.loads(disclosed_path.read_text(encoding="utf-8"))
         if disclosed_path.exists() else {}
     )
+    group_values_all = load_group_values(paths)
 
     by_scenario_rows: dict[str, list[Row]] = {}
     for r in rows:
@@ -262,6 +280,7 @@ def run(paths: RunPaths) -> dict:
                 cands.get(scenario, []),
                 disclosed=disclosed_all.get(scenario, {}),
                 baseline_status=cell.get("status"),
+                group_values=group_values_all.get(scenario, {}),
             )
             cell["evidence_txn_id"] = res.txn_id
             cell["evidence_basis"] = res.basis

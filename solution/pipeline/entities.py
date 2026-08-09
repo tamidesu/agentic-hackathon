@@ -109,6 +109,9 @@ class Entity:
     role: str                       # counterparty | parent | subsidiary
     ownership_pct: float | None = None
     is_related: bool = False
+    #: Неограниченная дочерняя организация: вне периметра обеспечения
+    #: по правилу из досье KYC. Осмысленно только при role="subsidiary".
+    unrestricted: bool = False
     basis: str = ""                 # почему признан связанным
     source_doc: str = ""
 
@@ -294,6 +297,73 @@ def find_group_parent(
 
 
 # --------------------------------------------------------------------------- #
+# Неограниченные дочерние организации — из досье KYC
+# --------------------------------------------------------------------------- #
+
+#: Заголовок таблицы обеспечительного покрытия. Именно он отличает её от
+#: таблицы долей участия выше по досье: строки обеих выглядят одинаково
+#: («Название LLP 31.4%»), и без привязки к заголовку дочерние организации
+#: перепутались бы с контрагентами.
+_PLEDGE_HEADER_RE = re.compile(
+    r"(?:дол[яи]\s+активов[^\n]{0,60}залог|залог[^\n]{0,60}дол[яи]\s+активов"
+    r"|assets?\s+pledged|pledged\s+assets?|pledge\s+share|share\s+of\s+assets\s+pledged)",
+    re.IGNORECASE)
+_SUBSIDIARY_ROW_RE = re.compile(
+    r"^\s*([^\n%]{2,70}?\b(?:" + "|".join(LEGAL_FORMS) + r")\b\.?)"
+    r"\s+(\d{1,3}(?:[.,]\d+)?)\s*%\s*$",
+    re.IGNORECASE | re.MULTILINE)
+#: Правило «ниже X%% — неограниченная». Порог берётся ТОЛЬКО из предложения,
+#: где упомянута неограниченность: числа в досье встречаются всюду.
+_UNRESTRICTED_WORD_RE = re.compile(r"неограниченн|unrestricted", re.IGNORECASE)
+_BELOW_PCT_RE = re.compile(
+    r"(?:ниже|менее|below|under|less\s+than)\s*(\d{1,3}(?:[.,]\d+)?)\s*%",
+    re.IGNORECASE)
+#: Дальше этого от заголовка таблица не живёт: окно ограничено, чтобы
+#: не подцепить строки следующих разделов.
+_PLEDGE_WINDOW = 900
+
+
+def parse_subsidiary_pledges(text: str) -> tuple[list[tuple[str, float]], float | None, list[str]]:
+    """Таблица «дочерняя организация → доля активов в залоге» и порог правила.
+
+    Возвращает (строки, порог_неограниченности, проблемы). Дочерняя
+    организация с долей НИЖЕ порога — неограниченная (вне периметра
+    обеспечения). Порог не найден — статус не выводится: угадать его
+    значит назначить организацию неограниченной без основания.
+    """
+    problems: list[str] = []
+    header = _PLEDGE_HEADER_RE.search(text)
+    if not header:
+        return [], None, problems
+
+    window = text[header.end(): header.end() + _PLEDGE_WINDOW]
+    rows = [
+        (m.group(1).strip(), float(m.group(2).replace(",", ".")))
+        for m in _SUBSIDIARY_ROW_RE.finditer(window)
+    ]
+    if not rows:
+        problems.append(
+            "найден заголовок обеспечительного покрытия, но ни одной строки "
+            "«организация → доля» — формат таблицы не разобран"
+        )
+        return [], None, problems
+
+    threshold: float | None = None
+    for m in _UNRESTRICTED_WORD_RE.finditer(text):
+        vicinity = text[max(0, m.start() - 300): m.start() + 300]
+        pct = _BELOW_PCT_RE.search(vicinity)
+        if pct:
+            threshold = float(pct.group(1).replace(",", "."))
+            break
+    if threshold is None:
+        problems.append(
+            "таблица обеспечительного покрытия есть, а правило «ниже X% — "
+            "неограниченная» не найдено — статусы не выводятся"
+        )
+    return rows, threshold, problems
+
+
+# --------------------------------------------------------------------------- #
 # Сборка графа
 # --------------------------------------------------------------------------- #
 
@@ -304,10 +374,14 @@ def build_graph(
     kyc: dict,
     texts: dict[str, str],
     own_docs: set[str] | None = None,
+    kyc_text: str = "",
 ) -> EntityGraph:
     """Собирает связи заёмщика из результата извлечения KYC и документов.
 
-    `kyc` — артефакт шага 8: {'threshold_pct': 40.0, 'parties': [...]}.
+    `kyc` — сценарная запись шага 8: {'threshold_pct': 40.0, 'parties': [...]}.
+    `kyc_text` — текст самого досье: из него детерминированно разбирается
+    таблица обеспечительного покрытия дочерних организаций, которую
+    извлечение шага 8 не покрывает.
     """
     graph = EntityGraph(scenario_id=scenario_id, borrower=borrower)
     threshold = kyc.get("threshold_pct")
@@ -338,6 +412,23 @@ def build_graph(
 
     if not graph.entities:
         graph.problems.append("в досье не найдено ни одной сущности — 6.3 неразрешим")
+
+    # --- дочерние организации и периметр обеспечения ---
+    if kyc_text:
+        pledges, below_pct, pledge_problems = parse_subsidiary_pledges(kyc_text)
+        graph.problems.extend(pledge_problems)
+        for name, pct in pledges:
+            unrestricted = below_pct is not None and pct < below_pct
+            graph.entities.append(Entity(
+                name=name, role="subsidiary", unrestricted=unrestricted,
+                basis=(
+                    f"доля активов в залоге {pct}% "
+                    + (f"{'<' if unrestricted else '≥'} {below_pct}% — "
+                       f"{'неограниченная' if unrestricted else 'ограниченная'}"
+                       if below_pct is not None else "— правило не найдено")
+                ),
+                source_doc=kyc.get("doc_id", "") or kyc.get("source_doc", ""),
+            ))
 
     # --- уровень Группы ---
     # own_docs не исключаются: отчётность материнской компании привязана
@@ -416,26 +507,48 @@ def run(paths: RunPaths) -> dict[str, EntityGraph]:
     texts_dir = paths.artifacts / A.TEXTS_DIR
     texts = {p.stem: p.read_text(encoding="utf-8") for p in texts_dir.glob("*.txt")}
 
+    # ФОРМА АРТЕФАКТА — КОНТРАКТ (третий раз в этом проекте, см. artifacts.py).
+    # Шаг 8 пишет {alarms, problems, scenarios: {...}}, а здесь сценарии
+    # искались на ВЕРХНЕМ уровне: kyc_all.get("P5") находил пустоту, и весь
+    # граф — стороны, родитель, показатели Группы — молча выходил пустым.
     kyc_path = paths.artifacts / A.RELATED_PARTIES
-    kyc_all: dict[str, dict] = (
+    kyc_raw: dict = (
         json.loads(kyc_path.read_text(encoding="utf-8")) if kyc_path.exists() else {}
     )
+    kyc_all: dict[str, dict] = kyc_raw.get("scenarios", kyc_raw)
     if not kyc_all:
         log.warning("СУЩНОСТИ: нет артефакта шага 8 — связанные стороны неизвестны")
 
+    # Название заёмщика в артефакте шага 8 не хранится — оно выучено шагом 4
+    # по различительности и лежит в отчёте привязки. Без названия не найти
+    # отчётность материнской компании: та упоминает заёмщика по имени.
     borrowers: dict[str, str] = {}
+    attribution_path = paths.artifacts / A.ATTRIBUTION_REPORT
+    if attribution_path.exists():
+        learned = json.loads(
+            attribution_path.read_text(encoding="utf-8")
+        ).get("learned_names", {})
+        for scenario, variants in learned.items():
+            # Вариант в обычном регистре читабельнее ЗАГЛАВНОГО из шапки.
+            titled = [v for v in variants if any(c.islower() for c in v)]
+            borrowers[scenario] = (titled or variants or [""])[0]
+
     own_docs: dict[str, set[str]] = {}
+    kyc_docs: dict[str, str] = {}
     for doc_id, d in docs.items():
         if d.scenario_id:
             own_docs.setdefault(d.scenario_id, set()).add(doc_id)
-    for scenario in own_docs:
-        borrowers[scenario] = kyc_all.get(scenario, {}).get("borrower", "")
+            if d.type == classify.DocType.KYC and d.scenario_id not in kyc_docs:
+                kyc_docs[d.scenario_id] = doc_id
 
     graphs: dict[str, EntityGraph] = {}
     for scenario in sorted(own_docs):
+        kyc = kyc_all.get(scenario, {})
+        kyc_doc = kyc.get("doc_id") or kyc_docs.get(scenario, "")
         graphs[scenario] = build_graph(
-            scenario, borrowers.get(scenario, ""), kyc_all.get(scenario, {}),
+            scenario, borrowers.get(scenario, ""), kyc,
             texts, own_docs=own_docs[scenario],
+            kyc_text=texts.get(kyc_doc, ""),
         )
 
     (paths.artifacts / A.ENTITY_GRAPH).write_text(
@@ -452,3 +565,46 @@ def run(paths: RunPaths) -> dict[str, EntityGraph]:
         sum(1 for g in graphs.values() if g.group.values),
     )
     return graphs
+
+
+def load(paths: RunPaths) -> dict[str, EntityGraph]:
+    """Читает обратно 05_entities.json — для шагов 11 и 12.
+
+    Лишние ключи (related_names — производное поле) отбрасываются,
+    отсутствующие получают значения по умолчанию: артефакт из старого
+    прогона не должен ронять новый код.
+    """
+    path = paths.artifacts / A.ENTITY_GRAPH
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        log.warning("СУЩНОСТИ: артефакт не читается: %s", exc)
+        return {}
+
+    entity_fields = {f for f in Entity.__dataclass_fields__}
+    out: dict[str, EntityGraph] = {}
+    for scenario, payload in data.items():
+        if not isinstance(payload, dict):
+            continue
+        graph = EntityGraph(
+            scenario_id=scenario,
+            borrower=payload.get("borrower", ""),
+            threshold_pct=payload.get("threshold_pct"),
+            problems=payload.get("problems", []),
+        )
+        for e in payload.get("entities", []):
+            if isinstance(e, dict):
+                graph.entities.append(
+                    Entity(**{k: v for k, v in e.items() if k in entity_fields})
+                )
+        group = payload.get("group") or {}
+        graph.group = GroupFacts(
+            parent=group.get("parent"),
+            source_doc=group.get("source_doc"),
+            values=group.get("values", {}) or {},
+            derivations=group.get("derivations", {}) or {},
+        )
+        out[scenario] = graph
+    return out
