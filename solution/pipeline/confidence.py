@@ -46,6 +46,7 @@ from __future__ import annotations
 import json
 import logging
 import math
+import re
 from dataclasses import dataclass, field
 
 from . import artifacts as A
@@ -135,18 +136,35 @@ def _addressing_misses(apply_report: dict | None) -> dict[str, list[str]]:
     return out
 
 
+_TXN_SCENARIO_RE = re.compile(r"\bTXN-([A-Za-z0-9]+)-")
+
+
 def _scenario_report_problems(paths: RunPaths) -> dict[str, list[str]]:
     """Строки «неопознанное» из отчётов шагов, привязанные к заёмщику.
 
     Шаги обязаны не терять незнакомое молча (валюта вне словаря, форма
     организации, статья) — они пишут это в problems своих отчётов
     с пометкой «вне словаря» или «неопознан». Здесь эти строки
-    подтягиваются к ячейкам заёмщика.
+    подтягиваются к ячейкам заёмщика: строка без определимого заёмщика
+    не пропадает, а приписывается всем (потеря данных неизвестно у кого —
+    повод смотреть везде).
     """
     markers = ("вне словаря", "неопознан", "неизвестн")
-    sources = [A.LEDGER_REPORT, A.APPLY_REPORT]
+
+    def matches(line) -> bool:
+        return isinstance(line, str) and any(m in line for m in markers)
+
+    def scenario_of(line: str) -> str | None:
+        m = _TXN_SCENARIO_RE.search(line)
+        if m:
+            return m.group(1)
+        head = line.split(":", 1)[0].strip()
+        return head if len(head) <= 8 and " " not in head else None
+
     out: dict[str, list[str]] = {}
-    for name in sources:
+    unattributed: list[str] = []
+
+    for name in (A.LEDGER_REPORT, A.APPLY_REPORT, A.TXN_CATEGORIES):
         path = paths.artifacts / name
         if not path.exists():
             continue
@@ -154,11 +172,27 @@ def _scenario_report_problems(paths: RunPaths) -> dict[str, list[str]]:
             data = json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             continue
-        for line in data.get("problems", []):
-            if not isinstance(line, str) or not any(m in line for m in markers):
+        for line in list(data.get("problems", [])) + list(data.get("unresolved", [])):
+            if not matches(line):
                 continue
-            scenario = line.split(":", 1)[0].strip()
-            out.setdefault(scenario, []).append(line)
+            scenario = scenario_of(line)
+            (out.setdefault(scenario, []) if scenario else unattributed).append(line)
+
+    # Граф сущностей хранит проблемы по заёмщикам — привязка уже готова.
+    graph_path = paths.artifacts / A.ENTITY_GRAPH
+    if graph_path.exists():
+        try:
+            graphs = json.loads(graph_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            graphs = {}
+        for scenario, payload in graphs.items() if isinstance(graphs, dict) else ():
+            if isinstance(payload, dict):
+                for line in payload.get("problems", []):
+                    if matches(line):
+                        out.setdefault(scenario, []).append(line)
+
+    if unattributed:
+        out.setdefault("*", []).extend(unattributed)
     return out
 
 
@@ -230,7 +264,9 @@ def assess(
 
             for line in misses.get(scenario, ()):
                 r.add(0.4, f"промах адресации: {line[:120]}")
-            for line in scenario_problems.get(scenario, ()):
+            # "*" — потери без определимого заёмщика: смотреть везде.
+            for line in (*scenario_problems.get(scenario, ()),
+                         *scenario_problems.get("*", ())):
                 r.add(0.3, f"неопознанные данные: {line[:120]}")
 
             if cell.get("status") == "BREACH" and not cell.get("evidence_txn_id"):

@@ -160,12 +160,19 @@ KNOWN_CURRENCIES = frozenset({
 })
 
 
-def find_fx_rates(text: str) -> dict[str, tuple[float, str]]:
+def find_fx_rates(
+    text: str, problems: list[str] | None = None
+) -> dict[str, tuple[float, str]]:
     """Выводит курсы из раскрытых пар «сумма в валюте → платёж в долларах».
 
     Внешние котировки не используются принципиально: ковенант проверяется
     по курсу фактического расчёта, а расхождение с рынком легко превысит
     порог в 5%.
+
+    `problems` — сток для отбраковки: отброшенный кандидат на курс обязан
+    попасть в отчёт шага, а не только в лог. На приватном наборе валюта
+    вне словаря может оказаться настоящей — и тогда её пропуск это тихая
+    потеря пересчёта, которую надо увидеть в первые минуты.
     """
     flat = re.sub(r"\s+", " ", text)
     out: dict[str, tuple[float, str]] = {}
@@ -175,10 +182,14 @@ def find_fx_rates(text: str) -> dict[str, tuple[float, str]]:
             continue
         if currency not in KNOWN_CURRENCIES:
             # Не настоящая валюта — почти наверняка мусор распознавания.
-            log.warning(
-                "Курс для неизвестной валюты %r пропущен: %s",
-                currency, flat[max(0, m.start() - 60):m.end() + 20].strip()[:160],
-            )
+            context = flat[max(0, m.start() - 60):m.end() + 20].strip()[:160]
+            log.warning("Курс для неизвестной валюты %r пропущен: %s", currency, context)
+            if problems is not None:
+                problems.append(
+                    f"валюта {currency!r} вне словаря KNOWN_CURRENCIES — кандидат "
+                    f"на курс отброшен; если это настоящая валюта, пополните "
+                    f"словарь ({context[:100]})"
+                )
             continue
         f, u = _to_float(foreign), _to_float(usd)
         if f <= 0 or u <= 0:
@@ -283,11 +294,15 @@ def run(dataset: DatasetPaths, paths: RunPaths) -> tuple[list[Txn], LedgerReport
 
     # --- курсы валют ---
     rates: dict[str, tuple[float, str]] = {}
+    fx_drops: list[str] = []
     for scenario_docs in by_scenario.values():
         for doc_id, text in scenario_docs:
-            for currency, (rate, ev) in find_fx_rates(text).items():
+            for currency, (rate, ev) in find_fx_rates(text, problems=fx_drops).items():
                 if currency not in rates:
                     rates[currency] = (rate, f"{doc_id}: {ev}")
+    # Одна и та же мусорная «валюта» встречается в нескольких документах —
+    # в отчёт по разу.
+    report.problems.extend(dict.fromkeys(fx_drops))
     report.fx_rates = {c: round(r, 6) for c, (r, _) in rates.items()}
     report.fx_evidence = {c: ev for c, (_, ev) in rates.items()}
 
@@ -304,8 +319,14 @@ def run(dataset: DatasetPaths, paths: RunPaths) -> tuple[list[Txn], LedgerReport
                 pass
         else:
             t.problems.append(f"курс {t.currency}→USD не раскрыт ни в одном документе")
+            # Валюта вне словаря — отдельная беда: раскрытие могло быть,
+            # но его кандидат отброшен как мусор (см. find_fx_rates).
+            suffix = (
+                " (валюта вне словаря KNOWN_CURRENCIES)"
+                if t.currency not in KNOWN_CURRENCIES else ""
+            )
             report.unresolved.append(
-                f"{t.txn_id}: {t.amount:,.2f} {t.currency} без раскрытого курса"
+                f"{t.txn_id}: {t.amount:,.2f} {t.currency} без раскрытого курса{suffix}"
             )
 
     # Курс раскрыт у одного заёмщика, а операции в этой валюте есть у других.

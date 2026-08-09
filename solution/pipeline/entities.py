@@ -98,6 +98,27 @@ def core_name(name: str) -> str:
     return " ".join(parts)
 
 
+def suspect_unknown_legal_form(name: str) -> str | None:
+    """Хвост названия, похожий на форму вне словаря LEGAL_FORMS.
+
+    Форма вне словаря не отбрасывается при нестрогом сравнении, и «Alpha
+    OOO» из досье молча не совпадёт с «Alpha ООО́» из реестра — агрегат по
+    связанным сторонам обнулится без единой ошибки. Заметить это можно
+    только по подозрительному хвосту: короткая аббревиатура заглавными
+    (или через точки), которой нет в словаре.
+    """
+    tokens = name.replace('"', " ").split()
+    if len(tokens) < 2:
+        return None
+    tail = _DOTTED_ACRONYM_RE.sub(lambda m: m.group(0).replace(".", ""), tokens[-1])
+    tail = tail.strip(".,;:")
+    if not (2 <= len(tail) <= 4):
+        return None
+    if not (tail.isalpha() and tail.isupper()):
+        return None
+    return tail if tail.upper() not in LEGAL_FORMS else None
+
+
 # --------------------------------------------------------------------------- #
 # Сущности и связи
 # --------------------------------------------------------------------------- #
@@ -404,8 +425,16 @@ def build_graph(
             if pct is not None and threshold is not None
             else p.get("basis") or "указано в досье"
         )
+        name = (p.get("name") or "").strip()
+        suspect = suspect_unknown_legal_form(name)
+        if suspect:
+            graph.problems.append(
+                f"{name}: хвост {suspect!r} похож на организационно-правовую "
+                f"форму вне словаря LEGAL_FORMS — нестрогое сопоставление "
+                f"имён с реестром может молча не сработать"
+            )
         graph.entities.append(Entity(
-            name=(p.get("name") or "").strip(), role="counterparty",
+            name=name, role="counterparty",
             ownership_pct=pct, is_related=related, basis=basis,
             source_doc=kyc.get("source_doc", ""),
         ))
