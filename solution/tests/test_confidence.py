@@ -24,6 +24,7 @@ sys.path.insert(0, str(ROOT))
 from pipeline import artifacts as A  # noqa: E402
 from pipeline import confidence  # noqa: E402
 from pipeline.confidence import CellRisk, assess  # noqa: E402
+from pipeline.config import RunPaths  # noqa: E402
 
 SNAPSHOT = ROOT / "fixtures" / "baseline" / "artifacts"
 KEY = ROOT / "eval" / "ground_truth.json"
@@ -110,6 +111,46 @@ def test_duplicate_traces_are_not_double_counted():
     risks = assess({"X": {"6.1": _cell(actual=1.5, threshold=1.0,
                                        unit="ratio", trace=[t, dict(t)])}})
     assert not any("хрупкая" in s for s in risks[0].signals)
+
+
+def test_aggregate_that_is_a_corpus_outlier_flags():
+    """Форма P5: «выручка» из двух строк при медиане корпуса в одну —
+    вторая оказалась платежом консультанту по налогам. Заёмщики устроены
+    одинаково, поэтому вдвое больший состав статьи требует объяснения."""
+    from collections import Counter
+
+    counts = {f"S{i}": Counter({"revenue": 1, "opex": 2}) for i in range(11)}
+    counts["P5"] = Counter({"revenue": 2, "opex": 2})
+    trace = [{"category": "revenue", "scope": "borrower", "party": None,
+              "value": 10.3e6, "txn_ids": ["T1", "T2"]}]
+    risks = {r.where: r for r in assess(
+        {"P5": {"6.2": _cell(actual=10.3e6, threshold=7.5e6, trace=trace)}},
+        counts=counts)}
+    assert risks["P5/6.2"].flagged
+    assert any("выброс против корпуса" in s for s in risks["P5/6.2"].signals)
+
+
+def test_a_typical_aggregate_is_not_an_outlier():
+    from collections import Counter
+
+    counts = {f"S{i}": Counter({"revenue": 1}) for i in range(12)}
+    trace = [{"category": "revenue", "scope": "borrower", "party": None,
+              "value": 7e6, "txn_ids": ["T1"]}]
+    risks = assess({"S1": {"6.2": _cell(actual=7e6, threshold=5e6, trace=trace)}},
+                   counts=counts)
+    assert not any("выброс" in s for s in risks[0].signals)
+
+
+def test_outlier_signal_is_silent_on_a_tiny_corpus():
+    """На двух заёмщиках медиана ничего не значит — сигнал молчит,
+    а не сыплет ложными тревогами."""
+    from collections import Counter
+
+    counts = {"A": Counter({"revenue": 1}), "B": Counter({"revenue": 9})}
+    trace = [{"category": "revenue", "scope": "borrower", "party": None,
+              "value": 1.0, "txn_ids": [f"T{i}" for i in range(9)]}]
+    risks = assess({"B": {"6.1": _cell(trace=trace)}}, counts=counts)
+    assert not any("выброс" in s for s in risks[0].signals)
 
 
 def test_verdict_hanging_on_one_kyc_txn_flags():
@@ -225,6 +266,43 @@ def test_flags_cover_every_lost_cell_within_budget(offline_run):
         f"помечено {len(flagged)} из {len(risks)} — список перестал "
         f"быть приоритизацией"
     )
+
+
+@pytest.mark.slow
+def test_flags_cover_every_lost_cell_on_the_live_run(corpus_report, public_dataset,
+                                                     tmp_path):
+    """Приёмка в той конфигурации, которая будет завтра: снимок дорогих
+    шагов ПЛЮС живые тексты корпуса.
+
+    Разница не косметическая. На снимке нет 01_texts, поэтому шаг 9б
+    не выводит показатели Группы, и ячейки P5 держатся флагом «пустой
+    агрегат». На живом прогоне агрегат наполняется — и P5/6.2 теряла
+    флаг вместе с ним: покрытие 12 из 13 вместо полного. Проверять
+    покрытие только на снимке значит не проверять его вовсе.
+    """
+    from pipeline import apply, attribute, compute, disclosed, entities, evidence
+
+    _, rp = corpus_report
+    run = RunPaths.create(tmp_path / "live")
+    shutil.copytree(rp.artifacts, run.artifacts, dirs_exist_ok=True)
+    attribute.run(public_dataset, run)
+    shutil.copytree(SNAPSHOT, run.artifacts, dirs_exist_ok=True)
+
+    entities.run(run)
+    disclosed.run(run)
+    apply.run(run)
+    compute.run(run)
+    evidence.run(run)
+
+    risks = confidence.run(run)
+    flagged = {r.where for r in risks if r.flagged}
+    lost = _lost_cells(run)
+
+    assert lost, "на публичном наборе потери есть — иначе проверять нечего"
+    assert lost - flagged == set(), (
+        f"на живом прогоне без флага остались: {sorted(lost - flagged)}"
+    )
+    assert len(flagged) <= confidence.FLAG_BUDGET
 
 
 def test_confidence_only_observes(offline_run):

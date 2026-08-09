@@ -43,10 +43,13 @@
 """
 from __future__ import annotations
 
+import csv
 import json
 import logging
 import math
 import re
+import statistics
+from collections import Counter
 from dataclasses import dataclass, field
 
 from . import artifacts as A
@@ -63,6 +66,12 @@ NEAR_FLAG = 0.05
 NEAR_RANK = 0.10
 #: Хрупкая разность: прочие агрегаты ≥ половины доминирующего.
 AMPLIFICATION = 1.5
+#: Во столько раз состав агрегата должен превышать медиану корпуса,
+#: чтобы считаться выбросом. Заёмщики устроены одинаково (по ~55 строк,
+#: те же три пункта), поэтому двукратное расхождение в числе строк
+#: статьи — признак иначе проведённой границы категории, а не природы
+#: бизнеса. Ниже двух — шум: у половины статей медиана и так единица.
+OUTLIER_FACTOR = 2.0
 #: Не больше стольких ячеек имеет смысл флаговать: на 36 ячеек длиннее
 #: список — не приоритизация, а перепись.
 FLAG_BUDGET = 20
@@ -136,6 +145,43 @@ def _addressing_misses(apply_report: dict | None) -> dict[str, list[str]]:
     return out
 
 
+def category_counts(paths: RunPaths) -> dict[str, Counter]:
+    """Сколько строк в каждой паре (заёмщик, статья) итогового реестра.
+
+    Исключённые правилом отсечения строки не считаются: в агрегаты они
+    не входят, и их присутствие исказило бы сравнение.
+    """
+    path = paths.artifacts / A.LEDGER_FINAL
+    out: dict[str, Counter] = {}
+    if not path.exists():
+        return out
+    with path.open(newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if str(row.get("excluded", "")).strip() in {"1", "true", "True"}:
+                continue
+            out.setdefault(row.get("scenario_id", ""), Counter())[
+                row.get("category", "")] += 1
+    return out
+
+
+def corpus_medians(counts: dict[str, Counter]) -> dict[str, float]:
+    """Медианное число строк статьи по всем заёмщикам.
+
+    Тот же приём, что и проверка письменности в extract.py: корпус
+    сравнивается сам с собой. Заёмщик, у которого статья набрана вдвое
+    большим числом строк, — не обязательно ошибка, но объяснение этому
+    должно быть, и в боевом окне его стоит найти.
+    """
+    if len(counts) < 3:
+        # На двух заёмщиках медиана ничего не значит.
+        return {}
+    categories = {c for cnt in counts.values() for c in cnt}
+    return {
+        c: statistics.median([cnt.get(c, 0) for cnt in counts.values()])
+        for c in categories
+    }
+
+
 _TXN_SCENARIO_RE = re.compile(r"\bTXN-([A-Za-z0-9]+)-")
 
 
@@ -206,12 +252,14 @@ def assess(
     assembly_report: dict | None = None,
     apply_report: dict | None = None,
     scenario_problems: dict[str, list[str]] | None = None,
+    counts: dict[str, Counter] | None = None,
 ) -> list[CellRisk]:
     """Признаки по каждой ячейке, отсортированные по убыванию риска."""
     fallback_cells = set((assembly_report or {}).get("cells_fallback", []))
     group_gaps = _group_gap_scenarios(results)
     misses = _addressing_misses(apply_report)
     scenario_problems = scenario_problems or {}
+    medians = corpus_medians(counts or {})
 
     out: list[CellRisk] = []
     for scenario, cells in sorted(results.items()):
@@ -246,6 +294,22 @@ def assess(
                 if amp >= AMPLIFICATION:
                     r.add(0.5, f"хрупкая разность: за доминирующим агрегатом "
                                f"масса ×{amp:.2f} — ошибка входа усиливается")
+
+            # Состав агрегата — выброс против корпуса. Ловит статью,
+            # чью границу для этого заёмщика провели иначе, чем для
+            # остальных: у P5 в «выручке» две строки при медиане одна,
+            # и вторая — платёж консультанту по налогам.
+            for t in cell.get("trace", []):
+                category = t.get("category")
+                if (category in (None, "any") or t.get("scope") != "borrower"
+                        or t.get("party")):
+                    continue
+                n = len(t.get("txn_ids") or [])
+                median = medians.get(category, 0)
+                if median and n >= max(2, median * OUTLIER_FACTOR):
+                    r.add(0.45, f"состав агрегата {category} — выброс против "
+                                f"корпуса: {n} строк при медиане {median:g}")
+                    break
 
             for p in problems:
                 if "взят из консолидированной отчётности" in p:
@@ -299,6 +363,7 @@ def run(paths: RunPaths) -> list[CellRisk]:
         assembly_report=_optional(A.ASSEMBLY_REPORT),
         apply_report=_optional(A.APPLY_REPORT),
         scenario_problems=_scenario_report_problems(paths),
+        counts=category_counts(paths),
     )
 
     flagged = [r for r in risks if r.flagged]
