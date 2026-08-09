@@ -41,7 +41,7 @@ for stream in (sys.stdout, sys.stderr):
     except (AttributeError, ValueError):
         pass
 
-from pipeline import apply, artifacts as A, assemble, compute, disclosed, evidence  # noqa: E402
+from pipeline import apply, artifacts as A, assemble, compute, confidence, disclosed, evidence  # noqa: E402
 from pipeline.config import RunPaths, discover_dataset  # noqa: E402
 
 SNAPSHOT = SOLUTION / "fixtures" / "baseline" / "artifacts"
@@ -62,6 +62,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--key", type=Path, default=SOLUTION / "eval" / "ground_truth.json")
     ap.add_argument("--run", type=Path, default=SOLUTION / "runs" / "offline")
     ap.add_argument("--verbose", "-v", action="store_true", help="показать все потерянные ячейки")
+    ap.add_argument("--flags", action="store_true", help="показать флаги уверенности (шаг 15)")
     args = ap.parse_args(argv)
 
     logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s: %(message)s")
@@ -114,6 +115,14 @@ def main(argv: list[str] | None = None) -> int:
     assemble.run(dataset, paths, team="tamidesu", contact_email="mogleg2@gmail.com",
                  model="offline-snapshot", out_path=out_path)
     print(f"шаг 14: {out_path}")
+
+    risks = confidence.run(paths)
+    flagged = [r for r in risks if r.flagged]
+    print(f"шаг 15: помечено {len(flagged)} из {len(risks)} ячеек "
+          f"(подробный список: --flags)")
+    if args.flags:
+        for line in confidence.render(risks):
+            print(f"  {line}")
 
     # ---------------- оценка ---------------- #
     sys.path.insert(0, str(SOLUTION / "eval"))

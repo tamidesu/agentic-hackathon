@@ -267,6 +267,19 @@ def apply_adjustments(
             )
             continue
 
+        # Вид проверяется ДО адресации. Иначе внебалансовое примечание
+        # без операции в реестре (P8 п.7.1 — его берёт узел DISCLOSED,
+        # шаг 7б) попадало в список как «не найдена операция», и промах
+        # адресации было не отличить от примечания, которому адресат
+        # не положен. Шаг 15 читает этот список как сигнал риска —
+        # ложная тревога там стоит внимания в боевом окне.
+        if note.kind not in {"cutoff", "reclassification"}:
+            skipped.append(
+                f"{adjustments.scenario_id} п.{note.note_id}: вид {note.kind} "
+                f"не меняет строк реестра"
+            )
+            continue
+
         targets = match_note_to_row(note, rows)
         if not targets:
             skipped.append(
@@ -293,12 +306,11 @@ def apply_adjustments(
                 reclassified.append(row.txn_id)
             continue
 
-        # Прочие виды примечаний (курсы, внебалансовые суммы) применяются
-        # не к строкам реестра: курс учтён шагом 9, а раскрытые величины
-        # движок берёт узлом DISCLOSED.
+        # Сюда доходит только переклассификация без целевой статьи:
+        # перекладывать некуда, применение было бы выдумкой.
         skipped.append(
-            f"{adjustments.scenario_id} п.{note.note_id}: вид {note.kind} "
-            f"не меняет строк реестра"
+            f"{adjustments.scenario_id} п.{note.note_id}: переклассификация "
+            f"без целевой статьи — применить нечего"
         )
 
     return reclassified, excluded, skipped

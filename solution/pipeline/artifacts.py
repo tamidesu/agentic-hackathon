@@ -57,6 +57,8 @@ LEDGER_FINAL = "08_ledger_final.csv"
 APPLY_REPORT = "08_apply_report.json"
 RESULTS = "09_results.json"
 ASSEMBLY_REPORT = "10_assembly_report.json"
+#: Шаг 15: ячейки по убыванию риска. Только наблюдение, значений не меняет.
+CONFIDENCE = "11_confidence.json"
 SUBMISSION = "submission.json"
 
 

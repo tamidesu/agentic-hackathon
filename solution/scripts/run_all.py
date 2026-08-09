@@ -50,6 +50,7 @@ from pipeline import (  # noqa: E402
     categorize,
     classify,
     compute,
+    confidence,
     covenants,
     disclosed,
     entities,
@@ -252,6 +253,15 @@ def main() -> int:
     assemble.run(dataset, paths, team=args.team, contact_email=args.email,
                  model=model, out_path=out_path)
     print(f"   {out_path}")
+
+    # ---------------- шаг 15: флаги уверенности ---------------- #
+    # Ключа на приватном наборе не будет; этот список — единственный
+    # способ узнать, куда смотреть. Поэтому он в самом конце вывода:
+    # первое, что видно на экране после прогона.
+    banner("шаг 15", "флаги уверенности — с чего начинать разбор")
+    risks = confidence.run(paths)
+    for line in confidence.render(risks):
+        print(f"   {line}")
 
     # ---------------- оценка ---------------- #
     if args.score and args.score.exists():
